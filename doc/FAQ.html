@@ -1,0 +1,45 @@
+
+<ul>
+
+<li>
+<strong>Cyrus Sieve server (timsieved) complains about size of Sieve scripts.</strong>
+<br/><br/>
+
+Sieve scripts can get quite large, especially with the metadata that avelsieve saves together
+with the script.
+<br/>
+In Cyrus, you are advised to make the permitted Sieve script size bigger, in imapd.conf:<br/>
+<pre>
+ # Maximum size (in kilobytes) any sieve script can be, enforced at
+ # submission by timsieved(8).
+sieve_maxscriptsize: 32
+</pre>
+<br/>
+Changing the default size of 32 kb to 64 or 128 kb should be OK for most purposes.
+
+</li>
+<br/><br/>
+
+
+<li>
+<strong>Using a ManageSieve backend against a non-ManageSieve-enabled server.</strong>
+<br/><br/>
+
+While it is possible to use the <em>file</em> storage backend, to store Sieve scripts
+in the filesystem, it might be more convenient to use a standalone ManageSieve server
+as a separate layer, and use the ManageSieve backend in avelsieve.<br/>
+<br/>
+You can use <a href="http://woozle.org/~neale/src/pysieved/">pysieved (Python
+    Managesieve Server)</a> to accomplish this.
+<br/><br/>
+This way, you can use a ManageSieve interface to store scripts to be consumed
+by Exim, Dovecot, Postfix etc.
+
+</li>
+
+
+</ul>
+
+
+
+

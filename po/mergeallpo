@@ -1,0 +1,17 @@
+#!/bin/sh
+for dir in `ls -1d ../locale/?????`
+do
+	mv $dir/LC_MESSAGES/avelsieve.po $dir/LC_MESSAGES/avelsieve.po.bak
+	echo "msgmerge $dir/LC_MESSAGES/avelsieve.po.bak avelsieve.pot > $dir/LC_MESSAGES/avelsieve.po";
+	msgmerge $dir/LC_MESSAGES/avelsieve.po.bak avelsieve.pot > $dir/LC_MESSAGES/avelsieve.po
+
+    for i in `seq 10 15`
+    do
+        if test -f $dir/LC_MESSAGES/avelsieve_rule_$i.po ; then
+	        echo "msgmerge $dir/LC_MESSAGES/avelsieve_rule_$i.po.bak avelsieve_rule_$i.pot > $dir/LC_MESSAGES/avelsieve_rule_$i.po"
+	        msgmerge $dir/LC_MESSAGES/avelsieve_rule_$i.po.bak avelsieve_rule_$i.pot > $dir/LC_MESSAGES/avelsieve_rule_$i.po
+        fi
+    done
+done
+
+     

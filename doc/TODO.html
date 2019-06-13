@@ -1,0 +1,129 @@
+<h3>Medium-priority Items</h3>
+
+<ul>
+
+<li>Clean up ManageSieve library (e.g. function that gets sieve capabilities
+should not depend on user being logged in).</li>
+
+<li>Support multiple Sieve scripts and switching between them.</li>
+
+<li>Support import / export / backup of Sieve scripts.</li>
+
+<li>Sieve scripts in shared folders, via ANNOTATEMORE (aka METADATA), as
+implemented in Cyrus 2.3.<br/>
+<em>Current status: there is a backend library for ANNOTATEMORE operations
+already written (see annotatemore Squirrelmail plugin). A new
+&quot;storage backend&quot; for avelsieve needs to be written to take
+advantage of it.</em>
+</li>
+
+<li>Sort out the GUI when adding a new rule. Make it more dynamic and
+support mixed, complicated AND/OR logic.</li>
+
+<li>Support <a href="http://www.ietf.org/rfc/rfc3894.txt">Sieve Extension:
+Copying Without Side Effects (RFC 3894)</a></li>
+
+<li>Fine-tune TLS connections via stream_context_create() options.</li>
+
+<li>Support sending and receiving of Sieve scripts &amp; rules via email. For
+this purpose, according to RFC 3028, the mime media type: application/sieve
+should be used.</li>
+
+<li>Parse Sieve scripts using <a
+href="http://libsieve-php.sourceforge.net/">libsieve-php</a> project by
+Heiko Hund.</li>
+
+</ul>
+
+
+<h3>Low Priority</h3>
+
+<ul>
+<li>Use Squirrelmail 1.5.2 template sub-system.</li>
+
+<li>Standalone version that does not depend on Squirrelmail.</li>
+
+<li>Support advanced mode, so that the user can edit the Sieve scripts directly
+(if she knows Sieve). However this will disable the nice GUI altogether after
+the first edit.</li>
+
+<li>Support <a href="http://www.oceana.com/ftp/drafts/draft-segmuller-sieve-relation-01.txt">Sieve
+Extension: Relational Tests</a>, the :count matchtype.</li>
+
+<li>Support Sieve spamtest and virustest extensions.</li>
+
+<li>RFC 3834 suggests to use Auto-Submitted: header for automated replies, such
+as vacation messages. Perhaps this could be added in the automatic rule
+creation. (<a href="http://www.rfc-editor.org/rfc/rfc3834.txt">RFC 3834</a>, <a
+href="http://www.iana.org/assignments/auto-response-parameters">Valid values
+per IANA</a>)</li>
+
+<li>Support <a
+href="http://tools.ietf.org/html/draft-melnikov-sieve-imapflags-06">IMAP
+flag Extension</a> (its recent version).  </li>
+
+
+</ul>
+
+
+
+<h3>Things to Check</h3>
+
+<p>These are implemented, but they might need some more QA.</p>
+
+<ul>
+<li><a href="http://www.ietf.org/internet-drafts/draft-degener-sieve-body-00.txt">
+        Sieve - body extension</a>
+<br/><em>Status: implemented</em>
+</li>
+
+<li>Error handling when creating a folder with invalid characters etc.
+<br/><em>Status: implemented</em>
+</li>
+
+<li>Synchronization between folders mentioned in fileinto rules and actual
+folders that exist in the Cyrus tree.
+<br/><em>Status: Partially implemented: a warning message is being displayed
+        when there is such an inconsistency.</em>
+</li>
+
+<li>Support multiple storage backends, instead of just ManageSieve, so that it
+can be used with non-ManageSieve servers such as MTAs (Exim).
+<br/><em>Status: implemented</em>
+</li>
+
+<li>Support TLS connects to timsieved, in sieve-php.lib.php.
+<br/><em>Status: implemented</em>
+</li>
+
+</ul>
+
+<h3>Wishlist</h3>
+
+<ul>
+
+<li>Header match rule: user can put a custom header to be matched against
+(editable box instead of Select).
+<br/><em>Status: tried it with dhtmlgoodies' corresponding widget. It will only
+        work with Javascript, and it looks ugly.</em>
+</li>
+
+<li>Folder creation does not work while editing an existing rule.</li>
+
+<li>Support &quot;ready-made rules&quot;, like: <em>All messages sent only to
+me</em>, <em>Place emails alphabetically in folders A-M and N-Z</em>, <em>Spam
+Filter</em> etc. (need ideas!)</li>
+
+<li>Respond with mime-encoded files. Support the :mime parameter.  <a
+href="http://www.irbs.net/internet/info-cyrus/0110/0252.html">(info-cyrus
+relevant mail)</a></li>
+
+<li>Support Sieve Variables Extension (<tt>draft-ietf-sieve-variables</tt>)</li>
+
+<li>Support Sieve Date and Index Extensions (<tt>draft-freed-sieve-date-index</tt>)</li>
+
+<li>Support Sieve extension for accessing mailbox metadata
+(draft-melnikov-sieve-imapext-metadata)</li>
+
+</ul>
+

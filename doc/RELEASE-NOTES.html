@@ -1,0 +1,179 @@
+<h2><a>Development Branch (1.9)</a></h2>
+
+<p>The Devel Branch aims for some major changes, which are not considered
+stable enough. In 1.9, the code has moved around and a lot of the GUI /
+frontend parts have been ported to a new scheme, while other pars have been
+completely rewritten.</p>
+
+
+<h3>1.9.7 (The <em>It's Summertime</em> Release)</h3>
+
+<p>Avelsieve 1.9.7 focuses on important bug fixes that aim for a stable 2.0
+release. More detailed information about these fixes can be found in the
+Changelog.</p>
+
+
+<h3>1.9.6 (The <em>We're Opening Up To Other Servers</em> Release)</h3>
+
+<p>This release adds the possibility to use different storage backends, instead
+of only using ManageSieve protocol. Of course, the different backends need to
+be written first. There are currently two skeletons (templates) in the code: a
+File-based and a more generic one. </p>
+
+<p>No other backends other than ManageSieve are implemented at this time. If
+you are interested in writing a backend and plan to share it with the
+community, please contact me in order to avoid duplicate work.</p>
+
+<p>Also, in this release, there are a lot of bugfixes since Avelsieve 1.9.5 was
+filled with bugs. Hopefully 2.0 will have very few of them.</p>
+
+
+
+<h3>1.9.5 (The &quot;1.9.5.&quot; Release)</h3>
+
+<p>Avelsieve 1.9.5 introduces some sort of integration between the Squirrelmail
+Search page and the Sieve Filters. Perform a search in Squirrelmail, and with
+the click on the link &quot;Create Filter&quot; you can instantly add a Sieve
+rule.</p>
+
+<p>Various bug{fixe}s continue to find their way into the code.</p>
+
+<p>When upgrading, <em>remember to resync your config/config.php with
+config/config_sample.php</em>. It is still changing in a lot of places, and it
+is mostly important that you keep the new global statements in it.</p>
+
+<p>A preview of the next steps in development: GUI refinements, support for
+multiple Sieve scripts, support for scripts in shared folders via AnnotateMore
+in Cyrus 2.3, multiple storage backends such as a simple file-based one (needed
+for Exim4 filters) and much much more!</p>
+
+
+
+<h3>1.9.4 (The &quot;Happy New Year&quot; Release)</h3>
+
+<p>After almost six (!) months of small and big changes in the CVS, release
+1.9.4 is out.</p>
+
+<p>The major highlight in this release is the new condition GUI, which also
+allows more Sieve features to be used in avelsieve. For example, envelope MAIL
+FROM and TO (as well as AUTH in Cyrus) can be checked against, as well as the
+body text of email messages wherever this is supported.</p>
+
+<p>There is also a transitioning step, which will take place in the first time
+that the rules are loaded. A slightly changed internal format will be written
+back. This means that this version is not backward-compatible with any previous
+'avelsieve' (&lt;= 1.9.3).</p>
+
+<p>So a word of warning to all you early adopters: <strong>This is
+beta</strong> so either</p>
+
+<ul>
+<li><strong>Back up your Sieve scripts.</strong></li>
+<li>Use this new avelsieve in a test, non-critical environment.</li>
+</ul>
+
+<p>That said, this version is up and running in a test environment (<a
+href="http://email.uoa.gr/">email.uoa.gr demo site</a>) and a production
+environment (University of Athens).</p>
+
+<p>There are new configuration options. Keep your config/config.php in sync
+with config/config_sample.php. I suggest <tt>vim -d</tt> ;) </p>
+
+<p>Please feed with any bug reports at this stage. There are still things to be
+done before a stable 2.0 is out. Enable debugging in config/config.php if
+things start going wrong.</p>
+
+
+<h3>1.9.3 (The &quot;We Are Still Alive&quot; Release)</h3>
+
+<p>On the road to 2.0, this is mostly a maintenance and bugfix release for the
+people who follow this devel branch. More changes will follow in 1.9.4.</p>
+
+
+<h3>1.9.2 (&quot;The Interface Improvements Release&quot;)</h3>
+
+<p>This release in the devel series focuses on usability and interface
+enhancements.</p>
+
+<p>Among the new features, the highlight is based on an idea and a patch by
+Simon Matter: The concept of enabling and disabling rules on the fly, without
+actually deleting them altogether, is introduced.</p>
+
+<p>The descriptions of the rules, especially the &quot;terse&quot; description,
+have been made more user-friendly.</p>
+
+<p>There are more bugfixes, including a new way to encode/decode SIEVE scripts
+from UTF-8 to the user's character set and vice versa. These fallback attempts
+try to use iconv or recode.</p>
+
+<p>Testing and bug reporting is much appreciated!</p>
+
+
+
+<h3>1.9.1</h3>
+
+<p>Welcome to another installment in the 1.9 series.</p>
+
+<p>This release fixes some usability and business-logic bugs that slipped the
+initial devel release. A fix for Dan's MANAGESIEVE class, upon which this whole
+project was based, is also in. The off-by-one error could cause Apache / PHP to
+get into an endless loop, until all the PHP memory limits were exhausted.
+Hopefully this will make avelsieve just a bit more robust and secure.</p>
+
+<p>Other than that, I believe that the 1.9 series is heading fast to become a
+2.0 release. Before doing that, I would like to ensure compatibility with PHP5,
+which means removing the hack that I've done, reasssigning '$this' in two
+places of the new code.</p>
+
+<p>At the moment nothing has changed in the way SIEVE scripts are being built.
+The SIEVE scripts created are backward- and forward-compatible so far.</p>
+
+<p><a href="avelsieve_changelog.php#1.9.1">Full Changelog</a></p>
+
+
+<h3>1.9.0</h3>
+
+<p>This is the first release of the next-gen avelsieve!</p>
+
+<p>This release should be considered 'alpha quality'. At the moment it works
+for me without any major glitches, but who knows, there might be a bug that
+DoS'es the Apache Server by eating all of its memory in there. (I know there
+<em>was</em> at least one of those, I fixed it some days ago).</p>
+
+<p>Please try out the new <em>Edit Rule</em> page and report to me, or to the
+squirrelmail-plugins mailing list, or to both, your annoyances, bugs and
+wishes.</p>
+
+<p><a href="avelsieve_changelog.php#1.9.0">Full Changelog</a></p>
+
+
+
+<h2><a>Stable Branch (1.0)</a></h2>
+
+<p>The code in this branch has practically lived as-is for enough months in
+peoples' production servers that I consider it very stable and at least
+soemwhat robust.</p>
+
+<p>Some people still report that they cannot get avelsieve to remember the
+rules - probably a session problem; but I can't figure out why that happens.
+For most people it works without a glitch. If you find any difficulty in
+getting it to work, please let me know.</p>
+
+
+<h3>1.0.1</h3>
+
+<p>This release simply incorporates the fix of the off-by-one bug in the
+MANAGESIEVE class, to avoid hammering the Apache Server. Upgrading is
+highly recommended.</p>
+
+<p><a href="avelsieve_changelog.php#1.0.1">Full Changelog</a></p>
+
+
+<h3>1.0</h3>
+
+<p>Nothing much that warrants really the move from 0.9.x to 1.0, but some day
+it had to be done!</p>
+
+<p><a href="avelsieve_changelog.php#1.0">Full Changelog</a></p>
+
+
