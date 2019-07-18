@@ -41,9 +41,9 @@ if(isset($_SESSION['newrule'])) {
 
 if(isset($_POST['cancel'])) {
 	unset($_SESSION['newrule']);
-	session_unregister('newrule');
-	unset($part);
-	session_unregister('part');
+	#session_unregister('newrule');
+	unset($_SESSION['part']);
+	#session_unregister('part');
 	header("Location: ./table.php");
 	exit;
 }
@@ -250,8 +250,11 @@ if(isset($_POST['finished']) || isset($_POST['apply'])) {
 	$_SESSION['comm']['new'] = true;
 
 	/* Remove addrule.php stuff */
-	session_unregister('newrule');
-	session_unregister('part');
+	/* DEPRECATED
+        session_unregister('newrule');
+	session_unregister('part');*/
+        unset($_SESSION['newrule']);
+        unset($_SESSION['part']);
 
 	/* go to table.php */
 	session_write_close();
