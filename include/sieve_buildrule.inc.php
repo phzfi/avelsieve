@@ -534,6 +534,8 @@ function makesinglerule($rule, $mode='rule') {
 		$out .= "keep;";
 		$text .= _("<em>keep</em> the message.");
 		$terse .= _("Keep");
+        $args = array($rule, $out, $text, $terse);
+		do_hook('avelsieve_buildrule_action', $args); 
 		break;
 	
 	case '2':	/* discard */
@@ -615,12 +617,7 @@ function makesinglerule($rule, $mode='rule') {
   		$out .= " text:" . LINEBREAK . $rule['vac_message'] . LINEBREAK . "." . LINEBREAK . ";";
  		$text .= _("reply with this vacation message: ") . htmlspecialchars($rule['vac_message']);
 		$terse .= _("Vacation Message");
- 		break;
-	
-	default:
-        $args = array($rule, $out, $text, $terse);
-		do_hook('avelsieve_buildrule_action', $args); 
-		break;
+ 		break;	
 	}
 	
 	if(isset($rule['keep'])) {
