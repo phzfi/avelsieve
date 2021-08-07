@@ -148,6 +148,7 @@ class avelsieve_html_edit extends avelsieve_html {
         }
         $out .= '>';
 
+        if (!empty($this->s) && !empty($this->s->condition_kinds))
         foreach($this->s->condition_kinds as $kind=>$desc) {
             $out .= '<option value="'.$kind.'"';
             if(isset($rule['cond'][$n]['kind']) && $rule['cond'][$n]['kind'] == $kind) {
