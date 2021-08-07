@@ -1,3 +1,23 @@
+var AVELSIEVE = AVELSIEVE || {};
+
+AVELSIEVE.util = {
+    showDiv: function(divname) {
+        if($(divname)) {
+            $(divname).style.display = "";
+        }
+        return false;
+    },
+    hideDiv: function(divname) {
+        if($(divname)) {
+            $(divname).style.display = "none";
+        }
+        return false;
+    }
+};
+
+/**
+ * @deprecated
+ */
 function el(id) {
   if (document.getElementById) {
     return document.getElementById(id);
@@ -5,14 +25,3 @@ function el(id) {
   return false;
 }
 
-function ShowDiv(divname) {
-  if(el(divname)) {
-    el(divname).style.display = "";
-  }
-  return false;
-}
-function HideDiv(divname) {
-  if(el(divname)) {
-    el(divname).style.display = "none";
-  }
-}

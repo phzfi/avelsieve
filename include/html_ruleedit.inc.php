@@ -672,14 +672,14 @@ class avelsieve_html_edit extends avelsieve_html {
 
         if($this->mode == 'edit') {
             /* 'edit' */
-            $out = '<form name="addrule" action="'.$PHP_SELF.'" method="POST">'.
+            $out = '<form id="avelsieve_addrule" name="addrule" action="'.$PHP_SELF.'" method="POST">'.
                 '<input type="hidden" name="edit" value="'.$edit.'" />'.
                 (isset($this->position) ? '<input type="hidden" name="position" value="'.$this->position.'" />' : '') .
                 $this->table_header( _("Editing Mail Filtering Rule") . ' #'. ($edit+1) ).
                 $this->all_sections_start();
         } else {
             /* 'duplicate' or 'addnew' */
-            $out = '<form name="addrule" action="'.$PHP_SELF.'" method="POST">'.
+            $out = '<form id="avelsieve_addrule" name="addrule" action="'.$PHP_SELF.'" method="POST">'.
                 $this->table_header( _("Create New Mail Filtering Rule") ).
 	    		$this->all_sections_start();
 		}

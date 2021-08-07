@@ -110,6 +110,12 @@
  * @subpackage avelsieve
  */ 
 
+/** Include Base Avelsieve Condition class */
+include_once(SM_PATH . 'plugins/avelsieve/include/avelsieve_condition.class.php');
+
+/** Include Base Avelsieve Action class */
+//include_once(SM_PATH . 'plugins/avelsieve/include/avelsieve_action.class.php');
+
 /**
  * exim's implementation uses CL for linebreaks instead of CLRF like specified in the RFC
  * this constant should be used for linebreaks in the sieve script instead of hardcoding them
