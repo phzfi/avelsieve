@@ -1,0 +1,1 @@
+/etc/squirrelmail/avelsieve-config.php
