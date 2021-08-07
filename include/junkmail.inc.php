@@ -10,7 +10,7 @@
  *
  * This file contains special functions related to junk mail options.
  *
- * @version $Id: junkmail.inc.php 1020 2009-05-13 14:10:13Z avel $
+ * @version $Id: junkmail.inc.php,v 1.7 2007/05/03 15:13:53 avel Exp $
  * @author Alexandros Vellis <avel@users.sourceforge.net>
  * @copyright 2004-2007 Alexandros Vellis
  * @package plugins
@@ -46,7 +46,7 @@ function junkmail_right_main_do() {
         include_once(SM_PATH . 'plugins/avelsieve/include/sieve.inc.php');
         $s = new $backend_class_name;
         $s->init();
-        $s->login();
+	    $s->login();
     }
 
     /* If this page is called before table.php is ever shown, then we have to make
@@ -56,7 +56,7 @@ function junkmail_right_main_do() {
     * ii) creation of a rule from some search criteria.
     */
     if (!isset($rules)) {
-        /* Actually get the script 'phpscript' (hardcoded ATM). */
+    	/* Actually get the script 'phpscript' (hardcoded ATM). */
         if($s->load('phpscript', $rules, $scriptinfo)) {
             $_SESSION['rules'] = $rules;
             $_SESSION['scriptinfo'] = $scriptinfo;
@@ -70,10 +70,10 @@ function junkmail_right_main_do() {
      * to be saved to server then.
      */
     if(isset($avelsieve_changed) && $avelsieve_changed == true) {
-        $newscript = makesieverule($rules);
-        $s->save($newscript, 'phpscript');
-        avelsieve_spam_highlight_update($rules);
-        sqsession_unregister('haschanged');
+	    $newscript = makesieverule($rules);
+	    $s->save($newscript, 'phpscript');
+	    avelsieve_spam_highlight_update($rules);
+		sqsession_unregister('haschanged');
         $s->logout();
     }
 
@@ -320,14 +320,17 @@ function avelsieve_spam_highlight_update(&$rules) {
  * @return boolean
  */
 function avelsieve_junkprune_ldapuserdata_update($username, $junkFolderDays) {
-    global $plugins, $data_dir;
-    if(in_array('ldapuserdata', $plugins)) {
+	global $plugins, $data_dir;
+	if(in_array('ldapuserdata', $plugins)) {
         if($_SESSION['ldap_prefs_cache']['junkprune'] != $junkFolderDays) {
-            setPref($data_dir, $username, 'junkprune', $junkFolderDays);
+    		setPref($data_dir, $username, 'junkprune', $junkFolderDays);
             ldapuserdata_flush();
             return true;
         }
         return false;
-    }
+	}
 }
 
+
+
+?>

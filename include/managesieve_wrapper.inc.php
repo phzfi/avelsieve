@@ -9,7 +9,7 @@
  * Licensed under the GNU GPL. For full terms see the file COPYING that came
  * with the Squirrelmail distribution.
  *
- * @version $Id: managesieve_wrapper.inc.php 1020 2009-05-13 14:10:13Z avel $
+ * @version $Id: managesieve_wrapper.inc.php,v 1.16 2007/01/17 13:46:10 avel Exp $
  * @author Alexandros Vellis <avel@users.sourceforge.net>
  * @copyright 2004-2007 The SquirrelMail Project Team, Alexandros Vellis
  * @package plugins
@@ -21,7 +21,7 @@
 include_once(SM_PATH . 'plugins/avelsieve/include/managesieve.lib.php');
 include_once(SM_PATH . 'plugins/avelsieve/include/support.inc.php');
 include_once(SM_PATH . 'plugins/avelsieve/config/config.php');
-
+	
 /**
  * This function initializes the avelsieve environment. Basically, it makes
  * sure that there is a valid sieve_capability array.
@@ -40,35 +40,35 @@ function avelsieve_initialize(&$sieve) {
     sqgetGlobalVar('rules', $rules, SQ_SESSION);
 
     if(!is_object($sieve)) {
-        sqgetGlobalVar('key', $key, SQ_COOKIE);
-        sqgetGlobalVar('onetimepad', $onetimepad, SQ_SESSION);
-        sqgetGlobalVar('authz', $authz, SQ_SESSION);
+	    sqgetGlobalVar('key', $key, SQ_COOKIE);
+    	sqgetGlobalVar('onetimepad', $onetimepad, SQ_SESSION);
+	    sqgetGlobalVar('authz', $authz, SQ_SESSION);
         global $imapServerAddress, $username, $avelsieve_imapproxymode, $avelsieve_cyrusadmins_map, $sieveport,
             $avelsieve_imapproxyserv, $sieve_preferred_sasl_mech;
 
         /* Need the cleartext password to login to timsieved */
-        $acctpass = OneTimePadDecrypt($key, $onetimepad);
+    	$acctpass = OneTimePadDecrypt($key, $onetimepad);
 
         if(isset($authz)) {
-            $imap_server =  sqimap_get_user_server ($imapServerAddress, $authz);
+        	$imap_server =  sqimap_get_user_server ($imapServerAddress, $authz);
         } else {
-            $imap_server =  sqimap_get_user_server ($imapServerAddress, $username);
+        	$imap_server =  sqimap_get_user_server ($imapServerAddress, $username);
     
-            if ($avelsieve_imapproxymode == true) { /* Need to do mapping so as to connect directly to server */
-                $imap_server = $avelsieve_imapproxyserv[$imap_server];
-            }
+        	if ($avelsieve_imapproxymode == true) { /* Need to do mapping so as to connect directly to server */
+	        	$imap_server = $avelsieve_imapproxyserv[$imap_server];
+    	    }
         }
         if(isset($authz)) {
-            if(isset($avelsieve_cyrusadmins_map[$username])) {
-                $bind_username = $avelsieve_cyrusadmins_map[$username];
-            } else {
-                $bind_username = $username;
-            }
-             $sieve=new sieve($imap_server, $sieveport, $bind_username, $acctpass, $authz, $sieve_preferred_sasl_mech);
+    	    if(isset($avelsieve_cyrusadmins_map[$username])) {
+        		$bind_username = $avelsieve_cyrusadmins_map[$username];
+	        } else {
+    	    	$bind_username = $username;
+    	    }
+         	$sieve=new sieve($imap_server, $sieveport, $bind_username, $acctpass, $authz, $sieve_preferred_sasl_mech);
         } else {
-            $sieve=new sieve($imap_server, $sieveport, $username, $acctpass, $username, $sieve_preferred_sasl_mech);
+        	$sieve=new sieve($imap_server, $sieveport, $username, $acctpass, $username, $sieve_preferred_sasl_mech);
         }
-        avelsieve_login($sieve);
+	    avelsieve_login($sieve);
     }
 }
 
@@ -80,37 +80,37 @@ function avelsieve_initialize(&$sieve) {
  * @obsolete
  */
 function avelsieve_login(&$sieve) {
-    global $sieve_capabilities, $imapServerAddress, $sieve_loggedin;
-    if(is_object($sieve) && isset($sieve_loggedin)) {
-        return true;
-    }
-    if ($sieve->sieve_login()){ /* User has logged on */
-        if(!isset($sieve_capabilities)) {
-            $sieve_capabilities = $sieve->sieve_get_capability();
-             $_SESSION['sieve_capabilities'] = $sieve_capabilities;
-        }
-        $sieve_loggedin = true;
-        return true;
-    } else {
-        $errormsg = _("Could not log on to timsieved daemon on your IMAP server") . 
-                " " . $sieve->host.':'.$sieve->port.'.<br/>';
+	global $sieve_capabilities, $imapServerAddress, $sieve_loggedin;
+	if(is_object($sieve) && isset($sieve_loggedin)) {
+		return true;
+	}
+	if ($sieve->sieve_login()){ /* User has logged on */
+		if(!isset($sieve_capabilities)) {
+			$sieve_capabilities = $sieve->sieve_get_capability();
+			 $_SESSION['sieve_capabilities'] = $sieve_capabilities;
+		}
+		$sieve_loggedin = true;
+		return true;
+	} else {
+		$errormsg = _("Could not log on to timsieved daemon on your IMAP server") . 
+				" " . $sieve->host.':'.$sieve->port.'.<br/>';
         if(!empty($sieve->error)) {
-            $errormsg .= _("Error Encountered:") . ' ' . $sieve->error . '</br>';
+		    $errormsg .= _("Error Encountered:") . ' ' . $sieve->error . '</br>';
         }
-        $errormsg .= _("Please contact your administrator.");
+		$errormsg .= _("Please contact your administrator.");
 
-        if(AVELSIEVE_DEBUG == 1) {
-            print "<pre>(Debug Mode). Login failed. Capabilities:\n";
-            print_r($sieve_capabilities);
+		if(AVELSIEVE_DEBUG == 1) {
+			print "<pre>(Debug Mode). Login failed. Capabilities:\n";
+			print_r($sieve_capabilities);
             if(!empty($sieve->error)) {
-                print "\nError Message returned:\n";
-                print_r($sieve->error);
+			    print "\nError Message returned:\n";
+			    print_r($sieve->error);
             }
             print '</pre>';
-        }
-        print_errormsg($errormsg);
-        exit;
-    }
+		}
+		print_errormsg($errormsg);
+		exit;
+	}
 }
 
 /**
@@ -119,15 +119,15 @@ function avelsieve_login(&$sieve) {
  */
 function avelsieve_listscripts($sieve) {
     $scripts = array();
-    if($sieve->sieve_listscripts()) {
-        if(is_array($sieve->response)){
-            $i = 0;
-            foreach($sieve->response as $line){
-                $scripts[$i] = $line;
-                $i++;
-            }
-        }
-    }
+	if($sieve->sieve_listscripts()) {
+		if(is_array($sieve->response)){
+			$i = 0;
+			foreach($sieve->response as $line){
+				$scripts[$i] = $line;
+				$i++;
+			}
+		}
+	}
     return $scripts;
 }
 
@@ -141,7 +141,7 @@ function avelsieve_listscripts($sieve) {
  * @obsolete
  */
 function avelsieve_getrules(&$sieve, $scriptname = 'phpscript', &$rules, &$scriptinfo) {
-    global $imapServerAddress;
+	global $imapServerAddress;
     sqgetGlobalVar('sieve_capabilities', $sieve_capabilities, SQ_SESSION);
     
     $rules = array();
@@ -163,11 +163,11 @@ function avelsieve_getrules(&$sieve, $scriptname = 'phpscript', &$rules, &$scrip
 
     /* Get actual script from Sieve server. */
     unset($sieve->response);
-    $sievescript = '';
-    if($sieve->sieve_getscript($scriptname)){
-        foreach($sieve->response as $line){
-            $sievescript .= $line;
-        }
+	$sievescript = '';
+	if($sieve->sieve_getscript($scriptname)){
+		foreach($sieve->response as $line){
+			$sievescript .= $line;
+		}
     } else {
         $prev = bindtextdomain ('avelsieve', SM_PATH . 'plugins/avelsieve/locale');
         textdomain ('avelsieve');
@@ -175,9 +175,9 @@ function avelsieve_getrules(&$sieve, $scriptname = 'phpscript', &$rules, &$scrip
         $errormsg .= " " . $imapServerAddress.".<br />";
         
         if(!empty($sieve->error)) {
-            $errormsg .= _("Error Encountered:") . ' ' . $sieve->error . '</br>';
-            $errormsg .= _("Please contact your administrator.");
-            print_errormsg($errormsg);
+    		$errormsg .= _("Error Encountered:") . ' ' . $sieve->error . '</br>';
+			$errormsg .= _("Please contact your administrator.");
+			print_errormsg($errormsg);
             exit;
         }
     }
@@ -197,56 +197,56 @@ function avelsieve_getrules(&$sieve, $scriptname = 'phpscript', &$rules, &$scrip
  * @obsolete
  */
 function avelsieve_upload_script (&$sieve, $newscript, $scriptname = 'phpscript') {
-    global $imapServerAddress;
-    if(isset($sieve->error_raw)) {
-        unset($sieve->error_raw);
-    }
+	global $imapServerAddress;
+	if(isset($sieve->error_raw)) {
+		unset($sieve->error_raw);
+	}
 
-    if($sieve->sieve_sendscript($scriptname, stripslashes($newscript))) {
-        if(!($sieve->sieve_setactivescript($scriptname))){
-            /* Just to be safe. */
-            $errormsg = _("Could not set active script on your IMAP server");
-            $errormsg .= " " . $imapServerAddress.".<br />";
-            $errormsg .= _("Please contact your administrator.");
-            print_errormsg($errormsg);
-            return false;
-        }
-        return true;
+	if($sieve->sieve_sendscript($scriptname, stripslashes($newscript))) {
+		if(!($sieve->sieve_setactivescript($scriptname))){
+			/* Just to be safe. */
+			$errormsg = _("Could not set active script on your IMAP server");
+			$errormsg .= " " . $imapServerAddress.".<br />";
+			$errormsg .= _("Please contact your administrator.");
+			print_errormsg($errormsg);
+			return false;
+		}
+		return true;
 
-    } else {
-        $errormsg = '<p>';
-        $errormsg .= _("Unable to load script to server.");
-        $errormsg .= '</p>';
+	} else {
+		$errormsg = '<p>';
+		$errormsg .= _("Unable to load script to server.");
+		$errormsg .= '</p>';
 
-        if(isset($sieve->error_raw)) {
-            $errormsg .= '<p>';
-            $errormsg .= _("Server responded with:");
-            $errormsg .= '<br />';
-            
-            if (is_array($sieve->error_raw)) {
-                foreach($sieve->error_raw as $error_raw) {
-                    $errormsg .= $error_raw . "<br />";
-                }
-            } else {
-                $errormsg .= $sieve->error_raw . "<br />";
-            }
-            $errormsg .= _("Please contact your administrator.");
-        
-            /* The following serves for viewing the script that
-             * tried to be uploaded, for debugging purposes. */
-            if(AVELSIEVE_DEBUG == 1) {
-                $errormsg .= '<br />(Debug mode)
-                <strong>avelsieve bug</strong> <br /> Script
-                that probably is buggy follows.<br /> Please
-                copy/paste it, together with the error message above, and email it to <a
-                href=\"mailto:avel@users.sourceforge.net\">avel@users.sourceforge.net</a>.
-                <br /><br />
-                <div style="font-size:8px;"><pre>' . $newscript. "</pre></div>";
-            }
-        }
-        print_errormsg($errormsg);
-        return false;
-    }
+		if(isset($sieve->error_raw)) {
+			$errormsg .= '<p>';
+			$errormsg .= _("Server responded with:");
+			$errormsg .= '<br />';
+			
+			if (is_array($sieve->error_raw)) {
+				foreach($sieve->error_raw as $error_raw) {
+					$errormsg .= $error_raw . "<br />";
+				}
+			} else {
+				$errormsg .= $sieve->error_raw . "<br />";
+			}
+			$errormsg .= _("Please contact your administrator.");
+		
+			/* The following serves for viewing the script that
+			 * tried to be uploaded, for debugging purposes. */
+			if(AVELSIEVE_DEBUG == 1) {
+				$errormsg .= '<br />(Debug mode)
+				<strong>avelsieve bug</strong> <br /> Script
+				that probably is buggy follows.<br /> Please
+				copy/paste it, together with the error message above, and email it to <a
+				href=\"mailto:avel@users.sourceforge.net\">avel@users.sourceforge.net</a>.
+				<br /><br />
+				<div style="font-size:8px;"><pre>' . $newscript. "</pre></div>";
+			}
+		}
+		print_errormsg($errormsg);
+		return false;
+	}
 }
 
 /**
@@ -258,31 +258,31 @@ function avelsieve_upload_script (&$sieve, $newscript, $scriptname = 'phpscript'
  * @obsolete
  */
 function avelsieve_delete_script (&$sieve, $script = 'phpscript') {
-    if(empty($script)) {
-        return false;
-    }
-    if($sieve->sieve_deletescript($script)) {
-        return true;
-    } else {
-        
+	if(empty($script)) {
+		return false;
+	}
+	if($sieve->sieve_deletescript($script)) {
+		return true;
+	} else {
+		
         $errormsg = sprintf( _("Could not delete script from server %s."), $sieve->host.':'.$sieve->port) .
             '<br/>';
         if(!empty($sieve->error)) {
-            $errormsg .= _("Error Encountered:") . ' ' . $sieve->error . '</br>';
+		    $errormsg .= _("Error Encountered:") . ' ' . $sieve->error . '</br>';
         }
-        $errormsg .= _("Please contact your administrator.");
-        print_errormsg($errormsg);
+		$errormsg .= _("Please contact your administrator.");
+		print_errormsg($errormsg);
 
         /*
-        if(is_array($sieve->error_raw)) {
-            foreach($sieve->error_raw as $error_raw)
-                print $error_raw."<br>";
-        } else {
-            print $sieve->error_raw."<br>";
-        }
+		if(is_array($sieve->error_raw)) {
+			foreach($sieve->error_raw as $error_raw)
+				print $error_raw."<br>";
+		} else {
+			print $sieve->error_raw."<br>";
+		}
         */
-        return false;
-    }
+	    return false;
+	}
 }
 
 /**
@@ -306,14 +306,12 @@ function avelsieve_delete_script (&$sieve, $script = 'phpscript') {
  */
 function avelsieve_capability_exists ($cap) {
 
-    global $disable_avelsieve_capabilities, $sieve_capabilities;
-    
-    if(array_key_exists($cap, $sieve_capabilities)) {
-        if(!in_array($cap, $disable_avelsieve_capabilities)) {
-            return true;
-        }
-    }
-    return false;
+	global $disable_avelsieve_capabilities, $sieve_capabilities;
+	
+	if(in_array($cap, $sieve_capabilities) && !in_array($cap, $disable_avelsieve_capabilities)) {
+		return true;
+	}
+	return false;
 }
 
 /**
@@ -324,41 +322,41 @@ function avelsieve_capability_exists ($cap) {
  */
 function avelsieve_encode_script($script) {
 
-    global $languages, $squirrelmail_language, $default_charset;
+	global $languages, $squirrelmail_language, $default_charset;
 
-    /* change $default_charset to user's charset (THANKS Tomas) */
-    set_my_charset();
+	/* change $default_charset to user's charset (THANKS Tomas) */
+	set_my_charset();
 
-    if(strtolower($default_charset) == 'utf-8') {
-        // No need to convert.
-        return $script;
-    
+	if(strtolower($default_charset) == 'utf-8') {
+		// No need to convert.
+		return $script;
+	
     } elseif(function_exists('mb_convert_encoding') && function_exists('sqimap_mb_convert_encoding')) {
-        // sqimap_mb_convert_encoding() returns '' if mb_convert_encoding() doesn't exist!
-        $utf8_s = sqimap_mb_convert_encoding($script, 'UTF-8', $default_charset, $default_charset);
-        if(empty($utf8_s)) {
-            return $script;
-        } else {
-            return $utf8_s;
-        }
+		// sqimap_mb_convert_encoding() returns '' if mb_convert_encoding() doesn't exist!
+		$utf8_s = sqimap_mb_convert_encoding($script, 'UTF-8', $default_charset, $default_charset);
+		if(empty($utf8_s)) {
+			return $script;
+		} else {
+			return $utf8_s;
+		}
 
-    } elseif(function_exists('mb_convert_encoding')) {
-        // Squirrelmail 1.4.0 ?
+	} elseif(function_exists('mb_convert_encoding')) {
+		// Squirrelmail 1.4.0 ?
 
-        if ( stristr($default_charset, 'iso-8859-') ||
-          stristr($default_charset, 'utf-8') || 
-          stristr($default_charset, 'iso-2022-jp') ) {
-            return mb_convert_encoding($script, "UTF-8", $default_charset);
-        }
+		if ( stristr($default_charset, 'iso-8859-') ||
+		  stristr($default_charset, 'utf-8') || 
+		  stristr($default_charset, 'iso-2022-jp') ) {
+			return mb_convert_encoding($script, "UTF-8", $default_charset);
+		}
 
-    } elseif(function_exists('recode_string')) {
-        return recode_string("$default_charset..UTF-8", $script);
+	} elseif(function_exists('recode_string')) {
+		return recode_string("$default_charset..UTF-8", $script);
 
-    } elseif(function_exists('iconv')) {
-        return iconv($default_charset, 'UTF-8', $script);
-    }
+	} elseif(function_exists('iconv')) {
+		return iconv($default_charset, 'UTF-8', $script);
+	}
 
-    return $script;
+	return $script;
 }
 
 
@@ -370,39 +368,40 @@ function avelsieve_encode_script($script) {
  */
 function avelsieve_decode_script($script) {
 
-    global $languages, $squirrelmail_language, $default_charset;
+	global $languages, $squirrelmail_language, $default_charset;
 
-    /* change $default_charset to user's charset (THANKS Tomas) */
-    set_my_charset();
+	/* change $default_charset to user's charset (THANKS Tomas) */
+	set_my_charset();
 
-    if(strtolower($default_charset) == 'utf-8') {
-        // No need to convert.
-        return $script;
-    
-    } elseif(function_exists('mb_convert_encoding') && function_exists('sqimap_mb_convert_encoding')) {
-        // sqimap_mb_convert_encoding() returns '' if mb_convert_encoding() doesn't exist!
-        $un_utf8_s = sqimap_mb_convert_encoding($script, $default_charset, "UTF-8", $default_charset);
-        if(empty($un_utf8_s)) {
-            return $script;
-        } else {
-            return $un_utf8_s;
-        }
+	if(strtolower($default_charset) == 'utf-8') {
+		// No need to convert.
+		return $script;
+	
+	} elseif(function_exists('mb_convert_encoding') && function_exists('sqimap_mb_convert_encoding')) {
+		// sqimap_mb_convert_encoding() returns '' if mb_convert_encoding() doesn't exist!
+		$un_utf8_s = sqimap_mb_convert_encoding($script, $default_charset, "UTF-8", $default_charset);
+		if(empty($un_utf8_s)) {
+			return $script;
+		} else {
+			return $un_utf8_s;
+		}
 
-    } elseif(function_exists('mb_convert_encoding')) {
-        /* Squirrelmail 1.4.0 ? */
+	} elseif(function_exists('mb_convert_encoding')) {
+		/* Squirrelmail 1.4.0 ? */
 
-        if ( stristr($default_charset, 'iso-8859-') ||
-          stristr($default_charset, 'utf-8') || 
-          stristr($default_charset, 'iso-2022-jp') ) {
-            return mb_convert_encoding($script, $default_charset, "UTF-8");
-        }
+		if ( stristr($default_charset, 'iso-8859-') ||
+		  stristr($default_charset, 'utf-8') || 
+		  stristr($default_charset, 'iso-2022-jp') ) {
+			return mb_convert_encoding($script, $default_charset, "UTF-8");
+		}
 
-    } elseif(function_exists('recode_string')) {
-        return recode_string("UTF-8..$default_charset", $script);
+	} elseif(function_exists('recode_string')) {
+		return recode_string("UTF-8..$default_charset", $script);
 
-    } elseif(function_exists('iconv')) {
-        return iconv('UTF-8', $default_charset, $script);
-    }
-    return $script;
+	} elseif(function_exists('iconv')) {
+		return iconv('UTF-8', $default_charset, $script);
+	}
+	return $script;
 }
 
+?>

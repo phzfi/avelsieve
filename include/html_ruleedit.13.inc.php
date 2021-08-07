@@ -3,7 +3,7 @@
  * Licensed under the GNU GPL. For full terms see the file COPYING that came
  * with the Squirrelmail distribution.
  *
- * @version $Id: html_ruleedit.13.inc.php 935 2008-07-04 10:25:39Z avel $
+ * @version $Id: html_ruleedit.13.inc.php,v 1.2 2007/04/11 10:34:19 avel Exp $
  * @author Kostantinos Koukopoulos <kouk@noc.uoa.gr>
  * @copyright 2007 Alexandros Vellis
  * @package plugins

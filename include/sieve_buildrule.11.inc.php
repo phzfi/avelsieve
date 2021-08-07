@@ -6,7 +6,7 @@
  * Licensed under the GNU GPL. For full terms see the file COPYING that came
  * with the Squirrelmail distribution.
  *
- * @version $Id: sieve_buildrule.11.inc.php 1034 2009-05-25 12:50:07Z avel $
+ * @version $Id: sieve_buildrule.11.inc.php,v 1.7 2007/05/23 12:45:57 avel Exp $
  * @author Alexandros Vellis <avel@users.sourceforge.net>
  * @copyright 2007 Alexandros Vellis
  * @package plugins
@@ -94,10 +94,8 @@ function avelsieve_buildrule_11($rule, $force_advanced_mode = false) {
 
         $outParts = array();
         foreach($whitelistRef as $w) {
-            $aTmp1 = build_rule_snippet('header', 'From', 'contains', $w);
-            $aTmp2 = build_rule_snippet('header', 'Sender', 'contains', $w);
-            $outParts[] = $aTmp1[0];
-            $outParts[] = $aTmp2[0];
+            $outParts[] = build_rule_snippet('header', 'From', 'contains', $w ,'rule');
+            $outParts[] = build_rule_snippet('header', 'Sender', 'contains', $w ,'rule');
         }
         $out .= implode(",\n", $outParts); 
         $out .= ')';
@@ -118,7 +116,9 @@ function avelsieve_buildrule_11($rule, $force_advanced_mode = false) {
             foreach($spamrule_tests as $group=>$data) {
                 if(array_key_exists($test, $data['available'])) {
                     $text .= '<li><strong>' . $data['available'][$test]. '</strong> = '. 
-                             ( is_array($val) ? implode(' | ', $val) : $val ). '</li>';
+                             // FIXME
+                             // ( isset($icons[$val]) ? '<img src="'.$icons[$val].'" alt="'.$val.'" /> ' : '') .
+                             $val. '</li>';
                     $terse .= '<li>' . $data['available'][$test].'</li>';
                     break;
                 }
@@ -146,13 +146,13 @@ function avelsieve_buildrule_11($rule, $force_advanced_mode = false) {
     /* FIXME - Temporary Copy/Paste kludge */
     switch($rule['action']) {
         /* Added */
-        case '7':    /* junk folder */
+	    case '7':	/* junk folder */
             $out .= 'fileinto "INBOX.Junk";';
             $text .= _("stored in the <strong>Junk</strong> Folder.");
             $terse .= _("Junk");
             break;
         
-        case '8':    /* junk folder */
+	    case '8':	/* junk folder */
             $text .= _("stored in the <strong>Trash</strong> Folder.");
         
             global $data_dir, $username;
@@ -172,3 +172,4 @@ function avelsieve_buildrule_11($rule, $force_advanced_mode = false) {
     return(array($out,$text,$terse));
 }
 
+?>

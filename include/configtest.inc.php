@@ -6,7 +6,7 @@
  * Licensed under the GNU GPL. For full terms see the file COPYING that came
  * with the Squirrelmail distribution.
  *
- * @version $Id: configtest.inc.php 1020 2009-05-13 14:10:13Z avel $
+ * @version $Id: configtest.inc.php,v 1.2 2007/01/17 13:46:10 avel Exp $
  * @author Alexandros Vellis <avel@users.sourceforge.net>
  * @copyright 2004-2007 Alexandros Vellis
  * @package plugins
@@ -44,3 +44,4 @@ function avelsieve_configtest_do() {
     return false;
 }
 
+?>

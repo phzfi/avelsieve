@@ -11,7 +11,7 @@
  * This file contains functions related to printing out information in 
  * Squirrelmail's src/right_main.php
  *
- * @version $Id: right_main.inc.php 1020 2009-05-13 14:10:13Z avel $
+ * @version $Id: right_main.inc.php,v 1.2 2007/05/17 13:54:08 avel Exp $
  * @author Alexandros Vellis <avel@users.sourceforge.net>
  * @copyright 2007 Alexandros Vellis
  * @package plugins
@@ -51,8 +51,8 @@ function avelsieve_right_main_do() {
                 include_once(SM_PATH . 'plugins/avelsieve/include/sieve.inc.php');
                 $s = new $backend_class_name;
                 $s->init();
-                $s->login();
-                /* Actually get the script 'phpscript' (hardcoded ATM). */
+        	    $s->login();
+        	    /* Actually get the script 'phpscript' (hardcoded ATM). */
                 if($s->load('phpscript', $rules, $scriptinfo)) {
                     $_SESSION['rules'] = $rules;
                     $_SESSION['scriptinfo'] = $scriptinfo;
@@ -85,4 +85,6 @@ function avelsieve_right_main_do() {
     bindtextdomain('squirrelmail', SM_PATH . 'locale');
     textdomain('squirrelmail');
 }
+
+
 

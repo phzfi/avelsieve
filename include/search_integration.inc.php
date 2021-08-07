@@ -6,7 +6,7 @@
  * Licensed under the GNU GPL. For full terms see the file COPYING that came
  * with the Squirrelmail distribution.
  *
- * @version $Id: search_integration.inc.php 1020 2009-05-13 14:10:13Z avel $
+ * @version $Id: search_integration.inc.php,v 1.6 2007/01/17 13:46:11 avel Exp $
  * @author Alexandros Vellis <avel@users.sourceforge.net>
  * @copyright 2004-2007 The SquirrelMail Project Team, Alexandros Vellis
  * @package plugins
@@ -31,10 +31,10 @@ function avelsieve_search_integration_do() {
 
     if(!empty($rule) && isset($_GET['submit'])) {
         bindtextdomain('avelsieve', SM_PATH . 'plugins/avelsieve/locale');
-        textdomain ('avelsieve');
+	    textdomain ('avelsieve');
         
         $url = '../plugins/avelsieve/edit.php?addnew=1&amp;type=1&amp;serialized_rule='.rawurlencode(serialize($rule));
-    
+	
         if(!$compose_new_win) {
             /* For non-popup page we need to come back to the search results. */
             /* FIXME */
@@ -43,7 +43,7 @@ function avelsieve_search_integration_do() {
             $url .= '&amp;popup=1';
         }
 
-        echo '<table border="0" width="100%" cellpadding="0" cellspacing="0">'.
+		echo '<table border="0" width="100%" cellpadding="0" cellspacing="0">'.
             avelsieve_html::section_start( _("Create Filter") );
         echo '<div align="center" style="text-align:center; font-size:120%; padding: 0.3em;">';
         
@@ -89,12 +89,12 @@ function avelsieve_search_integration_do() {
                 }
 
                 bindtextdomain('squirrelmail', SM_PATH . 'locale');
-                textdomain ('squirrelmail');
+            	textdomain ('squirrelmail');
                 echo '<li>('. ($no+1). ') &quot;' .
                     asearch_get_query_display($color, $mailbox_array_tmp, $biop_array_tmp, $unop_array_tmp,
                     $where_array_tmp, $what_array_tmp, $exclude_array_tmp, $sub_array_tmp);
                 bindtextdomain('avelsieve', SM_PATH . 'plugins/avelsieve/locale');
-                textdomain ('avelsieve');
+            	textdomain ('avelsieve');
             
                 if(isset($info['disabled_criteria_reasons'][$no])) {
                     echo '&quot; - ' . _("Reason:") . ' ' . $info['disabled_criteria_reasons'][$no];
@@ -115,7 +115,7 @@ function avelsieve_search_integration_do() {
         echo '</table>';
 
         bindtextdomain('squirrelmail', SM_PATH . 'locale');
-        textdomain ('squirrelmail');
+    	textdomain ('squirrelmail');
     }
 }
 
@@ -306,4 +306,4 @@ function asearch_to_avelsieve(&$mailbox_array, &$biop_array, &$unop_array, &$whe
     }
     return $r;
 }
-
+?>

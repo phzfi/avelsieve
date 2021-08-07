@@ -3,6 +3,8 @@
  * User-friendly interface to SIEVE server-side mail filtering.
  * Plugin for Squirrelmail 1.4
  *
+ * Copyright (c) 2002 Alexandros Vellis <avel@users.sourceforge.net>
+ *
  * Based on Dan Ellis' test scripts that came with sieve-php.lib
  * <danellis@rushmore.com> <URL:http://sieve-php.sourceforge.net>
  *
@@ -12,9 +14,9 @@
  * table.php: main routine that shows a table of all the rules and allows
  * manipulation.
  *
- * @version $Id: table.php 1031 2009-05-25 08:24:06Z avel $
+ * @version $Id: table.php,v 1.43 2007/06/26 09:52:57 avel Exp $
  * @author Alexandros Vellis <avel@users.sourceforge.net>
- * @copyright 2004-2009 The SquirrelMail Project Team, Alexandros Vellis
+ * @copyright 2004 The SquirrelMail Project Team, Alexandros Vellis
  * @package plugins
  * @subpackage avelsieve
  */
@@ -39,7 +41,7 @@ include_once(SM_PATH . 'plugins/avelsieve/include/sieve.inc.php');
 include_once(SM_PATH . 'plugins/avelsieve/include/spamrule.inc.php');
 include_once(SM_PATH . 'plugins/avelsieve/include/styles.inc.php');
 
-if(AVELSIEVE_DEBUG > 0) include_once(SM_PATH . 'plugins/avelsieve/include/dumpr.php');
+if(AVELSIEVE_DEBUG == 1) include_once(SM_PATH . 'plugins/avelsieve/include/dumpr.php');
 
 sqsession_is_active();
 
@@ -67,19 +69,19 @@ isset($popup) ? $popup = '?popup=1' : $popup = '';
 
 sqgetGlobalVar('delimiter', $delimiter, SQ_SESSION);
 if(!isset($delimiter)) {
-    $delimiter = sqimap_get_delimiter($imapConnection);
+	$delimiter = sqimap_get_delimiter($imapConnection);
 }
 
 sqgetGlobalVar('sieve_capabilities', $sieve_capabilities, SQ_SESSION);
-    
+	
 require_once (SM_PATH . 'plugins/avelsieve/include/constants.inc.php');
 
 if (!isset($rules)) {
-    /* Login. But if the rules are cached, don't even login to SIEVE
-     * Server. */ 
-    $s->login();
+	/* Login. But if the rules are cached, don't even login to SIEVE
+	 * Server. */ 
+	$s->login();
 
-    /* Actually get the script 'phpscript' (hardcoded ATM). */
+	/* Actually get the script 'phpscript' (hardcoded ATM). */
     if($s->load('phpscript', $rules, $scriptinfo)) {
         $_SESSION['rules'] = $rules;
         $_SESSION['scriptinfo'] = $scriptinfo;
@@ -93,46 +95,47 @@ if (!isset($rules)) {
  * been created. */
 
 if ($logout) {
-    /* Activate phpscript and log out. */
-    $s->login();
+	/* Activate phpscript and log out. */
+	$s->login();
 
-    if ($newscript = makesieverule($rules)) {
+	if ($newscript = makesieverule($rules)) {
 
-        $s->save($newscript, 'phpscript');
-        avelsieve_spam_highlight_update($rules);
+		$s->save($newscript, 'phpscript');
+		avelsieve_spam_highlight_update($rules);
 
-        if(!($s->setactive('phpscript'))){
-            /* Just to be safe. */
-            $errormsg = _("Could not set active script on your IMAP server");
-            $errormsg .= " " . $imapServerAddress.".<br />";
-            $errormsg .= _("Please contact your administrator.");
-            print_errormsg($errormsg);
-            exit;
-        }
-        $s->logout();
-    
-    } else {
-        /* upload a null thingie!!! :-) This works for now... some time
-         * it will get better. */
-        $s->save('', 'phpscript'); 
-        avelsieve_spam_highlight_update($rules);
-        /* if(sizeof($rules) == "0") {
-            $s->delete('phpscript');
-        } */
-    }
-    session_unregister('rules');
-    
-    header("Location: $location/../../src/options.php\n\n");
-    // header("Location: $location/../../src/options.php?optpage=avelsieve\n\n");
-    exit;
+		if(!($s->setactive('phpscript'))){
+			/* Just to be safe. */
+			$errormsg = _("Could not set active script on your IMAP server");
+			$errormsg .= " " . $imapServerAddress.".<br />";
+			$errormsg .= _("Please contact your administrator.");
+			print_errormsg($errormsg);
+			exit;
+		}
+		$s->logout();
+	
+	} else {
+		/* upload a null thingie!!! :-) This works for now... some time
+		 * it will get better. */
+		$s->save('', 'phpscript'); 
+		avelsieve_spam_highlight_update($rules);
+		/* if(sizeof($rules) == "0") {
+			$s->delete('phpscript');
+		} */
+	}
+	//session_unregister('rules');
+        unset($_SESSION['rules']);
+	
+	header("Location: $location/../../src/options.php\n\n");
+	// header("Location: $location/../../src/options.php?optpage=avelsieve\n\n");
+	exit;
 
 } elseif (isset($_POST['addrule'])) {
-    header("Location: $location/edit.php?addnew=1");
-    exit;
+	header("Location: $location/edit.php?addnew=1");
+	exit;
 
 } elseif (isset($_POST['addspamrule'])) {
-    header("Location: $location/addspamrule.php");
-    exit;
+	header("Location: $location/addspamrule.php");
+	exit;
 }
 
 /* Routine for Delete / Delete selected / enable selected / disable selected /
@@ -158,21 +161,21 @@ if(isset($_POST['morecontrols'])) {
 if(isset($_GET['rule']) || isset($_POST['deleteselected']) ||
   isset($_POST['enableselected']) || isset($_POST['disableselected']) ) {
     // 'edit' and 'rm' are simple, get these over with:
-    if (isset($_GET['edit'])) {
-        header("Location: $location/edit.php?edit=".$_POST['rule']."");
-        exit;
+	if (isset($_GET['edit'])) {
+		header("Location: $location/edit.php?edit=".$_POST['rule']."");
+		exit;
 
-    } elseif (isset($_GET['dup'])) {
-        header("Location: $location/edit.php?edit=".$_POST['rule']."&dup=1");
-        exit;
+	} elseif (isset($_GET['dup'])) {
+		header("Location: $location/edit.php?edit=".$_POST['rule']."&dup=1");
+		exit;
 
-    } elseif (isset($_GET['rm']) || ( isset($_POST['deleteselected']) && isset($_POST['selectedrules'])) ) {
+	} elseif (isset($_GET['rm']) || ( isset($_POST['deleteselected']) && isset($_POST['selectedrules'])) ) {
 
-        if (isset($_POST['deleteselected'])) {
-            $rules2 = $rules;
+		if (isset($_POST['deleteselected'])) {
+			$rules2 = $rules;
             $deletedrules = array();
             $notdeletedrules = array();
-            foreach($_POST['selectedrules'] as $no=>$sel) {
+			foreach($_POST['selectedrules'] as $no=>$sel) {
                 if(isset($rules2[$sel])) {
                     if($avelsieve_maintypes[$rules2[$sel]['type']]['undeletable']) {
                         $notdeletedrules[] = $sel;
@@ -181,9 +184,9 @@ if(isset($_GET['rule']) || isset($_POST['deleteselected']) ||
                         $deletedrules[] = $sel;
                     }
                 }
-            } 
+			} 
             // The human-readable messages:
-            $rules = array_values($rules2);
+			$rules = array_values($rules2);
             if(!empty($deletedrules)) {
                 $_SESSION['comm']['deleted'] = $deletedrules;
             }
@@ -195,76 +198,76 @@ if(isset($_GET['rule']) || isset($_POST['deleteselected']) ||
                 }
             }
 
-        } elseif(isset($_GET['rm'])) {
+		} elseif(isset($_GET['rm'])) {
             if(isset($rules[$_GET['rule']]) && $avelsieve_maintypes[$rules[$_GET['rule']]['type']]['undeletable'] ) {
                 $errormsg = sprintf( _("Could not delete rule #%s: This type of rule cannot be deleted."), $_GET['rule']);
             } else {
-                $rules2 = $rules;
-                unset($rules2[$_GET['rule']]);
-                $rules = array_values($rules2);
-                $_SESSION['comm']['deleted'] = $_GET['rule'];
+			    $rules2 = $rules;
+			    unset($rules2[$_GET['rule']]);
+			    $rules = array_values($rules2);
+			    $_SESSION['comm']['deleted'] = $_GET['rule'];
             }
-        }
+		}
 
-        if (!$conservative) {
-            $s->login();
-            if(sizeof($rules) == 0) {
-                $s->delete('phpscript');
-            }  else {
-                $newscript = makesieverule($rules);
-                $s->save($newscript, 'phpscript');
+	    if (!$conservative) {
+		    $s->login();
+		    if(sizeof($rules) == 0) {
+				$s->delete('phpscript');
+			}  else {
+		        $newscript = makesieverule($rules);
+    		    $s->save($newscript, 'phpscript');
 
             }
-            avelsieve_spam_highlight_update($rules);
-            sqsession_register($rules, 'rules');
-        } 
+	    	avelsieve_spam_highlight_update($rules);
+		    sqsession_register($rules, 'rules');
+		} 
         /* Since removing rules is a destructive function, we should redirect
          * to ourselves so as to eliminate the 'rm' GET parameter. (User could
          * do "Reload Frame" in browser) */
-        sqsession_register($rules, 'rules');
+	    sqsession_register($rules, 'rules');
         session_write_close();
-        header("Location: $location/table.php\n\n");
+	    header("Location: $location/table.php\n\n");
         exit;
-    
-    } elseif(isset($_POST['enableselected']) || isset($_POST['disableselected'])) {
+	
+	} elseif(isset($_POST['enableselected']) || isset($_POST['disableselected'])) {
         /* FIXME - in this block, define the $modifyEnable and $modifyAction vars
          * instead of doing the actual work. */
-        foreach($_POST['selectedrules'] as $no=>$sel) {
-            if(isset($_POST['enableselected'])) {
-                /* Verify that it is enabled  by removing the disabled flag. */
-                if(isset($rules[$sel]['disabled'])) {
-                    unset($rules[$sel]['disabled']);
+		foreach($_POST['selectedrules'] as $no=>$sel) {
+			if(isset($_POST['enableselected'])) {
+				/* Verify that it is enabled  by removing the disabled flag. */
+				if(isset($rules[$sel]['disabled'])) {
+					unset($rules[$sel]['disabled']);
                     $haschanged = true;
-                }
-            } elseif(isset($_POST['disableselected'])) {
-                /* Disable! */
-                $rules[$sel]['disabled'] = 1;
+				}
+			} elseif(isset($_POST['disableselected'])) {
+				/* Disable! */
+				$rules[$sel]['disabled'] = 1;
                 $haschanged = true;
-            }
-        } 
+			}
+		} 
 
-    } elseif (isset($_GET['mvup'])) {
+	} elseif (isset($_GET['mvup'])) {
         $modifyEnable = true;
         $modifyAction = 'mvup';
         $modifyRules = array($_GET['rule']);
 
-    } elseif (isset($_GET['mvdn'])) {
+	} elseif (isset($_GET['mvdn'])) {
         $modifyEnable = true;
         $modifyAction = 'mvdn';
         $modifyRules = array($_GET['rule']);
-    
-    } elseif (isset($_GET['mvtop'])) {
+	
+	} elseif (isset($_GET['mvtop'])) {
         // Left over for compatibility reasons or for when the icons are back
-        // Rule to get to the top:
+		// Rule to get to the top:
         $modifyEnable = true;
         $modifyAction = 'mvtop';
         $modifyRules = array($_GET['rule']);
 
-    } elseif (isset($_GET['mvbottom'])) {
+	} elseif (isset($_GET['mvbottom'])) {
         $modifyEnable = true;
         $modifyAction = 'mvbottom';
         $modifyRules = array($_GET['rule']);
-    }
+	}
 }
 
 // All (or most of the) actions on the rules, are to be performed in this 
@@ -274,33 +277,33 @@ if($modifyEnable) {
 
     switch($modifyAction) {
         case 'mvup':
-            $rules = array_swapval($rules, $modifyRules[0], $modifyRules[0]-1);
+		    $rules = array_swapval($rules, $modifyRules[0], $modifyRules[0]-1);
             /* Flag to write changes back. */ 
             $haschanged = true;
             break;
 
         case 'mvdn':
-            $rules = array_swapval($rules, $modifyRules[0], $modifyRules[0]+1);
+		    $rules = array_swapval($rules, $modifyRules[0], $modifyRules[0]+1);
             /* Flag to write changes back. */ 
             $haschanged = true;
             break;
 
         case 'mvtop':
-            $ruletop = $rules[$modifyRules[0]];
-            unset($rules[$modifyRules[0]]);
-            array_unshift($rules, $ruletop);
+		    $ruletop = $rules[$modifyRules[0]];
+		    unset($rules[$modifyRules[0]]);
+		    array_unshift($rules, $ruletop);
             /* Flag to write changes back. */ 
             $haschanged = true;
             break;
 
         case 'mvbottom':
-            /* Rule to get to the bottom: */
-            $rulebot = $rules[$modifyRules[0]];
-            unset($rules[$modifyRules[0]]);
-            /* Reindex */
-            $rules = array_values($rules);
-            /* Now Append it */
-            $rules[] = $rulebot;
+		    /* Rule to get to the bottom: */
+		    $rulebot = $rules[$modifyRules[0]];
+		    unset($rules[$modifyRules[0]]);
+		    /* Reindex */
+		    $rules = array_values($rules);
+		    /* Now Append it */
+		    $rules[] = $rulebot;
             /* Flag to write changes back. */ 
             $haschanged = true;
             break;
@@ -314,21 +317,21 @@ if($modifyEnable) {
                 } else {
                     $tmprule = $rules[$modifyRules[0]];
                     unset($rules[$modifyRules[0]]);
-                    array_splice($rules, $position-1, 0, array($tmprule));
-                    // Reindex
-                    $rules = array_values($rules);
+			        array_splice($rules, $position-1, 0, array($tmprule));
+        			// Reindex
+		        	$rules = array_values($rules);
                     $haschanged = true;
                 }
             }
             break;
 
         case 'duplicate':
-            header("Location: $location/edit.php?edit=".$modifyRules[0]."&dup=1");
+		    header("Location: $location/edit.php?edit=".$modifyRules[0]."&dup=1");
             exit;
             break;
 
         case 'insert':
-            header("Location: $location/edit.php?addnew=1&position=".$modifyRules[0]);
+	        header("Location: $location/edit.php?addnew=1&position=".$modifyRules[0]);
             break;
 
         case 'sendemail':
@@ -348,51 +351,52 @@ if($modifyEnable) {
     }
 
 
-    sqsession_register($rules, 'rules');
-    
-    /* Register changes to timsieved if we are not conservative in our
-     * connections with him. */
+	sqsession_register($rules, 'rules');
+	
+	/* Register changes to timsieved if we are not conservative in our
+	 * connections with him. */
 
-    if ($conservative == false && $rules) {
-        $newscript = makesieverule($rules);
-        $s->login();
-        $s->save($newscript, 'phpscript');
-        avelsieve_spam_highlight_update($rules);
-    }
-}    
+	if ($conservative == false && $rules) {
+		$newscript = makesieverule($rules);
+		$s->login();
+		$s->save($newscript, 'phpscript');
+		avelsieve_spam_highlight_update($rules);
+	}
+}	
 
 if (isset($_SESSION['returnnewrule'])) {
     /* There is a new rule to be added */
-    $newrule = $_SESSION['returnnewrule'];
-    session_unregister('returnnewrule');
-    $rules[] = $newrule;
-    $haschanged = true;
+	$newrule = $_SESSION['returnnewrule'];
+	//session_unregister('returnnewrule');
+        unset($_SESSION['returnnewrule']);
+	$rules[] = $newrule;
+	$haschanged = true;
 }
 
 if( (!$conservative && isset($haschanged) ) ) {
     /* Commit changes */
-    $s->login();
-    $newscript = makesieverule($rules);
-    $s->save($newscript, 'phpscript');
-    avelsieve_spam_highlight_update($rules);
-    if(isset($_SESSION['haschanged'])) {
-        unset($_SESSION['haschanged']);
-    }
+	$s->login();
+	$newscript = makesieverule($rules);
+	$s->save($newscript, 'phpscript');
+	avelsieve_spam_highlight_update($rules);
+	if(isset($_SESSION['haschanged'])) {
+		unset($_SESSION['haschanged']);
+	}
 
 }
 
 if(isset($rules)) {
-    $_SESSION['rules'] = $rules;
-    $_SESSION['scriptinfo'] = $scriptinfo;
+	$_SESSION['rules'] = $rules;
+	$_SESSION['scriptinfo'] = $scriptinfo;
 }
 
 if(isset($sieve_loggedin)) {
-    $sieve->sieve_logout();
+	$sieve->sieve_logout();
 }
-    
+	
 /* This is the place to do a consistency check, after all changes have been
  * done. We also grab the list of all folders. */
-    
+	
 // $folder_prefix = "INBOX";
 sqgetGlobalVar('key', $key, SQ_COOKIE);
 $imapConnection = sqimap_login($username, $key, $imapServerAddress, $imapPort, 0); 
@@ -409,38 +413,80 @@ $scriptHints['vacation_rules'] = avelsieve_vacation_check($rules);
 global $javascript_on;
 
 /* -------------------- Presentation Logic ------------------- */
+$avelsieve_css = avelsieve_css_styles();
+$avelsieve_css_wrapped = '<style type="text/css">
+'.$avelsieve_css.'
+</style>';
+
+if($javascript_on) {
+    if($popup) {
+        // For displayHtmlHeader()
+        $html_additional = $avelsieve_css_wrapped . '
+        <script language="JavaScript" type="text/javascript" src="'.$base_uri.'plugins/avelsieve/javascripts/avelsieve_common.js"></script>
+        <script language="JavaScript" type="text/javascript" src="'.$base_uri.'plugins/avelsieve/javascripts/avelsieve_table.js"></script>
+        ';
+    } else {
+        // For displayPageHeader()
+        $js = file_get_contents('./javascripts/avelsieve_common.js') ."\n".file_get_contents('./javascripts/avelsieve_table.js');
+        $js_wrapped = '
+            <script language="JavaScript" type="text/javascript">
+            '.$js.'
+            </script>
+            ';
+        $html_additional = $avelsieve_css_wrapped . $js_wrapped;
+    }
+} else {
+    $html_additional = $avelsieve_css_wrapped;
+}
+
 
 $prev = bindtextdomain ('squirrelmail', SM_PATH . 'locale');
 textdomain ('squirrelmail');
 if($popup) {
-    displayHtmlHeader('');
+    displayHtmlHeader('', $html_additional);
 } else {
     displayPageHeader($color, 'None');
+    echo $html_additional;
 }
 
 $prev = bindtextdomain ('avelsieve', SM_PATH . 'plugins/avelsieve/locale');
 textdomain ('avelsieve');
 
-if(isset($_GET['mode'])) {
-    if(array_key_exists($_GET['mode'], $displaymodes)) {
-        $mode = $_GET['mode'];
-    } else {
-        $mode = $avelsieve_default_mode;
-    }
-    sqsession_register($mode, 'mode');
-    setPref($data_dir, $username, 'avelsieve_display_mode', $mode);
-} else {
-    if( ($mode_tmp = getPref($data_dir, $username, 'avelsieve_display_mode', '')) != '') {
-        if(array_key_exists($mode_tmp, $displaymodes)) {
-            $mode = $mode_tmp;
-        } else {
-            $mode = $avelsieve_default_mode;
-        }
-    } else {
-        $mode = $avelsieve_default_mode;
-    }
+/* Debugging Part - Developers might want to enable this */
+/*
+echo 'SESSION:';
+dumpr($_SESSION);
+echo 'POST:';
+dumpr($_POST);
+echo 'Rules:';
+dumpr($rules);
+
+if(AVELSIEVE_DEBUG == 1) {
+	print "Debug: Using Backend: $avelsieve_backend.<br/>";
 }
-    
+
+*/
+
+if(isset($_GET['mode'])) {
+	if(array_key_exists($_GET['mode'], $displaymodes)) {
+		$mode = $_GET['mode'];
+	} else {
+		$mode = $avelsieve_default_mode;
+	}
+	sqsession_register($mode, 'mode');
+	setPref($data_dir, $username, 'avelsieve_display_mode', $mode);
+} else {
+	if( ($mode_tmp = getPref($data_dir, $username, 'avelsieve_display_mode', '')) != '') {
+		if(array_key_exists($mode_tmp, $displaymodes)) {
+			$mode = $mode_tmp;
+		} else {
+			$mode = $avelsieve_default_mode;
+		}
+	} else {
+		$mode = $avelsieve_default_mode;
+	}
+}
+	
 $ht = new avelsieve_html_rules($rules, $mode);
 if(!empty($errormsg)) {
     $ht->set_errmsg(array($errormsg));
@@ -448,9 +494,9 @@ if(!empty($errormsg)) {
 }
 
 if($popup) {
-    echo $ht->rules_confirmation();
+	echo $ht->rules_confirmation();
 } else {
-    echo $ht->rules_table();
+	echo $ht->rules_table();
 }
 
 ?>

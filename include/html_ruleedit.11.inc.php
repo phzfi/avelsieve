@@ -3,7 +3,7 @@
  * Licensed under the GNU GPL. For full terms see the file COPYING that came
  * with the Squirrelmail distribution.
  *
- * @version $Id: html_ruleedit.11.inc.php 1020 2009-05-13 14:10:13Z avel $
+ * @version $Id: html_ruleedit.11.inc.php,v 1.17 2007/07/06 14:08:04 avel Exp $
  * @author Alexandros Vellis <avel@users.sourceforge.net>
  * @copyright 2004-2007 Alexandros Vellis
  * @package plugins
@@ -54,7 +54,7 @@ class avelsieve_html_edit_11 extends avelsieve_html_edit_spamrule {
      *
      * @return string
      */
-    function submit_buttons() {
+	function submit_buttons() {
         $out = '<tr><td><div style="text-align: center">'.
             '<input type="submit" name="'. ($this->mode == 'addnew' ? 'addnew' : 'apply') . '" value="'._("Apply Changes").'" style="font-weight: bold" />';
         if($this->popup) {
@@ -62,7 +62,7 @@ class avelsieve_html_edit_11 extends avelsieve_html_edit_spamrule {
         } else {
             $out .= ' <input type="submit" name="cancel" value="'._("Cancel").'" />';
         }
-        return $out;
+		return $out;
     }
     
     /**
@@ -165,8 +165,8 @@ class avelsieve_html_edit_11 extends avelsieve_html_edit_spamrule {
                 $this->all_sections_start();
         } else {
             /* 'duplicate' or 'addnew' */
-            $this->rule = $this->settings['default_rule'];
-            
+			$this->rule = $this->settings['default_rule'];
+			
             $out .= '<form name="addrule" action="'.$PHP_SELF.'" method="POST">'.
                 //$this->table_header( _("Junk Mail Options") ).
                 $this->all_sections_start();
@@ -238,10 +238,10 @@ class avelsieve_html_edit_11 extends avelsieve_html_edit_spamrule {
             if($javascript_on) {
                 $out .= "<a href=\"javascript:void(0)\" onclick=\"comp_in_new('$whitelist_url')\">";
             } else {
-                $out .= '<a href="'.$whitelist_url.'" target="_blank">';
+                $out .= '<a href="'.$url.'" target="_blank">';
             }
         } else {
-            $out .= '<a href="'.$whitelist_url.'">';
+            $out .= '<a href="'.$url.'">';
         }
 
         $out .= '<strong>'. _("Edit Whitelist....") . '</strong></a></p>';

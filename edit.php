@@ -8,9 +8,9 @@
  * Licensed under the GNU GPL. For full terms see the file COPYING that came
  * with the Squirrelmail distribution.
  *
- * @version $Id: edit.php 1028 2009-05-22 10:01:15Z avel $
+ * @version $Id: edit.php,v 1.49 2007/06/26 10:12:12 avel Exp $
  * @author Alexandros Vellis <avel@users.sourceforge.net>
- * @copyright 2002-2009 Alexandros Vellis
+ * @copyright 2002-2004 Alexandros Vellis
  * @package plugins
  * @subpackage avelsieve
  */
@@ -36,7 +36,6 @@ include_once(SM_PATH . 'functions/identity.php');
 require_once(SM_PATH . 'plugins/avelsieve/include/constants.inc.php');
 include_once(SM_PATH . 'plugins/avelsieve/include/html_rulestable.inc.php');
 include_once(SM_PATH . 'plugins/avelsieve/include/html_ruleedit.inc.php');
-include_once(SM_PATH . 'plugins/avelsieve/include/sieve_conditions.inc.php');
 include_once(SM_PATH . 'plugins/avelsieve/include/sieve_actions.inc.php');
 include_once(SM_PATH . 'plugins/avelsieve/include/sieve.inc.php');
 include_once(SM_PATH . 'plugins/avelsieve/include/support.inc.php');
@@ -97,8 +96,8 @@ $s->init();
  * ii) creation of a rule from some search criteria.
  */
 if (!isset($rules)) {
-    $s->login();
-    /* Actually get the script 'phpscript' (hardcoded ATM). */
+	$s->login();
+	/* Actually get the script 'phpscript' (hardcoded ATM). */
     if($s->load('phpscript', $rules, $scriptinfo)) {
         $_SESSION['rules'] = $rules;
         $_SESSION['scriptinfo'] = $scriptinfo;
@@ -109,17 +108,17 @@ if (!isset($rules)) {
 /* Create new mailbox, if required by the user. */
 if(!empty($newfoldername)) {
     global $created_mailbox_name;
-    $created_mailbox_name = '';
-    avelsieve_create_folder($newfoldername, $newfolderparent, $created_mailbox_name, $errmsg);
+	$created_mailbox_name = '';
+	avelsieve_create_folder($newfoldername, $newfolderparent, $created_mailbox_name, $errmsg);
 }
 
 /* Mode of operation */
 if(isset($dup)) {
-    $mode = 'duplicate';
+	$mode = 'duplicate';
 } elseif(isset($addnew)) {
-    $mode = 'addnew';
+	$mode = 'addnew';
 } else {
-    $mode = 'edit';
+	$mode = 'edit';
 }
 
 if(is_numeric($type_get) && $type_get > 1 &&
@@ -157,28 +156,33 @@ $ruleobj = new $edit_class_name($s, $mode, $popup);
 $ruleobj->set_errmsg($errmsg);
 
 if(isset($edit)) {
-    /* Editing an existing rule */
+	/* Editing an existing rule */
+	//print "/* Editing an existing rule */";
     $ruleobj->set_rule_type( (isset($rules[$edit]['type']) ? $rules[$edit]['type'] : 1));
-    $ruleobj->set_rule_data($rules[$edit]);
+	$ruleobj->set_rule_data($rules[$edit]);
 
 } elseif(isset($serialized_rule)) {
-    /* Adding a new rule through $_GET, e.g. from search integration feature. */
+	/* Adding a new rule through $_GET, e.g. from search integration feature. */
+	//print "/* Adding a new rule through _GET, e.g. from search integration feature. */";
     $ruleobj->set_rule_type($type_get);
     $ruleobj->set_rule_data(unserialize(urldecode($serialized_rule)));
 
 } elseif(!isset($edit) && isset($type_get) && empty($_POST)) {
-    /* Adding a new rule through $_GET */
+	/* Adding a new rule through $_GET */
+	//print "/* Adding a new rule through _GET */";
     $ruleobj->set_rule_type($type_get);
     if(isset($avelsieve_rules_settings[$type_get]['default_rule'])) {
         $ruleobj->set_rule_data($avelsieve_rules_settings[$type_get]['default_rule']);
     }
-    $ruleobj->process_input($_GET, true);
+	$ruleobj->process_input($_GET, true);
 
 } elseif(!isset($edit) && isset($type_get) && !empty($_POST)) {
-    /* Continuing to add a new rule */
+	/* Continuing to add a new rule */
+	//print "/* Continuing to add a new rule */";
     $ruleobj->set_rule_type($type_get);
 } else {
-    /* Adding a new rule from scratch */
+	/* Adding a new rule from scratch */
+	//print "/* Adding a new rule from scratch */";
     $ruleobj->set_rule_type($type_get);
 }
 $type = $ruleobj->type;
@@ -188,12 +192,12 @@ if(!isset($type) || (isset($type) && !is_numeric($type)) ) $type = 1;
 /* TODO - use a snippet like this to change type from the edit UI */
 /*
 if(isset($previoustype) && (
-    $previoustype == 0 ||
-    (isset($type) && $previoustype != $type)
+	$previoustype == 0 ||
+	(isset($type) && $previoustype != $type)
   )) {
-        $changetype = true;
+		$changetype = true;
 } else {
-        $changetype = false;
+		$changetype = false;
 }
 */
 
@@ -201,11 +205,11 @@ if(isset($previoustype) && (
 $changetype = false;
 
 if(isset($previous_cond) && isset($new_cond)) {
-    foreach($previous_cond as $n=>$t) {
-        if(isset($new_cond[$n]['type']) && $t['type'] != $new_cond[$n]['type']) {
-            $changetype = true;
-        }
-    }
+	foreach($previous_cond as $n=>$t) {
+		if(isset($new_cond[$n]['type']) && $t['type'] != $new_cond[$n]['type']) {
+			$changetype = true;
+		}
+	}
 }
 
 /* Calculate referrer URL, if it exists. */
@@ -231,64 +235,64 @@ if(!empty($referrerUrl)) {
 /* Available Actions that occur if submitting the form in a number of ways */
 
 if(isset($_POST['cancel'])) {
-    /* Cancel Editing */
-    header("Location: $redirectUrl");
-    exit;
+	/* Cancel Editing */
+	header("Location: $redirectUrl");
+	exit;
 
 } elseif(isset($_POST['apply']) && !$changetype) {
-    /* Apply change in existing rule */
-    //print "/* Apply change in existing rule */";
-    $ruleobj->process_input($_POST, true);
-    if(empty($ruleobj->errmsg)) {
-        $_SESSION['rules'][$edit] = $ruleobj->rule;
+	/* Apply change in existing rule */
+	//print "/* Apply change in existing rule */";
+	$ruleobj->process_input($_POST, true);
+	if(empty($ruleobj->errmsg)) {
+		$_SESSION['rules'][$edit] = $ruleobj->rule;
         if($rawSuccessMsg = $ruleobj->getSuccessMessage()) {
-            $_SESSION['comm']['raw'] = $rawSuccessMsg;
+		    $_SESSION['comm']['raw'] = $rawSuccessMsg;
         } else {
-            $_SESSION['comm']['edited'] = $edit;
+    		$_SESSION['comm']['edited'] = $edit;
         }
-        $_SESSION['haschanged'] = true;
-        header("Location: $redirectUrl");
+		$_SESSION['haschanged'] = true;
+	    header("Location: $redirectUrl");
         exit;
-    }
+	}
 
 } elseif(isset($_POST['addnew']) && !$changetype) {
-    /* Add new rule */
-    $ruleobj->process_input($_POST, true);
-
-    if(empty($ruleobj->errmsg)) {
-        if(isset($dup)) {
-            // insert moving rule in place
-            array_splice($_SESSION['rules'], $edit+1, 0, array($ruleobj->rule));
-            // Reindex
-            $_SESSION['rules'] = array_values($_SESSION['rules']);
+	/* Add new rule */
+	//print "/* Add new rule */";
+ 	$ruleobj->process_input($_POST, true);
+	if(empty($ruleobj->errmsg)) {
+		if(isset($dup)) {
+			// insert moving rule in place
+			array_splice($_SESSION['rules'], $edit+1, 0, array($ruleobj->rule));
+			// Reindex
+			$_SESSION['rules'] = array_values($_SESSION['rules']);
         } elseif(isset($position)) {
-            array_splice($_SESSION['rules'], $position+1, 0, array($ruleobj->rule));
-            $_SESSION['rules'] = array_values($_SESSION['rules']);
-        } else {
+			array_splice($_SESSION['rules'], $position+1, 0, array($ruleobj->rule));
+			$_SESSION['rules'] = array_values($_SESSION['rules']);
+		} else {
             // Append the new rule at the end of rules table
-            $_SESSION['rules'][] = $ruleobj->rule;
-        }
-        /* Communication: */
+			$_SESSION['rules'][] = $ruleobj->rule;
+		}
+		/* Communication: */
         if($rawSuccessMsg = $ruleobj->getSuccessMessage()) {
-            $_SESSION['comm']['raw'] = $rawSuccessMsg;
+		    $_SESSION['comm']['raw'] = $rawSuccessMsg;
         } else {
-            $_SESSION['comm']['edited'] = $edit;
-            $_SESSION['comm']['new'] = true;
+		    $_SESSION['comm']['edited'] = $edit;
+    		$_SESSION['comm']['new'] = true;
         }
-        $_SESSION['haschanged'] = true;
-        header("Location: $redirectUrl");
-        exit;
+		$_SESSION['haschanged'] = true;
+	    header("Location: $redirectUrl");
+		exit;
     }
 } elseif($changetype || isset($_POST['append']) || isset($_POST['less']) || isset($intermediate_action)) {
-    /* still in editing; apply any changes. */
-    $ruleobj->process_input($_POST, false);
+	/* still in editing; apply any changes. */
+	$ruleobj->process_input($_POST, false);
 }
 
 /* Grab the list of my IMAP folders. This is only needed for the GUI, and is
  * done as the last step. */
 sqgetGlobalVar('delimiter', $delimiter, SQ_SESSION);
 if(!isset($delimiter)) {
-    $delimiter = sqimap_get_delimiter($imapConnection);
+	$delimiter = sqimap_get_delimiter($imapConnection);
 }
 // $folder_prefix = "INBOX";
 $imapConnection = sqimap_login($username, $key, $imapServerAddress, $imapPort, 0); 
@@ -311,23 +315,51 @@ sqimap_logout($imapConnection);
 
 
 /* -------------- Presentation Logic ------------- */
+$avelsieve_css = avelsieve_css_styles();
+$avelsieve_css_wrapped = '<style type="text/css">
+'.$avelsieve_css.'
+</style>';
+
+if($javascript_on) {
+    if($popup) {
+        // For displayHtmlHeader()
+        $html_additional = $avelsieve_css_wrapped . '
+        <script language="JavaScript" type="text/javascript" src="'.$base_uri.'plugins/avelsieve/javascripts/avelsieve_common.js"></script>
+        <script language="JavaScript" type="text/javascript" src="'.$base_uri.'plugins/avelsieve/javascripts/avelsieve_edit.js"></script>
+        ';
+    
+    } else {
+        // For displayPageHeader()
+        $js = file_get_contents('./javascripts/avelsieve_common.js') ."\n".file_get_contents('./javascripts/avelsieve_edit.js');
+        $js_wrapped = '
+        <script language="JavaScript" type="text/javascript">
+        '.$js.'
+        </script>
+        ';
+    
+        $html_additional = $avelsieve_css_wrapped . $js_wrapped;
+    }
+} else {
+    $html_additional = $avelsieve_css_wrapped;
+}
 
 $prev = bindtextdomain ('squirrelmail', SM_PATH . 'locale');
 textdomain ('squirrelmail');
 if($popup) {
-    displayHtmlHeader('');
+	displayHtmlHeader('', $html_additional);
 } else {
-    displayPageHeader($color, 'None');
+	displayPageHeader($color, 'None');
+	echo $html_additional;
 }
 
 $prev = bindtextdomain ('avelsieve', SM_PATH . 'plugins/avelsieve/locale');
 textdomain ('avelsieve');
 
 if(isset($edit)) {
-    echo $ruleobj->edit_rule($edit);
+	echo $ruleobj->edit_rule($edit);
 } else {
-    echo $ruleobj->edit_rule();
+	echo $ruleobj->edit_rule();
 }
-    
+	
 ?>
 </body></html>

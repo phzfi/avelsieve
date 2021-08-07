@@ -6,7 +6,7 @@
  * Licensed under the GNU GPL. For full terms see the file COPYING that came
  * with the Squirrelmail distribution.
  *
- * @version $Id: DO_Sieve_Skeleton.class.php 1020 2009-05-13 14:10:13Z avel $
+ * @version $Id: DO_Sieve_Skeleton.class.php,v 1.3 2007/01/17 13:46:10 avel Exp $
  * @author Alexandros Vellis <avel@users.sourceforge.net>
  * @copyright 2004-2007 Alexandros Vellis
  * @package plugins
@@ -58,7 +58,7 @@ class DO_Sieve_Skeleton extends DO_Sieve {
     /**
      * Get scripts list from SIEVE server.
      */
-    function list() {
+    function listscripts() {
         $scripts = array();
         /* ... */
         return $scripts;
@@ -82,9 +82,9 @@ class DO_Sieve_Skeleton extends DO_Sieve {
             $errormsg .= " " . $imapServerAddress.".<br />";
             
             if(!empty($this->sieve->error)) {
-                $errormsg .= _("Error Encountered:") . ' ' . $this->sieve->error . '</br>';
-                $errormsg .= _("Please contact your administrator.");
-                print_errormsg($errormsg);
+    		    $errormsg .= _("Error Encountered:") . ' ' . $this->sieve->error . '</br>';
+			    $errormsg .= _("Please contact your administrator.");
+			    print_errormsg($errormsg);
                 exit;
             }
         }
@@ -101,7 +101,7 @@ class DO_Sieve_Skeleton extends DO_Sieve {
      * @return true on success, false upon failure
      */
     function save($newscript, $scriptname = 'phpscript') {
-        /* Write file... */
+	    /* Write file... */
         if(false) {
             /* Error */
             $errormsg = '<p>';
@@ -127,10 +127,10 @@ class DO_Sieve_Skeleton extends DO_Sieve {
         if(false) {
             $errormsg = sprintf( _("Could not delete script from server %s."), $sieve->host.':'.$sieve->port) .
                 '<br/>';
-            $errormsg .= _("Please contact your administrator.");
-            print_errormsg($errormsg);
-            return false;
-        }
+		    $errormsg .= _("Please contact your administrator.");
+		    print_errormsg($errormsg);
+	        return false;
+	    }
     }
 
     /**
@@ -150,4 +150,5 @@ class DO_Sieve_Skeleton extends DO_Sieve {
     }
 
 }
- 
+    
+?>

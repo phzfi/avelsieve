@@ -3,7 +3,7 @@
  * Licensed under the GNU GPL. For full terms see the file COPYING that came
  * with the Squirrelmail distribution.
  *
- * @version $Id: html_ruleedit.10.inc.php 1020 2009-05-13 14:10:13Z avel $
+ * @version $Id: html_ruleedit.10.inc.php,v 1.4 2007/03/15 16:08:03 avel Exp $
  * @author Alexandros Vellis <avel@users.sourceforge.net>
  * @copyright 2004-2007 Alexandros Vellis
  * @package plugins
@@ -330,6 +330,8 @@ class avelsieve_html_edit_10 extends avelsieve_html_edit_spamrule {
         if(isset($stop) && $stop) {
             $this->rule['stop'] = $stop;
         }
+        
     }
+        
 }
 
