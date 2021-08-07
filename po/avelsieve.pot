@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-04 15:51+0300\n"
+"POT-Creation-Date: 2009-05-29 11:16+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,7 +51,41 @@ msgid ""
 "and forward buttons, to build a rule."
 msgstr ""
 
+msgid "Display and Edit"
+msgstr ""
+
+msgid ""
+"Shows a table of the mail filtering rules of this script and allows editing "
+"of them."
+msgstr ""
+
+msgid "Save Locally / Backup"
+msgstr ""
+
+msgid ""
+"Retrieve the mail filtering script from the Sieve server to your computer."
+msgstr ""
+
+msgid "Set as Filtering script for a Shared Folder"
+msgstr ""
+
+msgid ""
+"Activates this script, for all email received directly to a shared folder."
+msgstr ""
+
 msgid "Mail Filtering Scripts"
+msgstr ""
+
+msgid "Script Name"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Actions"
+msgstr ""
+
+msgid "Initial / Predefined script"
 msgstr ""
 
 msgid "Message Filters"
@@ -95,6 +129,15 @@ msgstr ""
 msgid "The entered position, %s, is greater than the current number of rules."
 msgstr ""
 
+msgid "Message"
+msgstr ""
+
+msgid "Current Date / Time"
+msgstr ""
+
+msgid "Always"
+msgstr ""
+
 msgid "Could not get SIEVE script from your IMAP server"
 msgstr ""
 
@@ -118,6 +161,413 @@ msgid "Could not log on to timsieved daemon on your IMAP server"
 msgstr ""
 
 msgid "Server responded with:"
+msgstr ""
+
+msgid "Disable"
+msgstr ""
+
+msgid "The rule will have no effect for as long as it is disabled."
+msgstr ""
+
+msgid "Discard"
+msgstr ""
+
+msgid "Silently discards the message; use with caution."
+msgstr ""
+
+msgid "Move to Folder"
+msgstr ""
+
+#, php-format
+msgid "Or specify a new folder: %s to be created under %s"
+msgstr ""
+
+msgid "Flag"
+msgstr ""
+
+msgid "Set message flags"
+msgstr ""
+
+msgid "Standard Flags"
+msgstr ""
+
+msgid "Message Labels"
+msgstr ""
+
+msgid "Custom Flags"
+msgstr ""
+
+msgid "Seen"
+msgstr ""
+
+msgid "Answered"
+msgstr ""
+
+msgid "Flagged"
+msgstr ""
+
+msgid "Deleted"
+msgstr ""
+
+msgid "Draft"
+msgstr ""
+
+msgid "Important"
+msgstr ""
+
+msgid "Work"
+msgstr ""
+
+msgid "Personal"
+msgstr ""
+
+msgid "To Do"
+msgstr ""
+
+msgid "Later"
+msgstr ""
+
+msgid "Junk"
+msgstr ""
+
+msgid "Not Junk"
+msgstr ""
+
+#, php-format
+msgid "Also, set message flag %s"
+msgstr ""
+
+#, php-format
+msgid "Also, set message flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Set (replace) flags as the current set: %s"
+msgstr ""
+
+#, php-format
+msgid "Set (replace) flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Add flags to current set: %s"
+msgstr ""
+
+#, php-format
+msgid "Add flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Remove flags from current set: %s"
+msgstr ""
+
+#, php-format
+msgid "Remove flags: %s"
+msgstr ""
+
+msgid ""
+"Enter here a list of flags separated by spaces. Example: <tt>$MyFlag "
+"$Special</tt>"
+msgstr ""
+
+msgid "Move to Junk"
+msgstr ""
+
+#, php-format
+msgid ""
+"Store message in your Junk Folder. Messages older than %s days will be "
+"deleted automatically."
+msgstr ""
+
+msgid "Note that you can set the number of days in Folder Preferences."
+msgstr ""
+
+msgid "Keep Message"
+msgstr ""
+
+msgid "Save the message in your INBOX."
+msgstr ""
+
+msgid "Also keep copy in INBOX, marked as deleted."
+msgstr ""
+
+msgid "Notify"
+msgstr ""
+
+msgid "Send a notification "
+msgstr ""
+
+msgid "Mobile Phone Message (SMS)"
+msgstr ""
+
+msgid "Email notification"
+msgstr ""
+
+msgid "Notification via Zephyr"
+msgstr ""
+
+msgid "Notification via ICQ"
+msgstr ""
+
+msgid "Method"
+msgstr ""
+
+msgid "Notification ID"
+msgstr ""
+
+msgid "Destination"
+msgstr ""
+
+msgid "Priority"
+msgstr ""
+
+msgid "Help: Valid variables are:"
+msgstr ""
+
+msgid "Redirect"
+msgstr ""
+
+msgid "Automatically redirect the message to a different email address"
+msgstr ""
+
+msgid "someone@example.org"
+msgstr ""
+
+msgid "Keep a local copy as well."
+msgstr ""
+
+msgid ""
+"Incorrect email address(es). You must enter one or more valid email "
+"addresses, separated by comma."
+msgstr ""
+
+msgid "Reject"
+msgstr ""
+
+msgid "Send the message back to the sender, along with an excuse"
+msgstr ""
+
+msgid "Please do not send me large attachments."
+msgstr ""
+
+msgid "If this rule matches, do not check any rules after it."
+msgstr ""
+
+msgid "STOP"
+msgstr ""
+
+msgid "Move to Trash"
+msgstr ""
+
+msgid ""
+"Store message in your Trash Folder. You will have to purge the folder "
+"yourself."
+msgstr ""
+
+msgid "Vacation / Autoresponder"
+msgstr ""
+
+msgid ""
+"This is an automated reply; I am away and will not be able to reply to you "
+"immediately."
+msgstr ""
+
+msgid "I will get back to you as soon as I return."
+msgstr ""
+
+msgid ""
+"The notice will be sent only once to each person that sends you mail, and "
+"will not be sent to a mailing list address."
+msgstr ""
+
+msgid "Subject:"
+msgstr ""
+
+msgid "Optional subject of the vacation message."
+msgstr ""
+
+msgid "Your Addresses:"
+msgstr ""
+
+msgid ""
+"A vacation / autorespond message will be sent only if an email is sent "
+"explicitly to one of these addresses."
+msgstr ""
+
+msgid "Days:"
+msgstr ""
+
+msgid "days"
+msgstr ""
+
+msgid ""
+"A vacation / autorespond message will not be resent to the same address, "
+"within this number of days."
+msgstr ""
+
+msgid "Message:"
+msgstr ""
+
+msgid "The number of days between vacation messages must be a positive number."
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "Received"
+msgstr ""
+
+msgid "Year"
+msgstr ""
+
+msgid "Month"
+msgstr ""
+
+msgid "Day"
+msgstr ""
+
+msgid "Weekday"
+msgstr ""
+
+msgid "Hour"
+msgstr ""
+
+msgid "Minute"
+msgstr ""
+
+msgid "Second"
+msgstr ""
+
+msgid "Sunday"
+msgstr ""
+
+msgid "Monday"
+msgstr ""
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Wednesday"
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+msgid "Friday"
+msgstr ""
+
+msgid "Saturday"
+msgstr ""
+
+msgid "Is"
+msgstr ""
+
+msgid "Before (&lt;=)"
+msgstr ""
+
+msgid "After (=&gt;)"
+msgstr ""
+
+msgid "Before (&lt;)"
+msgstr ""
+
+msgid "After (&gt;)"
+msgstr ""
+
+msgid "January"
+msgstr ""
+
+msgid "February"
+msgstr ""
+
+msgid "March"
+msgstr ""
+
+msgid "April"
+msgstr ""
+
+msgid "May"
+msgstr ""
+
+msgid "June"
+msgstr ""
+
+msgid "July"
+msgstr ""
+
+msgid "August"
+msgstr ""
+
+msgid "September"
+msgstr ""
+
+msgid "October"
+msgstr ""
+
+msgid "November"
+msgstr ""
+
+msgid "December"
+msgstr ""
+
+msgid "Occurence"
+msgstr ""
+
+msgid "Specific Date"
+msgstr ""
+
+msgid "Specific Time"
+msgstr ""
+
+#, php-format
+msgid "of header %s"
+msgstr ""
+
+msgid "Current date / time:"
+msgstr ""
+
+msgid "Current date:"
+msgstr ""
+
+msgid "message header"
+msgstr ""
+
+msgid "Message header"
+msgstr ""
+
+#, php-format
+msgid "is %s"
+msgstr ""
+
+msgid "is"
+msgstr ""
+
+#, php-format
+msgid "is before than %s (inclusive)"
+msgstr ""
+
+#, php-format
+msgid "is after than %s (inclusive)"
+msgstr ""
+
+#, php-format
+msgid "is before than %s"
+msgstr ""
+
+#, php-format
+msgid "is after than %s"
+msgstr ""
+
+#, php-format
+msgid "&quot;%s&quot;"
+msgstr ""
+
+#, php-format
+msgid "&quot;<tt>%s:</tt>&quot;"
 msgstr ""
 
 msgid "AND (Every item must match)"
@@ -187,6 +637,11 @@ msgstr ""
 msgid "Perform an action on messages depending on their content (body text)."
 msgstr ""
 
+msgid ""
+"Perform an action on messages depending on date or time related to the "
+"message."
+msgstr ""
+
 msgid "All"
 msgstr ""
 
@@ -197,9 +652,6 @@ msgid "contains"
 msgstr ""
 
 msgid "does not contain"
-msgstr ""
-
-msgid "is"
 msgstr ""
 
 msgid "is not"
@@ -300,9 +752,6 @@ msgid ""
 "yourself."
 msgstr ""
 
-msgid "Discard"
-msgstr ""
-
 msgid ""
 "Discard SPAM message. You will get no indication that the message ever "
 "arrived."
@@ -380,12 +829,6 @@ msgstr ""
 msgid ""
 "Messages that match any of these header rules will never end up in Junk "
 "Folders or regarded as SPAM."
-msgstr ""
-
-msgid "STOP"
-msgstr ""
-
-msgid "If this rule matches, do not check any rules after it."
 msgstr ""
 
 msgid "Apply Changes"
@@ -516,6 +959,36 @@ msgid ""
 "messages that do not match any of the previous rules."
 msgstr ""
 
+msgid "1st"
+msgstr ""
+
+msgid "2nd"
+msgstr ""
+
+msgid "3rd"
+msgstr ""
+
+msgid "4th"
+msgstr ""
+
+msgid "5th"
+msgstr ""
+
+msgid "6th"
+msgstr ""
+
+msgid "7th"
+msgstr ""
+
+msgid "8th"
+msgstr ""
+
+msgid "9th"
+msgstr ""
+
+msgid "from the end"
+msgstr ""
+
 msgid "Choose what to do when this rule triggers, from one of the following:"
 msgstr ""
 
@@ -612,9 +1085,6 @@ msgid "Really delete selected rules?"
 msgstr ""
 
 msgid "Enable"
-msgstr ""
-
-msgid "Disable"
 msgstr ""
 
 msgid ""
@@ -730,157 +1200,6 @@ msgstr ""
 msgid "These search expressions are not applicable during message delivery."
 msgstr ""
 
-msgid "Keep Message"
-msgstr ""
-
-msgid "Save the message in your INBOX."
-msgstr ""
-
-msgid "Silently discards the message; use with caution."
-msgstr ""
-
-msgid "Reject"
-msgstr ""
-
-msgid "Send the message back to the sender, along with an excuse"
-msgstr ""
-
-msgid "Please do not send me large attachments."
-msgstr ""
-
-msgid "Redirect"
-msgstr ""
-
-msgid "Automatically redirect the message to a different email address"
-msgstr ""
-
-msgid "someone@example.org"
-msgstr ""
-
-msgid "Keep a local copy as well."
-msgstr ""
-
-msgid ""
-"Incorrect email address(es). You must enter one or more valid email "
-"addresses, separated by comma."
-msgstr ""
-
-msgid "Move to Folder"
-msgstr ""
-
-#, php-format
-msgid "Or specify a new folder: %s to be created under %s"
-msgstr ""
-
-msgid "Vacation"
-msgstr ""
-
-msgid ""
-"This is an automated reply; I am away and will not be able to reply to you "
-"immediately."
-msgstr ""
-
-msgid "I will get back to you as soon as I return."
-msgstr ""
-
-msgid ""
-"The notice will be sent only once to each person that sends you mail, and "
-"will not be sent to a mailing list address."
-msgstr ""
-
-msgid "Subject:"
-msgstr ""
-
-msgid "Optional subject of the vacation message."
-msgstr ""
-
-msgid "Your Addresses:"
-msgstr ""
-
-msgid ""
-"A vacation message will be sent only if an email is sent explicitly to one "
-"of these addresses."
-msgstr ""
-
-msgid "Days:"
-msgstr ""
-
-msgid "days"
-msgstr ""
-
-msgid ""
-"A vacation message will not be resent to the same address, within this "
-"number of days."
-msgstr ""
-
-msgid "Message:"
-msgstr ""
-
-msgid "The number of days between vacation messages must be a positive number."
-msgstr ""
-
-msgid "Notify"
-msgstr ""
-
-msgid "Send a notification "
-msgstr ""
-
-msgid "Mobile Phone Message (SMS)"
-msgstr ""
-
-msgid "Email notification"
-msgstr ""
-
-msgid "Notification via Zephyr"
-msgstr ""
-
-msgid "Notification via ICQ"
-msgstr ""
-
-msgid "Method"
-msgstr ""
-
-msgid "Notification ID"
-msgstr ""
-
-msgid "Destination"
-msgstr ""
-
-msgid "Priority"
-msgstr ""
-
-msgid "Message"
-msgstr ""
-
-msgid "Help: Valid variables are:"
-msgstr ""
-
-msgid "Also keep copy in INBOX, marked as deleted."
-msgstr ""
-
-msgid "The rule will have no effect for as long as it is disabled."
-msgstr ""
-
-msgid "Move to Junk"
-msgstr ""
-
-#, php-format
-msgid ""
-"Store message in your Junk Folder. Messages older than %s days will be "
-"deleted automatically."
-msgstr ""
-
-msgid "Note that you can set the number of days in Folder Preferences."
-msgstr ""
-
-msgid "Move to Trash"
-msgstr ""
-
-msgid ""
-"Store message in your Trash Folder. You will have to purge the folder "
-"yourself."
-msgstr ""
-
 msgid ""
 "All messages considered as <strong>SPAM</strong> (unsolicited commercial "
 "messages)"
@@ -916,9 +1235,6 @@ msgid "will be"
 msgstr ""
 
 msgid "stored in the Junk Folder."
-msgstr ""
-
-msgid "Junk"
 msgstr ""
 
 msgid "stored in the Trash Folder."
@@ -1009,6 +1325,20 @@ msgstr ""
 msgid "message body"
 msgstr ""
 
+#, php-format
+msgid "index number %s"
+msgstr ""
+
+#, php-format
+msgid "index #%s"
+msgstr ""
+
+msgid "(counting from last header)"
+msgstr ""
+
+msgid "(from end)"
+msgstr ""
+
 msgid "matches the regular expression"
 msgstr ""
 
@@ -1051,6 +1381,9 @@ msgstr ""
 msgid "ALL"
 msgstr ""
 
+msgid "always"
+msgstr ""
+
 msgid "and"
 msgstr ""
 
@@ -1090,10 +1423,8 @@ msgstr ""
 msgid "(Warning: Folder not available)"
 msgstr ""
 
-msgid "reply with this vacation message: "
-msgstr ""
-
-msgid "Vacation Message"
+#, php-format
+msgid "reply with a vacation / autoresponder message: "
 msgstr ""
 
 msgid "Also keep a local copy."

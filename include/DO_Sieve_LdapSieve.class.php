@@ -43,7 +43,7 @@ class DO_Sieve_LdapSieve extends DO_Sieve {
         
         $this->sieveUsername = $username;
         $this->sieveLdapServer = $ldap_server;
-	$this->sieveHardcodedCapabilities = $avelsieve_hard_capabilities;
+    $this->sieveHardcodedCapabilities = $avelsieve_hard_capabilities;
     }
 
     /**
@@ -62,40 +62,40 @@ class DO_Sieve_LdapSieve extends DO_Sieve {
     function login() {
         
         if($this->loggedin) {
-	    return true;
+        return true;
         }
             
         $this->sieveLdapHost = $this->sieveLdapServer[0]['host'];
-	$this->sieveLdapBase = $this->sieveLdapServer[0]['base'];
+    $this->sieveLdapBase = $this->sieveLdapServer[0]['base'];
 
-	/*  Anonymous connexion to retrieve dn */
+    /*  Anonymous connexion to retrieve dn */
 
-	$this->sieveLdapConn = ldap_connect($this->sieveLdapHost);
-	$this->ldapbind = ldap_bind($this->sieveLdapConn)
-	    or die("Unable to connect to LDAP server, contact your administrator");
-	$this->sr = ldap_search($this->sieveLdapConn, $this->sieveLdapBase, "uid=$this->sieveUsername"); 
-	$this->info = ldap_get_entries($this->sieveLdapConn, $this->sr);
-	$this->dn = $this->info[0]["dn"];
-	ldap_close($this->sieveLdapConn);
+    $this->sieveLdapConn = ldap_connect($this->sieveLdapHost);
+    $this->ldapbind = ldap_bind($this->sieveLdapConn)
+        or die("Unable to connect to LDAP server, contact your administrator");
+    $this->sr = ldap_search($this->sieveLdapConn, $this->sieveLdapBase, "uid=$this->sieveUsername"); 
+    $this->info = ldap_get_entries($this->sieveLdapConn, $this->sr);
+    $this->dn = $this->info[0]["dn"];
+    ldap_close($this->sieveLdapConn);
 
-	/* Authenticated connexion to LDAP server */
+    /* Authenticated connexion to LDAP server */
 
-	sqgetGlobalVar('key', $key, SQ_COOKIE);
-	sqgetGlobalVar('onetimepad', $onetimepad, SQ_SESSION);
+    sqgetGlobalVar('key', $key, SQ_COOKIE);
+    sqgetGlobalVar('onetimepad', $onetimepad, SQ_SESSION);
 
-	/* Need the cleartext password to connect to the LDAP server */
-	$acctpass = OneTimePadDecrypt($key, $onetimepad);
+    /* Need the cleartext password to connect to the LDAP server */
+    $acctpass = OneTimePadDecrypt($key, $onetimepad);
 
-	if(!$this->dn || !$acctpass)
-	    die("Error: unable to find DN or invalid password.");
-	$this->sieveLdapConn = ldap_connect($this->sieveLdapHost);
-	$this->ldapbind = ldap_bind($this->sieveLdapConn, $this->dn, $acctpass)
-	    or die("Unable to bind to LDAP server, contact your administrator");
+    if(!$this->dn || !$acctpass)
+        die("Error: unable to find DN or invalid password.");
+    $this->sieveLdapConn = ldap_connect($this->sieveLdapHost);
+    $this->ldapbind = ldap_bind($this->sieveLdapConn, $this->dn, $acctpass)
+        or die("Unable to bind to LDAP server, contact your administrator");
 
-	if(!isset($this->sieve_capabilities)) {
-	    $this->capabilities = $sieve_capabilities = $this->sieveHardcodedCapabilities;
-	    $_SESSION['sieve_capabilities'] = $sieve_capabilities;
-	}
+    if(!isset($this->sieve_capabilities)) {
+        $this->capabilities = $sieve_capabilities = $this->sieveHardcodedCapabilities;
+        $_SESSION['sieve_capabilities'] = $sieve_capabilities;
+    }
 
         $this->loggedin = true;
         return true;
@@ -119,22 +119,22 @@ class DO_Sieve_LdapSieve extends DO_Sieve {
 
         /* Get rules from LDAP server. */
         
-    	$this->sr = ldap_search($this->sieveLdapConn, $this->sieveLdapBase, "uid=$this->sieveUsername", array("mailsieverulesource"))
-    	    or die("Unable to receive results from LDAP server, contact your administrator");
-    	$this->infos = ldap_get_entries($this->sieveLdapConn, $this->sr)
-    	    or die("Unable to get results from LDAP server, contact your administrator");
+        $this->sr = ldap_search($this->sieveLdapConn, $this->sieveLdapBase, "uid=$this->sieveUsername", array("mailsieverulesource"))
+            or die("Unable to receive results from LDAP server, contact your administrator");
+        $this->infos = ldap_get_entries($this->sieveLdapConn, $this->sr)
+            or die("Unable to get results from LDAP server, contact your administrator");
 
-	/* All the rules are store in only one value of the attribute mailsieverulesource */
+    /* All the rules are store in only one value of the attribute mailsieverulesource */
 
-    	$sievescript = $this->infos[0]["mailsieverulesource"][0];
-    	//ldap_close($this->sieveLdapConn);
+        $sievescript = $this->infos[0]["mailsieverulesource"][0];
+        //ldap_close($this->sieveLdapConn);
         //$this->loggedin = false;
-    	
-    	/* Extract rules from $sievescript. */
+        
+        /* Extract rules from $sievescript. */
         $rules = avelsieve_extract_rules($sievescript, $scriptinfo);
         return true;
     }
-	
+    
     /**
     * Upload rules
     *
@@ -148,15 +148,15 @@ class DO_Sieve_LdapSieve extends DO_Sieve {
             $this->login();
         }
         $attrs["mailsieverulesource"] = stripslashes($newscript);
-	if (!ldap_mod_replace($this->sieveLdapConn, $this->dn, $attrs)) {
-	    /* Just to be safe. */
+    if (!ldap_mod_replace($this->sieveLdapConn, $this->dn, $attrs)) {
+        /* Just to be safe. */
             $errormsg = _("Could not set active script on your IMAP server ");
             $errormsg .= $this->sieveLdapServer . ".<br />";
             $errormsg .= _("Please contact your administrator.");
             print_errormsg($errormsg);
             return false;
-	}
-	return true;
+    }
+    return true;
         //ldap_close($this->sieveLdapConn);
         //$this->loggedin = false;
     }
@@ -171,15 +171,15 @@ class DO_Sieve_LdapSieve extends DO_Sieve {
         if(!$this->loggedin) {
             $this->login();
         }
-    	$attrs["mailsieverulesource"] = array();
-	if (!ldap_mod_del($this->sieveLdapConn, $this->dn, $attrs)) {
+        $attrs["mailsieverulesource"] = array();
+    if (!ldap_mod_del($this->sieveLdapConn, $this->dn, $attrs)) {
             $errormsg = _("Could not delete script from server ");
             $errormsg .= $this->sieveLdapServer . ".<br />";
             $errormsg .= _("Please contact your administrator.");
             print_errormsg($errormsg);
             return false;
-	}
-	return true;
+    }
+    return true;
         //ldap_close($this->sieveLdapConn);
         //$this->loggedin = false;
     }
@@ -191,4 +191,4 @@ class DO_Sieve_LdapSieve extends DO_Sieve {
         $ldap_close($this->sieveLdapConn);
     }
 }
-?>
+

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-out="../doc/avelsieve_translation_statistics.html"
+out="../build/doc/avelsieve_translation_statistics.html"
 
 echo "<h2>Translation statistics for avelsieve</h2>" > $out
 echo "<h3>Updated ` date -I `</h3><ul>" >> $out

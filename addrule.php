@@ -8,7 +8,7 @@
  * Licensed under the GNU GPL. For full terms see the file COPYING that came
  * with the Squirrelmail distribution.
  *
- * @version $Id: addrule.php,v 1.14 2007/05/18 09:13:42 avel Exp $
+ * @version $Id: addrule.php 935 2008-07-04 10:25:39Z avel $
  * @author Alexandros Vellis <avel@users.sourceforge.net>
  * @copyright 2004 The SquirrelMail Project Team, Alexandros Vellis
  * @package plugins
@@ -41,9 +41,9 @@ if(isset($_SESSION['newrule'])) {
 
 if(isset($_POST['cancel'])) {
 	unset($_SESSION['newrule']);
-	#session_unregister('newrule');
-	unset($_SESSION['part']);
-	#session_unregister('part');
+	session_unregister('newrule');
+	unset($part);
+	session_unregister('part');
 	header("Location: ./table.php");
 	exit;
 }
@@ -250,11 +250,8 @@ if(isset($_POST['finished']) || isset($_POST['apply'])) {
 	$_SESSION['comm']['new'] = true;
 
 	/* Remove addrule.php stuff */
-	/* DEPRECATED
-        session_unregister('newrule');
-	session_unregister('part');*/
-        unset($_SESSION['newrule']);
-        unset($_SESSION['part']);
+	session_unregister('newrule');
+	session_unregister('part');
 
 	/* go to table.php */
 	session_write_close();

@@ -6,7 +6,7 @@
  * Licensed under the GNU GPL. For full terms see the file COPYING that came
  * with the Squirrelmail distribution.
  *
- * @version $Id: DO_Sieve_ManageSieve.class.php,v 1.9 2007/08/23 13:48:05 avel Exp $
+ * @version $Id: DO_Sieve_ManageSieve.class.php 1032 2009-05-25 11:34:12Z avel $
  * @author Alexandros Vellis <avel@users.sourceforge.net>
  * @copyright 2004-2007 Alexandros Vellis
  * @package plugins
@@ -115,10 +115,17 @@ class DO_Sieve_ManageSieve extends DO_Sieve {
             return true;
         }
         if ($this->sieve->sieve_login()){
+            // Things to do after login:
+            // 1) Get capabilities
             if(!isset($this->sieve_capabilities)) {
                 $this->capabilities = $sieve_capabilities = $this->sieve->sieve_get_capability();
                 $_SESSION['sieve_capabilities'] = $sieve_capabilities;
             }
+
+            // 2) Map capabilities to condition kinds
+            $this->condition_kinds = $this->_get_active_condition_kinds();
+
+            // All done
             $this->loggedin = true;
             return true;
         } else {
@@ -129,7 +136,7 @@ class DO_Sieve_ManageSieve extends DO_Sieve {
             }
             $errormsg .= _("Please contact your administrator.");
     
-            if(AVELSIEVE_DEBUG == 1) {
+            if(AVELSIEVE_DEBUG > 0) {
                 print "<pre>(Debug Mode). Login failed. Capabilities:\n";
                 print_r($this->sieve_capabilities);
                 if(!empty($this->sieve->error)) {
@@ -238,12 +245,12 @@ class DO_Sieve_ManageSieve extends DO_Sieve {
         if(!$this->loggedin) {
             $this->login();
         }
-    
+
         if($this->sieve->sieve_sendscript($scriptname, stripslashes($newscript))) {
             if(!($this->sieve->sieve_setactivescript($scriptname))){
                 /* Just to be safe. */
                 $errormsg = _("Could not set active script on your IMAP server");
-                $errormsg .= " " . $imapServerAddress.".<br />";
+                $errormsg .= " " . $this->sieveServerAddress.".<br />";
                 $errormsg .= _("Please contact your administrator.");
                 print_errormsg($errormsg);
                 return false;
@@ -266,13 +273,13 @@ class DO_Sieve_ManageSieve extends DO_Sieve {
             
                 /* The following serves for viewing the script that
                 * tried to be uploaded, for debugging purposes. */
-                if(AVELSIEVE_DEBUG == 1) {
+                if(AVELSIEVE_DEBUG > 0) {
                     $errormsg .= '<br />(Debug mode) <strong>avelsieve bug</strong>: Script that probably is buggy
                        follows. Please copy/paste it, together with the error message above and a short description of
                        what you were attempting to do, and email it to the author, at the email address: <a
                     href="mailto:'.AVELSIEVE_BUGREPORT_EMAIL.'">'.AVELSIEVE_BUGREPORT_EMAIL.'</a>.
                     <br />
-                    <div style="border: 1px solid grey; width: 95%; overflow: auto; height: 300px; font-family: monospace; font-size:10px;">' .nl2br(htmlspecialchars($newscript)). "</div>";
+                    <div style="border: 1px solid grey; width: 650px; overflow: auto; height: 300px; font-family: monospace; font-size:10px;">' .nl2br(htmlspecialchars($newscript)). "</div>";
 
                 }
             }
@@ -343,4 +350,3 @@ class DO_Sieve_ManageSieve extends DO_Sieve {
 
 }
 
-?>

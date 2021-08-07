@@ -11,7 +11,7 @@
  * 
  * Still not used. Just a draft.
  *
- * @version $Id: standalone.inc.php,v 1.3 2007/01/17 13:46:11 avel Exp $
+ * @version $Id: standalone.inc.php 1020 2009-05-13 14:10:13Z avel $
  * @author Alexandros Vellis <avel@users.sourceforge.net>
  * @copyright 2004-2007 The SquirrelMail Project Team, Alexandros Vellis
  * @package plugins
@@ -46,32 +46,31 @@ function  sqimap_get_user_server ($imapServerAddress, $username) {
 }
 
 function listmailboxes_cyrusmaster() {
-	return false;
+    return false;
 }
 
 function listmailboxes_php($imaphost, $username, $password) {
 
-	$mbox = imap_open($imaphost, $username, $password,OP_HALFOPEN)
-	      || die("can't connect: ".imap_last_error());
-	
-	$list = imap_getmailboxes($mbox,"{your.imap.host}","*");
-	
-	if(is_array($list)) {
-		reset($list);
-		while (list($key, $val) = each($list)) {
-			print "($key) ";
-			print imap_utf7_decode($val->name).",";
-			print "'".$val->delimiter."',";
-			print $val->attributes."<br>\n";
-			}
-		} else {
-			print "imap_getmailboxes failed: ".imap_last_error()."\n";
-		}
-	
-	imap_close($mbox);
-	
-	return $list;
+    $mbox = imap_open($imaphost, $username, $password,OP_HALFOPEN)
+          || die("can't connect: ".imap_last_error());
+    
+    $list = imap_getmailboxes($mbox,"{your.imap.host}","*");
+    
+    if(is_array($list)) {
+        reset($list);
+        while (list($key, $val) = each($list)) {
+            print "($key) ";
+            print imap_utf7_decode($val->name).",";
+            print "'".$val->delimiter."',";
+            print $val->attributes."<br>\n";
+            }
+        } else {
+            print "imap_getmailboxes failed: ".imap_last_error()."\n";
+        }
+    
+    imap_close($mbox);
+    
+    return $list;
 
 }
 
-?>

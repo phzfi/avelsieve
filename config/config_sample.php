@@ -9,7 +9,7 @@
  * This file contains configuration parameters for SIEVE mail filters plugin
  * (aka avelsieve)
  *
- * @version $Id: config_sample.php,v 1.24 2007/03/21 10:33:53 avel Exp $
+ * @version $Id: config_sample.php 1025 2009-05-21 08:35:24Z avel $
  * @author Alexandros Vellis <avel@users.sourceforge.net>
  * @copyright 2002-2004 Alexandros Vellis
  * @package plugins
@@ -17,7 +17,15 @@
  */
 
 /**
- * Debug Mode. Enable this (change to 1) if you need to send a bug report.
+ * Debug Mode. Enable this (change to 1) if you need to send a bug report,
+ * or to 2 or 3 if you are a developer!
+ *
+ * Valid values:
+ * 0 = No debugging output
+ * 1 = Normal debugging output
+ * 2 = Firebug-enhanced debugging output
+ * 3 = Enhanced debugging output and no Sieve capabilities checks - enables
+ *     all UI features!
  */
 if(!defined('AVELSIEVE_DEBUG')) {
     define('AVELSIEVE_DEBUG', 0);
@@ -68,9 +76,8 @@ $avelsieve_disabletls = false;
 /* ======================================================================== */
 
 global $avelsieve_file_backend_options, $data_dir, $username;
-/* %u is replaced by the username */
 $avelsieve_file_backend_options = array(
-    'avelsieve_default_file' => "$data_dir/%u.sievesource"
+    'avelsieve_default_file' => "$data_dir/$username.sievesource"
 );
 
 /* ======================================================================== */
@@ -221,7 +228,7 @@ global $headers;
 $headers = array(
  'From', 'To', 'Cc', 'Bcc', 'Subject', 'Reply-To', 'Sender', 'List-Id',
  'MailingList', 'Mailing-List', 'X-ML-Name', 'X-List', 'X-List-Name', 'X-Mailing-List',
- 'Resent-From',  'Resent-To', 'X-Mailer', 'X-MailingList',
+ 'Resent-From',  'Resent-To', 'X-Mailer', 'X-Mailing-List',
  'X-Spam-Flag', 'X-Spam-Status',
  'X-Priority', 'Importance', 'X-MSMail-Priority', 'Precedence',
  'Return-Path', 'Received', 'Auto-Submitted',
@@ -302,4 +309,4 @@ foreach($avelsieve_enable_rules as $r) {
 
 $avelsieve_spam_highlight_enable = false;
 
-?>
+

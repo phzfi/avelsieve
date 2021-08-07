@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: avelsieve\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-04 15:51+0300\n"
+"POT-Creation-Date: 2009-05-29 11:16+0300\n"
 "PO-Revision-Date: 2006-01-11 17:50+0200\n"
 "Last-Translator: Ognyan Kulev\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -56,8 +56,44 @@ msgstr ""
 "вместо бутоните за презареждане, назад и напред на браузъра."
 
 #, fuzzy
+msgid "Display and Edit"
+msgstr "Показване като:"
+
+msgid ""
+"Shows a table of the mail filtering rules of this script and allows editing "
+"of them."
+msgstr ""
+
+msgid "Save Locally / Backup"
+msgstr ""
+
+msgid ""
+"Retrieve the mail filtering script from the Sieve server to your computer."
+msgstr ""
+
+msgid "Set as Filtering script for a Shared Folder"
+msgstr ""
+
+msgid ""
+"Activates this script, for all email received directly to a shared folder."
+msgstr ""
+
+#, fuzzy
 msgid "Mail Filtering Scripts"
 msgstr "Текущи правила за филтриране на поща"
+
+msgid "Script Name"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+#, fuzzy
+msgid "Actions"
+msgstr "Действие"
+
+msgid "Initial / Predefined script"
+msgstr ""
 
 msgid "Message Filters"
 msgstr "Филтри за писма"
@@ -102,6 +138,16 @@ msgstr ""
 msgid "The entered position, %s, is greater than the current number of rules."
 msgstr ""
 
+msgid "Message"
+msgstr "Съобщение"
+
+msgid "Current Date / Time"
+msgstr ""
+
+#, fuzzy
+msgid "Always"
+msgstr "дни"
+
 msgid "Could not get SIEVE script from your IMAP server"
 msgstr "Не може да се вземе SIEVE скрипт от Вашия IMAP сървър"
 
@@ -128,6 +174,457 @@ msgstr "Не може да се влезе в демона timsieved на Ваш
 
 msgid "Server responded with:"
 msgstr "Сървърът отговори с:"
+
+msgid "Disable"
+msgstr "Деактивиране"
+
+msgid "The rule will have no effect for as long as it is disabled."
+msgstr "Това правило няма да има ефект, докато е деактивирано."
+
+msgid "Discard"
+msgstr "Изхвърляне"
+
+msgid "Silently discards the message; use with caution."
+msgstr ""
+
+#, fuzzy
+msgid "Move to Folder"
+msgstr "Преместване в началото"
+
+#, php-format
+msgid "Or specify a new folder: %s to be created under %s"
+msgstr ""
+
+msgid "Flag"
+msgstr ""
+
+msgid "Set message flags"
+msgstr ""
+
+msgid "Standard Flags"
+msgstr ""
+
+#, fuzzy
+msgid "Message Labels"
+msgstr "Филтри за писма"
+
+msgid "Custom Flags"
+msgstr ""
+
+#, fuzzy
+msgid "Seen"
+msgstr "Изпращач"
+
+msgid "Answered"
+msgstr ""
+
+msgid "Flagged"
+msgstr ""
+
+#, fuzzy
+msgid "Deleted"
+msgstr "Изтриване"
+
+msgid "Draft"
+msgstr ""
+
+msgid "Important"
+msgstr ""
+
+#, fuzzy
+msgid "Work"
+msgstr "или"
+
+msgid "Personal"
+msgstr ""
+
+#, fuzzy
+msgid "To Do"
+msgstr "To или Cc"
+
+#, fuzzy
+msgid "Later"
+msgstr "сбито"
+
+msgid "Junk"
+msgstr "Junk"
+
+#, fuzzy
+msgid "Not Junk"
+msgstr "Преместване в началото"
+
+#, php-format
+msgid "Also, set message flag %s"
+msgstr ""
+
+#, php-format
+msgid "Also, set message flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Set (replace) flags as the current set: %s"
+msgstr ""
+
+#, php-format
+msgid "Set (replace) flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Add flags to current set: %s"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "Add flags: %s"
+msgstr "Добавяне на ново правило"
+
+#, php-format
+msgid "Remove flags from current set: %s"
+msgstr ""
+
+#, php-format
+msgid "Remove flags: %s"
+msgstr ""
+
+msgid ""
+"Enter here a list of flags separated by spaces. Example: <tt>$MyFlag "
+"$Special</tt>"
+msgstr ""
+
+#, fuzzy
+msgid "Move to Junk"
+msgstr "Преместване в началото"
+
+#, fuzzy, php-format
+msgid ""
+"Store message in your Junk Folder. Messages older than %s days will be "
+"deleted automatically."
+msgstr ""
+"Съхраняване на писмата със СПАМ във Вашата папка Junk. Писмата по-стари от %"
+"s дни ще бъдат автоматично изтривани."
+
+msgid "Note that you can set the number of days in Folder Preferences."
+msgstr ""
+"Забележете, че можете да задавате броя на дните в настройките на папката."
+
+#, fuzzy
+msgid "Keep Message"
+msgstr "Съобщение"
+
+msgid "Save the message in your INBOX."
+msgstr ""
+
+msgid "Also keep copy in INBOX, marked as deleted."
+msgstr "Също така със запазване на копие в INBOX, отбелязано като изтрито."
+
+#, fuzzy
+msgid "Notify"
+msgstr "Уведомяване на %s"
+
+#, fuzzy
+msgid "Send a notification "
+msgstr "Уведомяване по поща"
+
+msgid "Mobile Phone Message (SMS)"
+msgstr "Съобщение до мобилен телефон (SMS)"
+
+msgid "Email notification"
+msgstr "Уведомяване по поща"
+
+msgid "Notification via Zephyr"
+msgstr "Уведомяване през Zephyr"
+
+msgid "Notification via ICQ"
+msgstr "Уведомяване през ICQ"
+
+msgid "Method"
+msgstr ""
+
+msgid "Notification ID"
+msgstr "Идентификатор на уведомяване"
+
+msgid "Destination"
+msgstr "Местоназначение"
+
+msgid "Priority"
+msgstr ""
+
+msgid "Help: Valid variables are:"
+msgstr "Помощ: Валидни променливи са:"
+
+#, fuzzy
+msgid "Redirect"
+msgstr "Пренасочване към"
+
+msgid "Automatically redirect the message to a different email address"
+msgstr ""
+
+msgid "someone@example.org"
+msgstr "someone@example.org"
+
+msgid "Keep a local copy as well."
+msgstr "Също така със запазване на локално копие."
+
+msgid ""
+"Incorrect email address(es). You must enter one or more valid email "
+"addresses, separated by comma."
+msgstr ""
+"Неправилен пощенски адрес(и). Трябва да въведете един или повече валидни "
+"пощенски адреси, разделени със запетая."
+
+msgid "Reject"
+msgstr "Отхвърляне"
+
+msgid "Send the message back to the sender, along with an excuse"
+msgstr ""
+
+msgid "Please do not send me large attachments."
+msgstr "Моля, не ми изпращайте големи притурки."
+
+msgid "If this rule matches, do not check any rules after it."
+msgstr "Ако това правило съвпада, да не се проверяват последващите правила."
+
+msgid "STOP"
+msgstr "Спиране"
+
+#, fuzzy
+msgid "Move to Trash"
+msgstr "Преместване в началото"
+
+#, fuzzy
+msgid ""
+"Store message in your Trash Folder. You will have to purge the folder "
+"yourself."
+msgstr ""
+"Съхраняване на писмата със СПАМ във Вашата папка Trash. Ще трябва сам да си "
+"изчиствате папката."
+
+#, fuzzy
+msgid "Vacation / Autoresponder"
+msgstr "Писмо за отпуск"
+
+msgid ""
+"This is an automated reply; I am away and will not be able to reply to you "
+"immediately."
+msgstr ""
+"Това е автоматичен отговор; Далеч съм и не мога да Ви отговоря веднага."
+
+msgid "I will get back to you as soon as I return."
+msgstr "Ще Ви обърна внимание скоро след като се върна."
+
+msgid ""
+"The notice will be sent only once to each person that sends you mail, and "
+"will not be sent to a mailing list address."
+msgstr ""
+"Бележката ще бъде изпратена само един път на всеки човек, който е изпратил "
+"поща, и няма да бъде пратена на пощенски списъци."
+
+#, fuzzy
+msgid "Subject:"
+msgstr "Тема"
+
+#, fuzzy
+msgid "Optional subject of the vacation message."
+msgstr "отговаряне със следното писмо за отпуск: "
+
+#, fuzzy
+msgid "Your Addresses:"
+msgstr "Адрес %s"
+
+msgid ""
+"A vacation / autorespond message will be sent only if an email is sent "
+"explicitly to one of these addresses."
+msgstr ""
+
+#, fuzzy
+msgid "Days:"
+msgstr "дни"
+
+msgid "days"
+msgstr "дни"
+
+msgid ""
+"A vacation / autorespond message will not be resent to the same address, "
+"within this number of days."
+msgstr ""
+
+#, fuzzy
+msgid "Message:"
+msgstr "Съобщение"
+
+msgid "The number of days between vacation messages must be a positive number."
+msgstr ""
+"Броят на дните между писмата за отпуска трябва да бъде положително число."
+
+#, fuzzy
+msgid "Date"
+msgstr "Клониране"
+
+msgid "Received"
+msgstr ""
+
+#, fuzzy
+msgid "Year"
+msgstr "Хедър"
+
+msgid "Month"
+msgstr ""
+
+#, fuzzy
+msgid "Day"
+msgstr "дни"
+
+msgid "Weekday"
+msgstr ""
+
+#, fuzzy
+msgid "Hour"
+msgstr "или"
+
+msgid "Minute"
+msgstr ""
+
+#, fuzzy
+msgid "Second"
+msgstr "Изпращач"
+
+#, fuzzy
+msgid "Sunday"
+msgstr "дни"
+
+#, fuzzy
+msgid "Monday"
+msgstr "Текст"
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Wednesday"
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+#, fuzzy
+msgid "Friday"
+msgstr "дни"
+
+msgid "Saturday"
+msgstr ""
+
+msgid "Is"
+msgstr ""
+
+msgid "Before (&lt;=)"
+msgstr ""
+
+msgid "After (=&gt;)"
+msgstr ""
+
+msgid "Before (&lt;)"
+msgstr ""
+
+msgid "After (&gt;)"
+msgstr ""
+
+msgid "January"
+msgstr ""
+
+msgid "February"
+msgstr ""
+
+msgid "March"
+msgstr ""
+
+msgid "April"
+msgstr ""
+
+msgid "May"
+msgstr ""
+
+#, fuzzy
+msgid "June"
+msgstr "Junk"
+
+msgid "July"
+msgstr ""
+
+msgid "August"
+msgstr ""
+
+msgid "September"
+msgstr ""
+
+msgid "October"
+msgstr ""
+
+msgid "November"
+msgstr ""
+
+msgid "December"
+msgstr ""
+
+msgid "Occurence"
+msgstr ""
+
+msgid "Specific Date"
+msgstr ""
+
+msgid "Specific Time"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "of header %s"
+msgstr "хедърът %s"
+
+msgid "Current date / time:"
+msgstr ""
+
+#, fuzzy
+msgid "Current date:"
+msgstr "Създаден на:"
+
+#, fuzzy
+msgid "message header"
+msgstr "текстът на писмо"
+
+#, fuzzy
+msgid "Message header"
+msgstr "Филтри за писма"
+
+#, fuzzy, php-format
+msgid "is %s"
+msgstr "Редактиране"
+
+msgid "is"
+msgstr "е"
+
+#, php-format
+msgid "is before than %s (inclusive)"
+msgstr ""
+
+#, php-format
+msgid "is after than %s (inclusive)"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "is before than %s"
+msgstr "е по-малка от"
+
+#, fuzzy, php-format
+msgid "is after than %s"
+msgstr "е по-голяма от"
+
+#, php-format
+msgid "&quot;%s&quot;"
+msgstr ""
+
+#, php-format
+msgid "&quot;<tt>%s:</tt>&quot;"
+msgstr ""
 
 msgid "AND (Every item must match)"
 msgstr "И (Всички елементи трябва да съвпадат)"
@@ -203,6 +700,12 @@ msgstr ""
 "Извършване на действие върху писмо в зависимост от неговото съдържание "
 "(текст в тялото)"
 
+#, fuzzy
+msgid ""
+"Perform an action on messages depending on date or time related to the "
+"message."
+msgstr "Извършване на действие върху писмо в зависимост от неговата големина."
+
 msgid "All"
 msgstr "Всички"
 
@@ -214,9 +717,6 @@ msgstr "съдържа"
 
 msgid "does not contain"
 msgstr "не съдържа"
-
-msgid "is"
-msgstr "е"
 
 msgid "is not"
 msgstr "не е"
@@ -320,9 +820,6 @@ msgstr ""
 "Съхраняване на писмата със СПАМ във Вашата папка Trash. Ще трябва сам да си "
 "изчиствате папката."
 
-msgid "Discard"
-msgstr "Изхвърляне"
-
 msgid ""
 "Discard SPAM message. You will get no indication that the message ever "
 "arrived."
@@ -412,12 +909,6 @@ msgid ""
 msgstr ""
 "Писмата, които съвпадат с кое да е от тези правила на хедъри, никога няма да "
 "попадат в папката Junk или да бъдат считани за СПАМ."
-
-msgid "STOP"
-msgstr "Спиране"
-
-msgid "If this rule matches, do not check any rules after it."
-msgstr "Ако това правило съвпада, да не се проверяват последващите правила."
 
 msgid "Apply Changes"
 msgstr "Прилагане на промените"
@@ -562,6 +1053,37 @@ msgstr ""
 "Следното действие ще бъде прилагано върху <strong>всички</strong> входящи "
 "писма, които не съвпадат с някое от предните правила."
 
+msgid "1st"
+msgstr ""
+
+#, fuzzy
+msgid "2nd"
+msgstr "и"
+
+msgid "3rd"
+msgstr ""
+
+msgid "4th"
+msgstr ""
+
+msgid "5th"
+msgstr ""
+
+msgid "6th"
+msgstr ""
+
+msgid "7th"
+msgstr ""
+
+msgid "8th"
+msgstr ""
+
+msgid "9th"
+msgstr ""
+
+msgid "from the end"
+msgstr ""
+
 msgid "Choose what to do when this rule triggers, from one of the following:"
 msgstr ""
 "Измежду следните възможности, изберете какво да се случи, когато това "
@@ -678,9 +1200,6 @@ msgstr "Наистина ли да се изтрие това правило?"
 
 msgid "Enable"
 msgstr "Активиране"
-
-msgid "Disable"
-msgstr "Деактивиране"
 
 msgid ""
 "When you are done, please click the button below to return to your webmail."
@@ -804,181 +1323,6 @@ msgstr ""
 msgid "These search expressions are not applicable during message delivery."
 msgstr ""
 
-#, fuzzy
-msgid "Keep Message"
-msgstr "Съобщение"
-
-msgid "Save the message in your INBOX."
-msgstr ""
-
-msgid "Silently discards the message; use with caution."
-msgstr ""
-
-msgid "Reject"
-msgstr "Отхвърляне"
-
-msgid "Send the message back to the sender, along with an excuse"
-msgstr ""
-
-msgid "Please do not send me large attachments."
-msgstr "Моля, не ми изпращайте големи притурки."
-
-#, fuzzy
-msgid "Redirect"
-msgstr "Пренасочване към"
-
-msgid "Automatically redirect the message to a different email address"
-msgstr ""
-
-msgid "someone@example.org"
-msgstr "someone@example.org"
-
-msgid "Keep a local copy as well."
-msgstr "Също така със запазване на локално копие."
-
-msgid ""
-"Incorrect email address(es). You must enter one or more valid email "
-"addresses, separated by comma."
-msgstr ""
-"Неправилен пощенски адрес(и). Трябва да въведете един или повече валидни "
-"пощенски адреси, разделени със запетая."
-
-#, fuzzy
-msgid "Move to Folder"
-msgstr "Преместване в началото"
-
-#, php-format
-msgid "Or specify a new folder: %s to be created under %s"
-msgstr ""
-
-msgid "Vacation"
-msgstr "Отпуска"
-
-msgid ""
-"This is an automated reply; I am away and will not be able to reply to you "
-"immediately."
-msgstr ""
-"Това е автоматичен отговор; Далеч съм и не мога да Ви отговоря веднага."
-
-msgid "I will get back to you as soon as I return."
-msgstr "Ще Ви обърна внимание скоро след като се върна."
-
-msgid ""
-"The notice will be sent only once to each person that sends you mail, and "
-"will not be sent to a mailing list address."
-msgstr ""
-"Бележката ще бъде изпратена само един път на всеки човек, който е изпратил "
-"поща, и няма да бъде пратена на пощенски списъци."
-
-#, fuzzy
-msgid "Subject:"
-msgstr "Тема"
-
-#, fuzzy
-msgid "Optional subject of the vacation message."
-msgstr "отговаряне със следното писмо за отпуск: "
-
-#, fuzzy
-msgid "Your Addresses:"
-msgstr "Адрес %s"
-
-msgid ""
-"A vacation message will be sent only if an email is sent explicitly to one "
-"of these addresses."
-msgstr ""
-
-#, fuzzy
-msgid "Days:"
-msgstr "дни"
-
-msgid "days"
-msgstr "дни"
-
-msgid ""
-"A vacation message will not be resent to the same address, within this "
-"number of days."
-msgstr ""
-
-#, fuzzy
-msgid "Message:"
-msgstr "Съобщение"
-
-msgid "The number of days between vacation messages must be a positive number."
-msgstr ""
-"Броят на дните между писмата за отпуска трябва да бъде положително число."
-
-#, fuzzy
-msgid "Notify"
-msgstr "Уведомяване на %s"
-
-#, fuzzy
-msgid "Send a notification "
-msgstr "Уведомяване по поща"
-
-msgid "Mobile Phone Message (SMS)"
-msgstr "Съобщение до мобилен телефон (SMS)"
-
-msgid "Email notification"
-msgstr "Уведомяване по поща"
-
-msgid "Notification via Zephyr"
-msgstr "Уведомяване през Zephyr"
-
-msgid "Notification via ICQ"
-msgstr "Уведомяване през ICQ"
-
-msgid "Method"
-msgstr ""
-
-msgid "Notification ID"
-msgstr "Идентификатор на уведомяване"
-
-msgid "Destination"
-msgstr "Местоназначение"
-
-msgid "Priority"
-msgstr ""
-
-msgid "Message"
-msgstr "Съобщение"
-
-msgid "Help: Valid variables are:"
-msgstr "Помощ: Валидни променливи са:"
-
-msgid "Also keep copy in INBOX, marked as deleted."
-msgstr "Също така със запазване на копие в INBOX, отбелязано като изтрито."
-
-msgid "The rule will have no effect for as long as it is disabled."
-msgstr "Това правило няма да има ефект, докато е деактивирано."
-
-#, fuzzy
-msgid "Move to Junk"
-msgstr "Преместване в началото"
-
-#, fuzzy, php-format
-msgid ""
-"Store message in your Junk Folder. Messages older than %s days will be "
-"deleted automatically."
-msgstr ""
-"Съхраняване на писмата със СПАМ във Вашата папка Junk. Писмата по-стари от %"
-"s дни ще бъдат автоматично изтривани."
-
-msgid "Note that you can set the number of days in Folder Preferences."
-msgstr ""
-"Забележете, че можете да задавате броя на дните в настройките на папката."
-
-#, fuzzy
-msgid "Move to Trash"
-msgstr "Преместване в началото"
-
-#, fuzzy
-msgid ""
-"Store message in your Trash Folder. You will have to purge the folder "
-"yourself."
-msgstr ""
-"Съхраняване на писмата със СПАМ във Вашата папка Trash. Ще трябва сам да си "
-"изчиствате папката."
-
 msgid ""
 "All messages considered as <strong>SPAM</strong> (unsolicited commercial "
 "messages)"
@@ -1016,9 +1360,6 @@ msgstr "ще бъде"
 
 msgid "stored in the Junk Folder."
 msgstr "съхранен в папка Junk."
-
-msgid "Junk"
-msgstr "Junk"
 
 msgid "stored in the Trash Folder."
 msgstr "съхранен в папка Trash"
@@ -1114,6 +1455,20 @@ msgstr "Адрес %s"
 msgid "message body"
 msgstr "текстът на писмо"
 
+#, php-format
+msgid "index number %s"
+msgstr ""
+
+#, php-format
+msgid "index #%s"
+msgstr ""
+
+msgid "(counting from last header)"
+msgstr ""
+
+msgid "(from end)"
+msgstr ""
+
 #, fuzzy
 msgid "matches the regular expression"
 msgstr "съвпада с регулярния израз"
@@ -1158,6 +1513,10 @@ msgstr "За <strong>ВСИЧКИ</strong> входящи писма; "
 msgid "ALL"
 msgstr "ВСИЧКИ"
 
+#, fuzzy
+msgid "always"
+msgstr "дни"
+
 msgid "and"
 msgstr "и"
 
@@ -1200,11 +1559,9 @@ msgstr "Записване в %s"
 msgid "(Warning: Folder not available)"
 msgstr "(Внимание: Папката не съществува)"
 
-msgid "reply with this vacation message: "
+#, fuzzy, php-format
+msgid "reply with a vacation / autoresponder message: "
 msgstr "отговаряне със следното писмо за отпуск: "
-
-msgid "Vacation Message"
-msgstr "Писмо за отпуск"
 
 msgid "Also keep a local copy."
 msgstr "Също така запазване на локално копие."
@@ -1246,6 +1603,9 @@ msgstr "Невалидно име на папка. Моля, изберете р
 
 msgid "None"
 msgstr "Няма"
+
+#~ msgid "Vacation"
+#~ msgstr "Отпуска"
 
 #~ msgid "Addresses: Only reply if sent to these addresses:"
 #~ msgstr "Адреси: Отговаряне само при изпращане до следните адреси:"

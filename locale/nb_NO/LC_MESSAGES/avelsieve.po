@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: avelsieve\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-04 15:51+0300\n"
+"POT-Creation-Date: 2009-05-29 11:16+0300\n"
 "PO-Revision-Date: 2005-03-30 09:36+0100\n"
 "Last-Translator: Hans Fredrik Nordhaug <hans@nordhaug.priv.no>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
@@ -55,8 +55,44 @@ msgstr ""
 "tilbake- og framover-knapper for &aring; lage en regel."
 
 #, fuzzy
+msgid "Display and Edit"
+msgstr "Vis som:"
+
+msgid ""
+"Shows a table of the mail filtering rules of this script and allows editing "
+"of them."
+msgstr ""
+
+msgid "Save Locally / Backup"
+msgstr ""
+
+msgid ""
+"Retrieve the mail filtering script from the Sieve server to your computer."
+msgstr ""
+
+msgid "Set as Filtering script for a Shared Folder"
+msgstr ""
+
+msgid ""
+"Activates this script, for all email received directly to a shared folder."
+msgstr ""
+
+#, fuzzy
 msgid "Mail Filtering Scripts"
 msgstr "N&aring;v&aelig;rende regler"
+
+msgid "Script Name"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+#, fuzzy
+msgid "Actions"
+msgstr "Utf&oslash;relse"
+
+msgid "Initial / Predefined script"
+msgstr ""
 
 msgid "Message Filters"
 msgstr "Meldingsfilter"
@@ -102,6 +138,16 @@ msgstr ""
 msgid "The entered position, %s, is greater than the current number of rules."
 msgstr ""
 
+msgid "Message"
+msgstr "Melding"
+
+msgid "Current Date / Time"
+msgstr ""
+
+#, fuzzy
+msgid "Always"
+msgstr "dager"
+
 msgid "Could not get SIEVE script from your IMAP server"
 msgstr "Kunne ikke hente SIEVE regelsettet fra IMAP-tjeneren din."
 
@@ -128,6 +174,453 @@ msgstr "Kunne ikke logge p&aring; timsieved nissen p&aring; din IMAP-tjener"
 
 msgid "Server responded with:"
 msgstr "Tjener svarte med:"
+
+msgid "Disable"
+msgstr "Deaktiver"
+
+msgid "The rule will have no effect for as long as it is disabled."
+msgstr "Regelen vil ikke ha noen effekt s&aring; lenge den er deaktivert."
+
+msgid "Discard"
+msgstr "Kassér"
+
+msgid "Silently discards the message; use with caution."
+msgstr ""
+
+#, fuzzy
+msgid "Move to Folder"
+msgstr "Flytt til toppen"
+
+#, php-format
+msgid "Or specify a new folder: %s to be created under %s"
+msgstr ""
+
+msgid "Flag"
+msgstr ""
+
+msgid "Set message flags"
+msgstr ""
+
+msgid "Standard Flags"
+msgstr ""
+
+#, fuzzy
+msgid "Message Labels"
+msgstr "Meldingsfilter"
+
+msgid "Custom Flags"
+msgstr ""
+
+#, fuzzy
+msgid "Seen"
+msgstr "Avsender"
+
+msgid "Answered"
+msgstr ""
+
+msgid "Flagged"
+msgstr ""
+
+#, fuzzy
+msgid "Deleted"
+msgstr "Slett"
+
+msgid "Draft"
+msgstr ""
+
+msgid "Important"
+msgstr ""
+
+#, fuzzy
+msgid "Work"
+msgstr "eller"
+
+msgid "Personal"
+msgstr ""
+
+#, fuzzy
+msgid "To Do"
+msgstr "To eller Cc"
+
+#, fuzzy
+msgid "Later"
+msgstr "Konsist"
+
+msgid "Junk"
+msgstr "Skrap"
+
+#, fuzzy
+msgid "Not Junk"
+msgstr "Flytt til toppen"
+
+#, php-format
+msgid "Also, set message flag %s"
+msgstr ""
+
+#, php-format
+msgid "Also, set message flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Set (replace) flags as the current set: %s"
+msgstr ""
+
+#, php-format
+msgid "Set (replace) flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Add flags to current set: %s"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "Add flags: %s"
+msgstr "Legg til en ny regel"
+
+#, php-format
+msgid "Remove flags from current set: %s"
+msgstr ""
+
+#, php-format
+msgid "Remove flags: %s"
+msgstr ""
+
+msgid ""
+"Enter here a list of flags separated by spaces. Example: <tt>$MyFlag "
+"$Special</tt>"
+msgstr ""
+
+#, fuzzy
+msgid "Move to Junk"
+msgstr "Flytt til toppen"
+
+#, fuzzy, php-format
+msgid ""
+"Store message in your Junk Folder. Messages older than %s days will be "
+"deleted automatically."
+msgstr ""
+"Lagre søppelmeldinger i din skrapmappe. Meldinger eldre enn %s dager vil bli "
+"slettet automatisk."
+
+msgid "Note that you can set the number of days in Folder Preferences."
+msgstr "Merk at du kan sette antall dager i mappevalg."
+
+#, fuzzy
+msgid "Keep Message"
+msgstr "Melding"
+
+msgid "Save the message in your INBOX."
+msgstr ""
+
+msgid "Also keep copy in INBOX, marked as deleted."
+msgstr "Behold ogs&aring; en kopi i Innboksen, merket som slettet."
+
+#, fuzzy
+msgid "Notify"
+msgstr "Varsle %s"
+
+#, fuzzy
+msgid "Send a notification "
+msgstr "Melding via epost"
+
+msgid "Mobile Phone Message (SMS)"
+msgstr "Melding til mobiltelefon (SMS)"
+
+msgid "Email notification"
+msgstr "Melding via epost"
+
+msgid "Notification via Zephyr"
+msgstr "Melding via Zephyr"
+
+msgid "Notification via ICQ"
+msgstr "Melding via ICQ"
+
+msgid "Method"
+msgstr ""
+
+msgid "Notification ID"
+msgstr "Meldings-ID"
+
+msgid "Destination"
+msgstr "Sluttpunkt"
+
+msgid "Priority"
+msgstr ""
+
+msgid "Help: Valid variables are:"
+msgstr "Hjelp: Gyldige variabler er:"
+
+#, fuzzy
+msgid "Redirect"
+msgstr "Send videre til"
+
+msgid "Automatically redirect the message to a different email address"
+msgstr ""
+
+msgid "someone@example.org"
+msgstr "noen@eksempel.no"
+
+msgid "Keep a local copy as well."
+msgstr "Behold en lokal kopi også."
+
+#, fuzzy
+msgid ""
+"Incorrect email address(es). You must enter one or more valid email "
+"addresses, separated by comma."
+msgstr "Ugyldig e-postadresse. Du må oppgi kun en gyldig e-postadresse."
+
+msgid "Reject"
+msgstr "Avvis"
+
+msgid "Send the message back to the sender, along with an excuse"
+msgstr ""
+
+msgid "Please do not send me large attachments."
+msgstr "Vennligst ikke send meg store vedlegg."
+
+msgid "If this rule matches, do not check any rules after it."
+msgstr "Hvis denne regelen blir gjort gjeldende, ikke sjekk flere regler."
+
+msgid "STOP"
+msgstr "STOPP"
+
+#, fuzzy
+msgid "Move to Trash"
+msgstr "Flytt til toppen"
+
+#, fuzzy
+msgid ""
+"Store message in your Trash Folder. You will have to purge the folder "
+"yourself."
+msgstr "Lagre søppelmeldinger i din søppelmappe. Du må tømme mappen selv.."
+
+#, fuzzy
+msgid "Vacation / Autoresponder"
+msgstr "Ferie/borte/automatisk beskjed"
+
+msgid ""
+"This is an automated reply; I am away and will not be able to reply to you "
+"immediately."
+msgstr ""
+"Dette er et automatisk svar; Jeg er ikke tilgjengelig og har ikke anledning "
+"til &aring; svare deg med en gang."
+
+msgid "I will get back to you as soon as I return."
+msgstr "Jeg gir svar p&aring; din epost s&aring; snart jeg er tilbake."
+
+msgid ""
+"The notice will be sent only once to each person that sends you mail, and "
+"will not be sent to a mailing list address."
+msgstr ""
+"Denne meldingen vil bli sendt bare en gang til hver person som sender deg "
+"epost, og vil ikke bli sendt til epostlister."
+
+#, fuzzy
+msgid "Subject:"
+msgstr "Emne"
+
+#, fuzzy
+msgid "Optional subject of the vacation message."
+msgstr "svar med denne automatisk-svar-meldingen:"
+
+#, fuzzy
+msgid "Your Addresses:"
+msgstr "Stemmer med epost-adresse"
+
+msgid ""
+"A vacation / autorespond message will be sent only if an email is sent "
+"explicitly to one of these addresses."
+msgstr ""
+
+#, fuzzy
+msgid "Days:"
+msgstr "dager"
+
+msgid "days"
+msgstr "dager"
+
+msgid ""
+"A vacation / autorespond message will not be resent to the same address, "
+"within this number of days."
+msgstr ""
+
+#, fuzzy
+msgid "Message:"
+msgstr "Melding"
+
+msgid "The number of days between vacation messages must be a positive number."
+msgstr ""
+
+#, fuzzy
+msgid "Date"
+msgstr "Duplisere"
+
+msgid "Received"
+msgstr ""
+
+#, fuzzy
+msgid "Year"
+msgstr "Avsender"
+
+msgid "Month"
+msgstr ""
+
+#, fuzzy
+msgid "Day"
+msgstr "dager"
+
+msgid "Weekday"
+msgstr ""
+
+#, fuzzy
+msgid "Hour"
+msgstr "eller"
+
+msgid "Minute"
+msgstr ""
+
+#, fuzzy
+msgid "Second"
+msgstr "Avsender"
+
+#, fuzzy
+msgid "Sunday"
+msgstr "dager"
+
+#, fuzzy
+msgid "Monday"
+msgstr "dager"
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Wednesday"
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+#, fuzzy
+msgid "Friday"
+msgstr "dager"
+
+msgid "Saturday"
+msgstr ""
+
+msgid "Is"
+msgstr ""
+
+msgid "Before (&lt;=)"
+msgstr ""
+
+msgid "After (=&gt;)"
+msgstr ""
+
+msgid "Before (&lt;)"
+msgstr ""
+
+msgid "After (&gt;)"
+msgstr ""
+
+msgid "January"
+msgstr ""
+
+msgid "February"
+msgstr ""
+
+msgid "March"
+msgstr ""
+
+msgid "April"
+msgstr ""
+
+msgid "May"
+msgstr ""
+
+#, fuzzy
+msgid "June"
+msgstr "Skrap"
+
+msgid "July"
+msgstr ""
+
+msgid "August"
+msgstr ""
+
+msgid "September"
+msgstr ""
+
+msgid "October"
+msgstr ""
+
+msgid "November"
+msgstr ""
+
+msgid "December"
+msgstr ""
+
+msgid "Occurence"
+msgstr ""
+
+msgid "Specific Date"
+msgstr ""
+
+msgid "Specific Time"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "of header %s"
+msgstr "meldingshodet"
+
+msgid "Current date / time:"
+msgstr ""
+
+#, fuzzy
+msgid "Current date:"
+msgstr "Opprettet:"
+
+#, fuzzy
+msgid "message header"
+msgstr "Melding"
+
+#, fuzzy
+msgid "Message header"
+msgstr "Meldingsfilter"
+
+#, fuzzy, php-format
+msgid "is %s"
+msgstr "Editere"
+
+msgid "is"
+msgstr "er"
+
+#, php-format
+msgid "is before than %s (inclusive)"
+msgstr ""
+
+#, php-format
+msgid "is after than %s (inclusive)"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "is before than %s"
+msgstr "er lavere enn"
+
+#, fuzzy, php-format
+msgid "is after than %s"
+msgstr "er st&oslash;rre enn"
+
+#, php-format
+msgid "&quot;%s&quot;"
+msgstr ""
+
+#, php-format
+msgid "&quot;<tt>%s:</tt>&quot;"
+msgstr ""
 
 msgid "AND (Every item must match)"
 msgstr "OG (Alle punktene m&aring; eksistere)"
@@ -209,6 +702,14 @@ msgstr ""
 msgid "Perform an action on messages depending on their content (body text)."
 msgstr "Utf&oslash;r en handling p&aring; meldinger avhengig av deres innhold."
 
+#, fuzzy
+msgid ""
+"Perform an action on messages depending on date or time related to the "
+"message."
+msgstr ""
+"Utf&oslash;r en handling p&aring; meldingen avhengig av dens st&oslash;"
+"rrelse."
+
 msgid "All"
 msgstr ""
 
@@ -222,9 +723,6 @@ msgstr "inneholder"
 
 msgid "does not contain"
 msgstr "inneholder ikke"
-
-msgid "is"
-msgstr "er"
 
 msgid "is not"
 msgstr "er ikke"
@@ -326,9 +824,6 @@ msgid ""
 "yourself."
 msgstr "Lagre søppelmeldinger i din søppelmappe. Du må tømme mappen selv.."
 
-msgid "Discard"
-msgstr "Kassér"
-
 msgid ""
 "Discard SPAM message. You will get no indication that the message ever "
 "arrived."
@@ -417,12 +912,6 @@ msgid ""
 msgstr ""
 "Meldinger som samsvarer med noen av disse hodereglene vil aldri enda opp i "
 "søppelmapper eller bli betraktet som søppelpost."
-
-msgid "STOP"
-msgstr "STOPP"
-
-msgid "If this rule matches, do not check any rules after it."
-msgstr "Hvis denne regelen blir gjort gjeldende, ikke sjekk flere regler."
 
 msgid "Apply Changes"
 msgstr "Utf&oslash;r endringer"
@@ -567,6 +1056,37 @@ msgstr ""
 "De f&oslash;lgende metodene vil bli utf&oslash;rt p&aring; <strong>alle</"
 "strong> innkommende meldinger som ikke er ber&oslash;rt av tidligere regler."
 
+msgid "1st"
+msgstr ""
+
+#, fuzzy
+msgid "2nd"
+msgstr "og"
+
+msgid "3rd"
+msgstr ""
+
+msgid "4th"
+msgstr ""
+
+msgid "5th"
+msgstr ""
+
+msgid "6th"
+msgstr ""
+
+msgid "7th"
+msgstr ""
+
+msgid "8th"
+msgstr ""
+
+msgid "9th"
+msgstr ""
+
+msgid "from the end"
+msgstr ""
+
 msgid "Choose what to do when this rule triggers, from one of the following:"
 msgstr ""
 "Velg hva som skal utf&oslash;res n&aring;r denne regelen blir gjort "
@@ -679,9 +1199,6 @@ msgstr "Vil du virkelig slette denne regelen?"
 
 msgid "Enable"
 msgstr "Aktiver"
-
-msgid "Disable"
-msgstr "Deaktiver"
 
 msgid ""
 "When you are done, please click the button below to return to your webmail."
@@ -805,177 +1322,6 @@ msgstr ""
 msgid "These search expressions are not applicable during message delivery."
 msgstr ""
 
-#, fuzzy
-msgid "Keep Message"
-msgstr "Melding"
-
-msgid "Save the message in your INBOX."
-msgstr ""
-
-msgid "Silently discards the message; use with caution."
-msgstr ""
-
-msgid "Reject"
-msgstr "Avvis"
-
-msgid "Send the message back to the sender, along with an excuse"
-msgstr ""
-
-msgid "Please do not send me large attachments."
-msgstr "Vennligst ikke send meg store vedlegg."
-
-#, fuzzy
-msgid "Redirect"
-msgstr "Send videre til"
-
-msgid "Automatically redirect the message to a different email address"
-msgstr ""
-
-msgid "someone@example.org"
-msgstr "noen@eksempel.no"
-
-msgid "Keep a local copy as well."
-msgstr "Behold en lokal kopi også."
-
-#, fuzzy
-msgid ""
-"Incorrect email address(es). You must enter one or more valid email "
-"addresses, separated by comma."
-msgstr "Ugyldig e-postadresse. Du må oppgi kun en gyldig e-postadresse."
-
-#, fuzzy
-msgid "Move to Folder"
-msgstr "Flytt til toppen"
-
-#, php-format
-msgid "Or specify a new folder: %s to be created under %s"
-msgstr ""
-
-msgid "Vacation"
-msgstr "Ferie/borte/automatisk svar"
-
-msgid ""
-"This is an automated reply; I am away and will not be able to reply to you "
-"immediately."
-msgstr ""
-"Dette er et automatisk svar; Jeg er ikke tilgjengelig og har ikke anledning "
-"til &aring; svare deg med en gang."
-
-msgid "I will get back to you as soon as I return."
-msgstr "Jeg gir svar p&aring; din epost s&aring; snart jeg er tilbake."
-
-msgid ""
-"The notice will be sent only once to each person that sends you mail, and "
-"will not be sent to a mailing list address."
-msgstr ""
-"Denne meldingen vil bli sendt bare en gang til hver person som sender deg "
-"epost, og vil ikke bli sendt til epostlister."
-
-#, fuzzy
-msgid "Subject:"
-msgstr "Emne"
-
-#, fuzzy
-msgid "Optional subject of the vacation message."
-msgstr "svar med denne automatisk-svar-meldingen:"
-
-#, fuzzy
-msgid "Your Addresses:"
-msgstr "Stemmer med epost-adresse"
-
-msgid ""
-"A vacation message will be sent only if an email is sent explicitly to one "
-"of these addresses."
-msgstr ""
-
-#, fuzzy
-msgid "Days:"
-msgstr "dager"
-
-msgid "days"
-msgstr "dager"
-
-msgid ""
-"A vacation message will not be resent to the same address, within this "
-"number of days."
-msgstr ""
-
-#, fuzzy
-msgid "Message:"
-msgstr "Melding"
-
-msgid "The number of days between vacation messages must be a positive number."
-msgstr ""
-
-#, fuzzy
-msgid "Notify"
-msgstr "Varsle %s"
-
-#, fuzzy
-msgid "Send a notification "
-msgstr "Melding via epost"
-
-msgid "Mobile Phone Message (SMS)"
-msgstr "Melding til mobiltelefon (SMS)"
-
-msgid "Email notification"
-msgstr "Melding via epost"
-
-msgid "Notification via Zephyr"
-msgstr "Melding via Zephyr"
-
-msgid "Notification via ICQ"
-msgstr "Melding via ICQ"
-
-msgid "Method"
-msgstr ""
-
-msgid "Notification ID"
-msgstr "Meldings-ID"
-
-msgid "Destination"
-msgstr "Sluttpunkt"
-
-msgid "Priority"
-msgstr ""
-
-msgid "Message"
-msgstr "Melding"
-
-msgid "Help: Valid variables are:"
-msgstr "Hjelp: Gyldige variabler er:"
-
-msgid "Also keep copy in INBOX, marked as deleted."
-msgstr "Behold ogs&aring; en kopi i Innboksen, merket som slettet."
-
-msgid "The rule will have no effect for as long as it is disabled."
-msgstr "Regelen vil ikke ha noen effekt s&aring; lenge den er deaktivert."
-
-#, fuzzy
-msgid "Move to Junk"
-msgstr "Flytt til toppen"
-
-#, fuzzy, php-format
-msgid ""
-"Store message in your Junk Folder. Messages older than %s days will be "
-"deleted automatically."
-msgstr ""
-"Lagre søppelmeldinger i din skrapmappe. Meldinger eldre enn %s dager vil bli "
-"slettet automatisk."
-
-msgid "Note that you can set the number of days in Folder Preferences."
-msgstr "Merk at du kan sette antall dager i mappevalg."
-
-#, fuzzy
-msgid "Move to Trash"
-msgstr "Flytt til toppen"
-
-#, fuzzy
-msgid ""
-"Store message in your Trash Folder. You will have to purge the folder "
-"yourself."
-msgstr "Lagre søppelmeldinger i din søppelmappe. Du må tømme mappen selv.."
-
 msgid ""
 "All messages considered as <strong>SPAM</strong> (unsolicited commercial "
 "messages)"
@@ -1012,9 +1358,6 @@ msgstr "vil bli"
 
 msgid "stored in the Junk Folder."
 msgstr "lagret i «Junk Folder»-en."
-
-msgid "Junk"
-msgstr "Skrap"
 
 msgid "stored in the Trash Folder."
 msgstr "lagret i «Trash Folder»-en."
@@ -1111,6 +1454,20 @@ msgstr "Stemmer med epost-adresse"
 msgid "message body"
 msgstr "Melding"
 
+#, php-format
+msgid "index number %s"
+msgstr ""
+
+#, php-format
+msgid "index #%s"
+msgstr ""
+
+msgid "(counting from last header)"
+msgstr ""
+
+msgid "(from end)"
+msgstr ""
+
 #, fuzzy
 msgid "matches the regular expression"
 msgstr "samvarer med det regulære uttrykket"
@@ -1155,6 +1512,10 @@ msgstr "For <strong>ALLE</strong> innkommende meldinger;"
 msgid "ALL"
 msgstr "ALT"
 
+#, fuzzy
+msgid "always"
+msgstr "dager"
+
 msgid "and"
 msgstr "og"
 
@@ -1196,11 +1557,9 @@ msgstr "Lagre i %s"
 msgid "(Warning: Folder not available)"
 msgstr ""
 
-msgid "reply with this vacation message: "
+#, fuzzy, php-format
+msgid "reply with a vacation / autoresponder message: "
 msgstr "svar med denne automatisk-svar-meldingen:"
-
-msgid "Vacation Message"
-msgstr "Ferie/borte/automatisk beskjed"
 
 msgid "Also keep a local copy."
 msgstr "Behold en lokal kopi også."
@@ -1241,6 +1600,9 @@ msgstr "Ugyldig mappenavn. Velg et annet navn."
 
 msgid "None"
 msgstr "Ingen"
+
+#~ msgid "Vacation"
+#~ msgstr "Ferie/borte/automatisk svar"
 
 #~ msgid "Addresses: Only reply if sent to these addresses:"
 #~ msgstr "Adresser: Bare svar hvis avsender har sendt til disse adressene:"

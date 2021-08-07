@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: (avelsieve 0.9.7)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-04 15:51+0300\n"
+"POT-Creation-Date: 2009-05-29 11:16+0300\n"
 "PO-Revision-Date: 2003-10-09 19:56+0200\n"
 "Last-Translator: Tomas Kuliavas <tokul@users.sourceforge.net>\n"
 "Language-Team: SquirrelMail I18N Team <squirrelmail-i18n@lists.sourceforge."
@@ -60,8 +60,44 @@ msgstr ""
 "mytgtukais, o ne naršyklės puslapio perkrovimo mygtuku ar komanda."
 
 #, fuzzy
+msgid "Display and Edit"
+msgstr "Parodyti kaip:"
+
+msgid ""
+"Shows a table of the mail filtering rules of this script and allows editing "
+"of them."
+msgstr ""
+
+msgid "Save Locally / Backup"
+msgstr ""
+
+msgid ""
+"Retrieve the mail filtering script from the Sieve server to your computer."
+msgstr ""
+
+msgid "Set as Filtering script for a Shared Folder"
+msgstr ""
+
+msgid ""
+"Activates this script, for all email received directly to a shared folder."
+msgstr ""
+
+#, fuzzy
 msgid "Mail Filtering Scripts"
 msgstr "Esamos pašto filtravimo taisyklės"
+
+msgid "Script Name"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+#, fuzzy
+msgid "Actions"
+msgstr "Veiksmas"
+
+msgid "Initial / Predefined script"
+msgstr ""
 
 msgid "Message Filters"
 msgstr "Žinučių filtrai"
@@ -107,6 +143,16 @@ msgstr ""
 msgid "The entered position, %s, is greater than the current number of rules."
 msgstr ""
 
+msgid "Message"
+msgstr "žinutė"
+
+msgid "Current Date / Time"
+msgstr ""
+
+#, fuzzy
+msgid "Always"
+msgstr "dienos(ų)"
+
 msgid "Could not get SIEVE script from your IMAP server"
 msgstr "Nepavyko gauti SIEVE skripto iš jūsų IMAP serverio"
 
@@ -134,6 +180,445 @@ msgstr "Nepavyko prisijungti prie jūsų IMAP serverio timsieved posistemės"
 
 msgid "Server responded with:"
 msgstr "Serveris atsakė"
+
+msgid "Disable"
+msgstr ""
+
+msgid "The rule will have no effect for as long as it is disabled."
+msgstr ""
+
+msgid "Discard"
+msgstr "Tyliai ištrinti"
+
+msgid "Silently discards the message; use with caution."
+msgstr ""
+
+#, fuzzy
+msgid "Move to Folder"
+msgstr "Peršokti į viršų"
+
+#, php-format
+msgid "Or specify a new folder: %s to be created under %s"
+msgstr ""
+
+msgid "Flag"
+msgstr ""
+
+msgid "Set message flags"
+msgstr ""
+
+msgid "Standard Flags"
+msgstr ""
+
+#, fuzzy
+msgid "Message Labels"
+msgstr "Žinučių filtrai"
+
+msgid "Custom Flags"
+msgstr ""
+
+msgid "Seen"
+msgstr ""
+
+msgid "Answered"
+msgstr ""
+
+msgid "Flagged"
+msgstr ""
+
+#, fuzzy
+msgid "Deleted"
+msgstr "Ištrinti"
+
+msgid "Draft"
+msgstr ""
+
+msgid "Important"
+msgstr ""
+
+msgid "Work"
+msgstr ""
+
+msgid "Personal"
+msgstr ""
+
+msgid "To Do"
+msgstr ""
+
+#, fuzzy
+msgid "Later"
+msgstr "trumpas"
+
+msgid "Junk"
+msgstr ""
+
+#, fuzzy
+msgid "Not Junk"
+msgstr "Peršokti į viršų"
+
+#, php-format
+msgid "Also, set message flag %s"
+msgstr ""
+
+#, php-format
+msgid "Also, set message flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Set (replace) flags as the current set: %s"
+msgstr ""
+
+#, php-format
+msgid "Set (replace) flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Add flags to current set: %s"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "Add flags: %s"
+msgstr "Pridėti naują taisyklę"
+
+#, php-format
+msgid "Remove flags from current set: %s"
+msgstr ""
+
+#, php-format
+msgid "Remove flags: %s"
+msgstr ""
+
+msgid ""
+"Enter here a list of flags separated by spaces. Example: <tt>$MyFlag "
+"$Special</tt>"
+msgstr ""
+
+#, fuzzy
+msgid "Move to Junk"
+msgstr "Peršokti į viršų"
+
+#, fuzzy, php-format
+msgid ""
+"Store message in your Junk Folder. Messages older than %s days will be "
+"deleted automatically."
+msgstr ""
+"Išsaugoti įtartiną žinutę šlamšto aplanke. Žinutės senesnės nei %s diena(ų) "
+"bus trinamos automatiškai."
+
+msgid "Note that you can set the number of days in Folder Preferences."
+msgstr ""
+
+#, fuzzy
+msgid "Keep Message"
+msgstr "žinutė"
+
+msgid "Save the message in your INBOX."
+msgstr ""
+
+msgid "Also keep copy in INBOX, marked as deleted."
+msgstr "Kartu išsaugoti kopiją tarp INBOX, pažymėtą kaip ištrintą."
+
+msgid "Notify"
+msgstr ""
+
+#, fuzzy
+msgid "Send a notification "
+msgstr "Pranešimas į paštą"
+
+msgid "Mobile Phone Message (SMS)"
+msgstr "Pranešimas į mobilų (SMS)"
+
+msgid "Email notification"
+msgstr "Pranešimas į paštą"
+
+msgid "Notification via Zephyr"
+msgstr "Pranešimas per Zephyr sistemą"
+
+msgid "Notification via ICQ"
+msgstr "Pranešimas per ICQ sistemą"
+
+msgid "Method"
+msgstr ""
+
+msgid "Notification ID"
+msgstr "Pranešimo ID"
+
+msgid "Destination"
+msgstr "Adresatas"
+
+msgid "Priority"
+msgstr ""
+
+msgid "Help: Valid variables are:"
+msgstr "Pagalba: Tinkami kintamieji yra:"
+
+msgid "Redirect"
+msgstr ""
+
+msgid "Automatically redirect the message to a different email address"
+msgstr ""
+
+msgid "someone@example.org"
+msgstr "kazkas@example.org"
+
+msgid "Keep a local copy as well."
+msgstr ""
+
+msgid ""
+"Incorrect email address(es). You must enter one or more valid email "
+"addresses, separated by comma."
+msgstr ""
+
+msgid "Reject"
+msgstr ""
+
+msgid "Send the message back to the sender, along with an excuse"
+msgstr ""
+
+msgid "Please do not send me large attachments."
+msgstr "Prašau nesiųsti man didelių priedų."
+
+msgid "If this rule matches, do not check any rules after it."
+msgstr "Jei taisyklė sutampa, nebetikrinti kitų taisyklių."
+
+msgid "STOP"
+msgstr "Sustoti"
+
+#, fuzzy
+msgid "Move to Trash"
+msgstr "Peršokti į viršų"
+
+#, fuzzy
+msgid ""
+"Store message in your Trash Folder. You will have to purge the folder "
+"yourself."
+msgstr ""
+"Išsaugoti įtartiną žinutę šiukšlių aplanke. Jūs turėsite patys ją galutinai "
+"ištrinti."
+
+#, fuzzy
+msgid "Vacation / Autoresponder"
+msgstr "Atostogos"
+
+msgid ""
+"This is an automated reply; I am away and will not be able to reply to you "
+"immediately."
+msgstr ""
+"Tai yra autoatsakiklis. Aš šiuo metu esu toli ir negaliu tuoj pat atsakyti į "
+"jūsų žinutę."
+
+msgid "I will get back to you as soon as I return."
+msgstr "Atsakysiu jums kai tik galėsiu."
+
+msgid ""
+"The notice will be sent only once to each person that sends you mail, and "
+"will not be sent to a mailing list address."
+msgstr ""
+"Perspėjimas bus nusiųstas vieną kartą kiekvienam asmeniui, kuris bandys jums "
+"atsiųsti laišką, bet nebus siunčiamas į susirašinėjimo sąrašus."
+
+msgid "Subject:"
+msgstr ""
+
+#, fuzzy
+msgid "Optional subject of the vacation message."
+msgstr "atsakyti su atostogų žinute: "
+
+#, fuzzy
+msgid "Your Addresses:"
+msgstr "Adreso sutapimas"
+
+msgid ""
+"A vacation / autorespond message will be sent only if an email is sent "
+"explicitly to one of these addresses."
+msgstr ""
+
+#, fuzzy
+msgid "Days:"
+msgstr "dienos(ų)"
+
+msgid "days"
+msgstr "dienos(ų)"
+
+msgid ""
+"A vacation / autorespond message will not be resent to the same address, "
+"within this number of days."
+msgstr ""
+
+#, fuzzy
+msgid "Message:"
+msgstr "žinutė"
+
+msgid "The number of days between vacation messages must be a positive number."
+msgstr ""
+
+#, fuzzy
+msgid "Date"
+msgstr "Dubliuoti"
+
+msgid "Received"
+msgstr ""
+
+#, fuzzy
+msgid "Year"
+msgstr "Antraštės sutapimas"
+
+msgid "Month"
+msgstr ""
+
+#, fuzzy
+msgid "Day"
+msgstr "dienos(ų)"
+
+msgid "Weekday"
+msgstr ""
+
+msgid "Hour"
+msgstr ""
+
+msgid "Minute"
+msgstr ""
+
+msgid "Second"
+msgstr ""
+
+#, fuzzy
+msgid "Sunday"
+msgstr "dienos(ų)"
+
+#, fuzzy
+msgid "Monday"
+msgstr "dienos(ų)"
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Wednesday"
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+#, fuzzy
+msgid "Friday"
+msgstr "dienos(ų)"
+
+msgid "Saturday"
+msgstr ""
+
+msgid "Is"
+msgstr ""
+
+msgid "Before (&lt;=)"
+msgstr ""
+
+msgid "After (=&gt;)"
+msgstr ""
+
+msgid "Before (&lt;)"
+msgstr ""
+
+msgid "After (&gt;)"
+msgstr ""
+
+msgid "January"
+msgstr ""
+
+msgid "February"
+msgstr ""
+
+msgid "March"
+msgstr ""
+
+msgid "April"
+msgstr ""
+
+msgid "May"
+msgstr ""
+
+msgid "June"
+msgstr ""
+
+msgid "July"
+msgstr ""
+
+msgid "August"
+msgstr ""
+
+msgid "September"
+msgstr ""
+
+msgid "October"
+msgstr ""
+
+msgid "November"
+msgstr ""
+
+msgid "December"
+msgstr ""
+
+msgid "Occurence"
+msgstr ""
+
+msgid "Specific Date"
+msgstr ""
+
+msgid "Specific Time"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "of header %s"
+msgstr "antraštė"
+
+msgid "Current date / time:"
+msgstr ""
+
+#, fuzzy
+msgid "Current date:"
+msgstr "Sukurta:"
+
+#, fuzzy
+msgid "message header"
+msgstr "žinutė"
+
+#, fuzzy
+msgid "Message header"
+msgstr "Žinučių filtrai"
+
+#, fuzzy, php-format
+msgid "is %s"
+msgstr "Taisyti"
+
+msgid "is"
+msgstr "yra"
+
+#, php-format
+msgid "is before than %s (inclusive)"
+msgstr ""
+
+#, php-format
+msgid "is after than %s (inclusive)"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "is before than %s"
+msgstr "yra mažesnė nei"
+
+#, fuzzy, php-format
+msgid "is after than %s"
+msgstr "yra didesnė nei"
+
+#, php-format
+msgid "&quot;%s&quot;"
+msgstr ""
+
+#, php-format
+msgid "&quot;<tt>%s:</tt>&quot;"
+msgstr ""
 
 msgid "AND (Every item must match)"
 msgstr "IR (Turi sutapti visi požymiai)"
@@ -215,6 +700,12 @@ msgstr ""
 "Atlikti veiksmus su žinutėmis priklausomai nuo jų turinio (viso žinutės "
 "teksto)."
 
+#, fuzzy
+msgid ""
+"Perform an action on messages depending on date or time related to the "
+"message."
+msgstr "Atlikti veiksmus su žinutėmis priklausomai nuo jų dydžio."
+
 msgid "All"
 msgstr ""
 
@@ -226,9 +717,6 @@ msgstr "turi"
 
 msgid "does not contain"
 msgstr "neturi"
-
-msgid "is"
-msgstr "yra"
 
 msgid "is not"
 msgstr "nėra"
@@ -333,9 +821,6 @@ msgstr ""
 "Išsaugoti įtartiną žinutę šiukšlių aplanke. Jūs turėsite patys ją galutinai "
 "ištrinti."
 
-msgid "Discard"
-msgstr "Tyliai ištrinti"
-
 msgid ""
 "Discard SPAM message. You will get no indication that the message ever "
 "arrived."
@@ -424,12 +909,6 @@ msgid ""
 "Messages that match any of these header rules will never end up in Junk "
 "Folders or regarded as SPAM."
 msgstr ""
-
-msgid "STOP"
-msgstr "Sustoti"
-
-msgid "If this rule matches, do not check any rules after it."
-msgstr "Jei taisyklė sutampa, nebetikrinti kitų taisyklių."
 
 msgid "Apply Changes"
 msgstr "Išsaugoti pakeitimus"
@@ -565,6 +1044,36 @@ msgstr ""
 "Šis veiksmas bus pritaikytas <strong>visoms</strong> atėjusios žinutėms, "
 "kurios neatitiks nei vienos iš ankstesnių taisyklių."
 
+msgid "1st"
+msgstr ""
+
+msgid "2nd"
+msgstr ""
+
+msgid "3rd"
+msgstr ""
+
+msgid "4th"
+msgstr ""
+
+msgid "5th"
+msgstr ""
+
+msgid "6th"
+msgstr ""
+
+msgid "7th"
+msgstr ""
+
+msgid "8th"
+msgstr ""
+
+msgid "9th"
+msgstr ""
+
+msgid "from the end"
+msgstr ""
+
 msgid "Choose what to do when this rule triggers, from one of the following:"
 msgstr "Pasirinkite ką daryti, kai taisyklė suveikia, iš galimų veiksmų: "
 
@@ -676,9 +1185,6 @@ msgid "Really delete selected rules?"
 msgstr "Sėkmingai ištrinta taisyklė Nr."
 
 msgid "Enable"
-msgstr ""
-
-msgid "Disable"
 msgstr ""
 
 msgid ""
@@ -804,175 +1310,6 @@ msgstr ""
 msgid "These search expressions are not applicable during message delivery."
 msgstr ""
 
-#, fuzzy
-msgid "Keep Message"
-msgstr "žinutė"
-
-msgid "Save the message in your INBOX."
-msgstr ""
-
-msgid "Silently discards the message; use with caution."
-msgstr ""
-
-msgid "Reject"
-msgstr ""
-
-msgid "Send the message back to the sender, along with an excuse"
-msgstr ""
-
-msgid "Please do not send me large attachments."
-msgstr "Prašau nesiųsti man didelių priedų."
-
-msgid "Redirect"
-msgstr ""
-
-msgid "Automatically redirect the message to a different email address"
-msgstr ""
-
-msgid "someone@example.org"
-msgstr "kazkas@example.org"
-
-msgid "Keep a local copy as well."
-msgstr ""
-
-msgid ""
-"Incorrect email address(es). You must enter one or more valid email "
-"addresses, separated by comma."
-msgstr ""
-
-#, fuzzy
-msgid "Move to Folder"
-msgstr "Peršokti į viršų"
-
-#, php-format
-msgid "Or specify a new folder: %s to be created under %s"
-msgstr ""
-
-msgid "Vacation"
-msgstr "Atostogos"
-
-msgid ""
-"This is an automated reply; I am away and will not be able to reply to you "
-"immediately."
-msgstr ""
-"Tai yra autoatsakiklis. Aš šiuo metu esu toli ir negaliu tuoj pat atsakyti į "
-"jūsų žinutę."
-
-msgid "I will get back to you as soon as I return."
-msgstr "Atsakysiu jums kai tik galėsiu."
-
-msgid ""
-"The notice will be sent only once to each person that sends you mail, and "
-"will not be sent to a mailing list address."
-msgstr ""
-"Perspėjimas bus nusiųstas vieną kartą kiekvienam asmeniui, kuris bandys jums "
-"atsiųsti laišką, bet nebus siunčiamas į susirašinėjimo sąrašus."
-
-msgid "Subject:"
-msgstr ""
-
-#, fuzzy
-msgid "Optional subject of the vacation message."
-msgstr "atsakyti su atostogų žinute: "
-
-#, fuzzy
-msgid "Your Addresses:"
-msgstr "Adreso sutapimas"
-
-msgid ""
-"A vacation message will be sent only if an email is sent explicitly to one "
-"of these addresses."
-msgstr ""
-
-#, fuzzy
-msgid "Days:"
-msgstr "dienos(ų)"
-
-msgid "days"
-msgstr "dienos(ų)"
-
-msgid ""
-"A vacation message will not be resent to the same address, within this "
-"number of days."
-msgstr ""
-
-#, fuzzy
-msgid "Message:"
-msgstr "žinutė"
-
-msgid "The number of days between vacation messages must be a positive number."
-msgstr ""
-
-msgid "Notify"
-msgstr ""
-
-#, fuzzy
-msgid "Send a notification "
-msgstr "Pranešimas į paštą"
-
-msgid "Mobile Phone Message (SMS)"
-msgstr "Pranešimas į mobilų (SMS)"
-
-msgid "Email notification"
-msgstr "Pranešimas į paštą"
-
-msgid "Notification via Zephyr"
-msgstr "Pranešimas per Zephyr sistemą"
-
-msgid "Notification via ICQ"
-msgstr "Pranešimas per ICQ sistemą"
-
-msgid "Method"
-msgstr ""
-
-msgid "Notification ID"
-msgstr "Pranešimo ID"
-
-msgid "Destination"
-msgstr "Adresatas"
-
-msgid "Priority"
-msgstr ""
-
-msgid "Message"
-msgstr "žinutė"
-
-msgid "Help: Valid variables are:"
-msgstr "Pagalba: Tinkami kintamieji yra:"
-
-msgid "Also keep copy in INBOX, marked as deleted."
-msgstr "Kartu išsaugoti kopiją tarp INBOX, pažymėtą kaip ištrintą."
-
-msgid "The rule will have no effect for as long as it is disabled."
-msgstr ""
-
-#, fuzzy
-msgid "Move to Junk"
-msgstr "Peršokti į viršų"
-
-#, fuzzy, php-format
-msgid ""
-"Store message in your Junk Folder. Messages older than %s days will be "
-"deleted automatically."
-msgstr ""
-"Išsaugoti įtartiną žinutę šlamšto aplanke. Žinutės senesnės nei %s diena(ų) "
-"bus trinamos automatiškai."
-
-msgid "Note that you can set the number of days in Folder Preferences."
-msgstr ""
-
-#, fuzzy
-msgid "Move to Trash"
-msgstr "Peršokti į viršų"
-
-#, fuzzy
-msgid ""
-"Store message in your Trash Folder. You will have to purge the folder "
-"yourself."
-msgstr ""
-"Išsaugoti įtartiną žinutę šiukšlių aplanke. Jūs turėsite patys ją galutinai "
-"ištrinti."
-
 msgid ""
 "All messages considered as <strong>SPAM</strong> (unsolicited commercial "
 "messages)"
@@ -1012,9 +1349,6 @@ msgstr "bus"
 
 msgid "stored in the Junk Folder."
 msgstr "patalpinta Šlamšto aplanke."
-
-msgid "Junk"
-msgstr ""
 
 msgid "stored in the Trash Folder."
 msgstr "patalpinta Šlamšto aplanke."
@@ -1111,6 +1445,20 @@ msgstr "Adreso sutapimas"
 msgid "message body"
 msgstr "žinutė"
 
+#, php-format
+msgid "index number %s"
+msgstr ""
+
+#, php-format
+msgid "index #%s"
+msgstr ""
+
+msgid "(counting from last header)"
+msgstr ""
+
+msgid "(from end)"
+msgstr ""
+
 #, fuzzy
 msgid "matches the regular expression"
 msgstr "atitinka išraišką"
@@ -1155,6 +1503,10 @@ msgstr "<strong>VISOMS</strong> ateinančioms žinutėms; "
 msgid "ALL"
 msgstr ""
 
+#, fuzzy
+msgid "always"
+msgstr "dienos(ų)"
+
 msgid "and"
 msgstr ""
 
@@ -1197,12 +1549,9 @@ msgstr ""
 msgid "(Warning: Folder not available)"
 msgstr ""
 
-msgid "reply with this vacation message: "
+#, fuzzy, php-format
+msgid "reply with a vacation / autoresponder message: "
 msgstr "atsakyti su atostogų žinute: "
-
-#, fuzzy
-msgid "Vacation Message"
-msgstr "Atostogos"
 
 msgid "Also keep a local copy."
 msgstr ""
@@ -1246,6 +1595,9 @@ msgstr "Netinkamas aplanko vardas. Pasirinkite kita"
 #, fuzzy
 msgid "None"
 msgstr "Ne"
+
+#~ msgid "Vacation"
+#~ msgstr "Atostogos"
 
 #~ msgid "Addresses: Only reply if sent to these addresses:"
 #~ msgstr "Adresai: Atsakyti tik nurodytiems adresams:"

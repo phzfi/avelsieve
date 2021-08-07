@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: avelsieve 1.9.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-04 15:51+0300\n"
+"POT-Creation-Date: 2009-05-29 11:16+0300\n"
 "PO-Revision-Date: 2005-02-23 16:28+0100\n"
 "Last-Translator: Marcin Przybylek <smithpl@softnet.waw.pl>\n"
 "Language-Team: Polish <pl_team@softnet.waw.pl>\n"
@@ -56,8 +56,44 @@ msgstr ""
 "budowy regu³y."
 
 #, fuzzy
+msgid "Display and Edit"
+msgstr "Wy¶wietl jako:"
+
+msgid ""
+"Shows a table of the mail filtering rules of this script and allows editing "
+"of them."
+msgstr ""
+
+msgid "Save Locally / Backup"
+msgstr ""
+
+msgid ""
+"Retrieve the mail filtering script from the Sieve server to your computer."
+msgstr ""
+
+msgid "Set as Filtering script for a Shared Folder"
+msgstr ""
+
+msgid ""
+"Activates this script, for all email received directly to a shared folder."
+msgstr ""
+
+#, fuzzy
 msgid "Mail Filtering Scripts"
 msgstr "Aktualne regu³y filtrowania maili"
+
+msgid "Script Name"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+#, fuzzy
+msgid "Actions"
+msgstr "Akcja"
+
+msgid "Initial / Predefined script"
+msgstr ""
 
 msgid "Message Filters"
 msgstr "Filtry wiadomo¶ci"
@@ -102,6 +138,16 @@ msgstr ""
 msgid "The entered position, %s, is greater than the current number of rules."
 msgstr ""
 
+msgid "Message"
+msgstr "Wiadomo¶æ"
+
+msgid "Current Date / Time"
+msgstr ""
+
+#, fuzzy
+msgid "Always"
+msgstr "dni"
+
 msgid "Could not get SIEVE script from your IMAP server"
 msgstr "Nie mogê pobraæ skryptu SIEVE z serwera IMAP"
 
@@ -129,6 +175,452 @@ msgstr "Nie mog³em po³±czyæ siê z demonem Sieve na serwerze IMAP"
 
 msgid "Server responded with:"
 msgstr "Serwer odpowiedzia³ z:"
+
+msgid "Disable"
+msgstr ""
+
+msgid "The rule will have no effect for as long as it is disabled."
+msgstr ""
+
+msgid "Discard"
+msgstr "Opu¶æ"
+
+msgid "Silently discards the message; use with caution."
+msgstr ""
+
+#, fuzzy
+msgid "Move to Folder"
+msgstr "Na pocz±tek"
+
+#, php-format
+msgid "Or specify a new folder: %s to be created under %s"
+msgstr ""
+
+msgid "Flag"
+msgstr ""
+
+msgid "Set message flags"
+msgstr ""
+
+msgid "Standard Flags"
+msgstr ""
+
+#, fuzzy
+msgid "Message Labels"
+msgstr "Filtry wiadomo¶ci"
+
+msgid "Custom Flags"
+msgstr ""
+
+#, fuzzy
+msgid "Seen"
+msgstr "Nadawca"
+
+msgid "Answered"
+msgstr ""
+
+msgid "Flagged"
+msgstr ""
+
+#, fuzzy
+msgid "Deleted"
+msgstr "Borrar"
+
+msgid "Draft"
+msgstr ""
+
+msgid "Important"
+msgstr ""
+
+#, fuzzy
+msgid "Work"
+msgstr "lub"
+
+msgid "Personal"
+msgstr ""
+
+#, fuzzy
+msgid "To Do"
+msgstr "Do: lub DW"
+
+#, fuzzy
+msgid "Later"
+msgstr "zwiêz³y"
+
+msgid "Junk"
+msgstr ""
+
+#, fuzzy
+msgid "Not Junk"
+msgstr "Na pocz±tek"
+
+#, php-format
+msgid "Also, set message flag %s"
+msgstr ""
+
+#, php-format
+msgid "Also, set message flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Set (replace) flags as the current set: %s"
+msgstr ""
+
+#, php-format
+msgid "Set (replace) flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Add flags to current set: %s"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "Add flags: %s"
+msgstr "Dodaj now± regu³e"
+
+#, php-format
+msgid "Remove flags from current set: %s"
+msgstr ""
+
+#, php-format
+msgid "Remove flags: %s"
+msgstr ""
+
+msgid ""
+"Enter here a list of flags separated by spaces. Example: <tt>$MyFlag "
+"$Special</tt>"
+msgstr ""
+
+#, fuzzy
+msgid "Move to Junk"
+msgstr "Na pocz±tek"
+
+#, fuzzy, php-format
+msgid ""
+"Store message in your Junk Folder. Messages older than %s days will be "
+"deleted automatically."
+msgstr ""
+"Zapisz wiadomo¶æ SPAM w Folder-¦mieci. Wiadomo¶ci starsze ni¿ %s bêd± "
+"kasowane automatycznie."
+
+msgid "Note that you can set the number of days in Folder Preferences."
+msgstr "Mo¿esz ustawiæ ilo¶æ dni we w³a¶ciwo¶ciach folderu."
+
+#, fuzzy
+msgid "Keep Message"
+msgstr "Wiadomo¶æ"
+
+msgid "Save the message in your INBOX."
+msgstr ""
+
+msgid "Also keep copy in INBOX, marked as deleted."
+msgstr "Pozostaw kopie tak¿e w INBOX oznaczon± jako skasowana."
+
+msgid "Notify"
+msgstr ""
+
+#, fuzzy
+msgid "Send a notification "
+msgstr "Powiadomienie poprzez email"
+
+msgid "Mobile Phone Message (SMS)"
+msgstr "Telefon GSM (SMS)"
+
+msgid "Email notification"
+msgstr "Powiadomienie poprzez email"
+
+msgid "Notification via Zephyr"
+msgstr "Powiadomienie poprzez Zephyr"
+
+msgid "Notification via ICQ"
+msgstr "Powiadomienie poprzez ICQ"
+
+msgid "Method"
+msgstr ""
+
+msgid "Notification ID"
+msgstr "ID powiadomienia"
+
+msgid "Destination"
+msgstr "Cel"
+
+msgid "Priority"
+msgstr ""
+
+msgid "Help: Valid variables are:"
+msgstr "Pomoc: Poprawne zmienne to: "
+
+#, fuzzy
+msgid "Redirect"
+msgstr "Tytu³"
+
+msgid "Automatically redirect the message to a different email address"
+msgstr ""
+
+msgid "someone@example.org"
+msgstr "ktokolwiek@domena.com"
+
+msgid "Keep a local copy as well."
+msgstr "Zachowaj lokaln± kopie"
+
+msgid ""
+"Incorrect email address(es). You must enter one or more valid email "
+"addresses, separated by comma."
+msgstr ""
+
+#, fuzzy
+msgid "Reject"
+msgstr "Tytu³"
+
+msgid "Send the message back to the sender, along with an excuse"
+msgstr ""
+
+msgid "Please do not send me large attachments."
+msgstr "Proszê, nie wysy³aj do mnie du¿ych za³±czników."
+
+msgid "If this rule matches, do not check any rules after it."
+msgstr "Je¶li ta regu³a pasuje nie sprawdzaj nastêpnych regu³."
+
+msgid "STOP"
+msgstr "PARAR"
+
+#, fuzzy
+msgid "Move to Trash"
+msgstr "Na pocz±tek"
+
+#, fuzzy
+msgid ""
+"Store message in your Trash Folder. You will have to purge the folder "
+"yourself."
+msgstr "Zapisz wiadomo¶æ SPAM w Koszu. Kosz musisz opró¿niæ samodzielnie."
+
+#, fuzzy
+msgid "Vacation / Autoresponder"
+msgstr "Vacation"
+
+msgid ""
+"This is an automated reply; I am away and will not be able to reply to you "
+"immediately."
+msgstr ""
+"To jest automatyczna odpowied¼. Jestem nieobecny, skontaktuje siê jak "
+"najszybciej."
+
+msgid "I will get back to you as soon as I return."
+msgstr "Odpowiem natychmiast po powrocie."
+
+msgid ""
+"The notice will be sent only once to each person that sends you mail, and "
+"will not be sent to a mailing list address."
+msgstr ""
+"To powiadomienie zostanie wys³ane tylko raz do ka¿dej osoby wysy³aj±cej do "
+"ciebie maila."
+
+#, fuzzy
+msgid "Subject:"
+msgstr "Tytu³"
+
+#, fuzzy
+msgid "Optional subject of the vacation message."
+msgstr "odpowiedz z t± Urlopow± wiadomo¶ci±: "
+
+#, fuzzy
+msgid "Your Addresses:"
+msgstr "Pasuj±cy adres"
+
+msgid ""
+"A vacation / autorespond message will be sent only if an email is sent "
+"explicitly to one of these addresses."
+msgstr ""
+
+#, fuzzy
+msgid "Days:"
+msgstr "dni"
+
+msgid "days"
+msgstr "dni"
+
+msgid ""
+"A vacation / autorespond message will not be resent to the same address, "
+"within this number of days."
+msgstr ""
+
+#, fuzzy
+msgid "Message:"
+msgstr "Wiadomo¶æ"
+
+msgid "The number of days between vacation messages must be a positive number."
+msgstr ""
+
+#, fuzzy
+msgid "Date"
+msgstr "Duplikuj"
+
+msgid "Received"
+msgstr ""
+
+#, fuzzy
+msgid "Year"
+msgstr "Nadawca"
+
+msgid "Month"
+msgstr ""
+
+#, fuzzy
+msgid "Day"
+msgstr "dni"
+
+msgid "Weekday"
+msgstr ""
+
+#, fuzzy
+msgid "Hour"
+msgstr "lub"
+
+msgid "Minute"
+msgstr ""
+
+#, fuzzy
+msgid "Second"
+msgstr "Nadawca"
+
+#, fuzzy
+msgid "Sunday"
+msgstr "dni"
+
+#, fuzzy
+msgid "Monday"
+msgstr "dni"
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Wednesday"
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+#, fuzzy
+msgid "Friday"
+msgstr "dni"
+
+msgid "Saturday"
+msgstr ""
+
+msgid "Is"
+msgstr ""
+
+msgid "Before (&lt;=)"
+msgstr ""
+
+msgid "After (=&gt;)"
+msgstr ""
+
+msgid "Before (&lt;)"
+msgstr ""
+
+msgid "After (&gt;)"
+msgstr ""
+
+msgid "January"
+msgstr ""
+
+msgid "February"
+msgstr ""
+
+msgid "March"
+msgstr ""
+
+msgid "April"
+msgstr ""
+
+msgid "May"
+msgstr ""
+
+#, fuzzy
+msgid "June"
+msgstr "chyba ¿e"
+
+msgid "July"
+msgstr ""
+
+msgid "August"
+msgstr ""
+
+msgid "September"
+msgstr ""
+
+msgid "October"
+msgstr ""
+
+msgid "November"
+msgstr ""
+
+msgid "December"
+msgstr ""
+
+msgid "Occurence"
+msgstr ""
+
+msgid "Specific Date"
+msgstr ""
+
+msgid "Specific Time"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "of header %s"
+msgstr "Nag³ówek"
+
+msgid "Current date / time:"
+msgstr ""
+
+#, fuzzy
+msgid "Current date:"
+msgstr "Utworzony:"
+
+#, fuzzy
+msgid "message header"
+msgstr "Wiadomo¶æ"
+
+#, fuzzy
+msgid "Message header"
+msgstr "Filtry wiadomo¶ci"
+
+#, fuzzy, php-format
+msgid "is %s"
+msgstr "Editar"
+
+msgid "is"
+msgstr "jest"
+
+#, php-format
+msgid "is before than %s (inclusive)"
+msgstr ""
+
+#, php-format
+msgid "is after than %s (inclusive)"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "is before than %s"
+msgstr "jest mniejsze ni¿"
+
+#, fuzzy, php-format
+msgid "is after than %s"
+msgstr "jest wiêksze ni¿"
+
+#, php-format
+msgid "&quot;%s&quot;"
+msgstr ""
+
+#, php-format
+msgid "&quot;<tt>%s:</tt>&quot;"
+msgstr ""
 
 msgid "AND (Every item must match)"
 msgstr "AND (Ka¿da pozycja musi pasowaæ)"
@@ -204,6 +696,12 @@ msgstr ""
 msgid "Perform an action on messages depending on their content (body text)."
 msgstr "Wykonanie akcji na wiadomo¶ciach opieraj±c siê na zawarto¶ci (tre¶æ) "
 
+#, fuzzy
+msgid ""
+"Perform an action on messages depending on date or time related to the "
+"message."
+msgstr "Filtrowanie wiadomo¶ci na podstawie wielko¶ci."
+
 msgid "All"
 msgstr ""
 
@@ -216,9 +714,6 @@ msgstr "zawieraj±"
 
 msgid "does not contain"
 msgstr "nie zawiera"
-
-msgid "is"
-msgstr "jest"
 
 msgid "is not"
 msgstr "nie jest"
@@ -321,9 +816,6 @@ msgid ""
 "yourself."
 msgstr "Zapisz wiadomo¶æ SPAM w Koszu. Kosz musisz opró¿niæ samodzielnie."
 
-msgid "Discard"
-msgstr "Opu¶æ"
-
 msgid ""
 "Discard SPAM message. You will get no indication that the message ever "
 "arrived."
@@ -413,12 +905,6 @@ msgid ""
 msgstr ""
 "Wiadomo¶ci pasuj±ce do jednej z poni¿szych regu³ nigdy nie zostan± "
 "przeniesione do folderu ¦mieci ani oznaczone jako SPAM."
-
-msgid "STOP"
-msgstr "PARAR"
-
-msgid "If this rule matches, do not check any rules after it."
-msgstr "Je¶li ta regu³a pasuje nie sprawdzaj nastêpnych regu³."
 
 msgid "Apply Changes"
 msgstr "Zastosuj zmiany"
@@ -563,6 +1049,36 @@ msgstr ""
 "Nastêpuj±ca akcja zadzia³a dla <strong>wszystkich</strong> wiadomo¶ci które "
 "nie pasowa³y do poprzednich regu³."
 
+msgid "1st"
+msgstr ""
+
+msgid "2nd"
+msgstr ""
+
+msgid "3rd"
+msgstr ""
+
+msgid "4th"
+msgstr ""
+
+msgid "5th"
+msgstr ""
+
+msgid "6th"
+msgstr ""
+
+msgid "7th"
+msgstr ""
+
+msgid "8th"
+msgstr ""
+
+msgid "9th"
+msgstr ""
+
+msgid "from the end"
+msgstr ""
+
 msgid "Choose what to do when this rule triggers, from one of the following:"
 msgstr "Wybierz co zrobiæ je¶li wiadomo¶æ pasuje do regu³y:"
 
@@ -675,9 +1191,6 @@ msgid "Really delete selected rules?"
 msgstr "Napewno usun±æ regu³e?"
 
 msgid "Enable"
-msgstr ""
-
-msgid "Disable"
 msgstr ""
 
 msgid ""
@@ -802,176 +1315,6 @@ msgstr ""
 msgid "These search expressions are not applicable during message delivery."
 msgstr ""
 
-#, fuzzy
-msgid "Keep Message"
-msgstr "Wiadomo¶æ"
-
-msgid "Save the message in your INBOX."
-msgstr ""
-
-msgid "Silently discards the message; use with caution."
-msgstr ""
-
-#, fuzzy
-msgid "Reject"
-msgstr "Tytu³"
-
-msgid "Send the message back to the sender, along with an excuse"
-msgstr ""
-
-msgid "Please do not send me large attachments."
-msgstr "Proszê, nie wysy³aj do mnie du¿ych za³±czników."
-
-#, fuzzy
-msgid "Redirect"
-msgstr "Tytu³"
-
-msgid "Automatically redirect the message to a different email address"
-msgstr ""
-
-msgid "someone@example.org"
-msgstr "ktokolwiek@domena.com"
-
-msgid "Keep a local copy as well."
-msgstr "Zachowaj lokaln± kopie"
-
-msgid ""
-"Incorrect email address(es). You must enter one or more valid email "
-"addresses, separated by comma."
-msgstr ""
-
-#, fuzzy
-msgid "Move to Folder"
-msgstr "Na pocz±tek"
-
-#, php-format
-msgid "Or specify a new folder: %s to be created under %s"
-msgstr ""
-
-msgid "Vacation"
-msgstr "Vacation"
-
-msgid ""
-"This is an automated reply; I am away and will not be able to reply to you "
-"immediately."
-msgstr ""
-"To jest automatyczna odpowied¼. Jestem nieobecny, skontaktuje siê jak "
-"najszybciej."
-
-msgid "I will get back to you as soon as I return."
-msgstr "Odpowiem natychmiast po powrocie."
-
-msgid ""
-"The notice will be sent only once to each person that sends you mail, and "
-"will not be sent to a mailing list address."
-msgstr ""
-"To powiadomienie zostanie wys³ane tylko raz do ka¿dej osoby wysy³aj±cej do "
-"ciebie maila."
-
-#, fuzzy
-msgid "Subject:"
-msgstr "Tytu³"
-
-#, fuzzy
-msgid "Optional subject of the vacation message."
-msgstr "odpowiedz z t± Urlopow± wiadomo¶ci±: "
-
-#, fuzzy
-msgid "Your Addresses:"
-msgstr "Pasuj±cy adres"
-
-msgid ""
-"A vacation message will be sent only if an email is sent explicitly to one "
-"of these addresses."
-msgstr ""
-
-#, fuzzy
-msgid "Days:"
-msgstr "dni"
-
-msgid "days"
-msgstr "dni"
-
-msgid ""
-"A vacation message will not be resent to the same address, within this "
-"number of days."
-msgstr ""
-
-#, fuzzy
-msgid "Message:"
-msgstr "Wiadomo¶æ"
-
-msgid "The number of days between vacation messages must be a positive number."
-msgstr ""
-
-msgid "Notify"
-msgstr ""
-
-#, fuzzy
-msgid "Send a notification "
-msgstr "Powiadomienie poprzez email"
-
-msgid "Mobile Phone Message (SMS)"
-msgstr "Telefon GSM (SMS)"
-
-msgid "Email notification"
-msgstr "Powiadomienie poprzez email"
-
-msgid "Notification via Zephyr"
-msgstr "Powiadomienie poprzez Zephyr"
-
-msgid "Notification via ICQ"
-msgstr "Powiadomienie poprzez ICQ"
-
-msgid "Method"
-msgstr ""
-
-msgid "Notification ID"
-msgstr "ID powiadomienia"
-
-msgid "Destination"
-msgstr "Cel"
-
-msgid "Priority"
-msgstr ""
-
-msgid "Message"
-msgstr "Wiadomo¶æ"
-
-msgid "Help: Valid variables are:"
-msgstr "Pomoc: Poprawne zmienne to: "
-
-msgid "Also keep copy in INBOX, marked as deleted."
-msgstr "Pozostaw kopie tak¿e w INBOX oznaczon± jako skasowana."
-
-msgid "The rule will have no effect for as long as it is disabled."
-msgstr ""
-
-#, fuzzy
-msgid "Move to Junk"
-msgstr "Na pocz±tek"
-
-#, fuzzy, php-format
-msgid ""
-"Store message in your Junk Folder. Messages older than %s days will be "
-"deleted automatically."
-msgstr ""
-"Zapisz wiadomo¶æ SPAM w Folder-¦mieci. Wiadomo¶ci starsze ni¿ %s bêd± "
-"kasowane automatycznie."
-
-msgid "Note that you can set the number of days in Folder Preferences."
-msgstr "Mo¿esz ustawiæ ilo¶æ dni we w³a¶ciwo¶ciach folderu."
-
-#, fuzzy
-msgid "Move to Trash"
-msgstr "Na pocz±tek"
-
-#, fuzzy
-msgid ""
-"Store message in your Trash Folder. You will have to purge the folder "
-"yourself."
-msgstr "Zapisz wiadomo¶æ SPAM w Koszu. Kosz musisz opró¿niæ samodzielnie."
-
 msgid ""
 "All messages considered as <strong>SPAM</strong> (unsolicited commercial "
 "messages)"
@@ -1012,9 +1355,6 @@ msgstr "bêdzie"
 
 msgid "stored in the Junk Folder."
 msgstr "zapisane w Folder-¦mieci."
-
-msgid "Junk"
-msgstr ""
 
 msgid "stored in the Trash Folder."
 msgstr "zapisane w Koszu."
@@ -1112,6 +1452,20 @@ msgstr "Pasuj±cy adres"
 msgid "message body"
 msgstr "Wiadomo¶æ"
 
+#, php-format
+msgid "index number %s"
+msgstr ""
+
+#, php-format
+msgid "index #%s"
+msgstr ""
+
+msgid "(counting from last header)"
+msgstr ""
+
+msgid "(from end)"
+msgstr ""
+
 #, fuzzy
 msgid "matches the regular expression"
 msgstr "spe³nia warunek wyr. regularnego"
@@ -1156,6 +1510,10 @@ msgstr "Dla <strong>WSZYSTKICH</strong> przychodz±cych wiadomo¶ci; "
 msgid "ALL"
 msgstr ""
 
+#, fuzzy
+msgid "always"
+msgstr "dni"
+
 msgid "and"
 msgstr ""
 
@@ -1198,12 +1556,9 @@ msgstr ""
 msgid "(Warning: Folder not available)"
 msgstr ""
 
-msgid "reply with this vacation message: "
+#, fuzzy, php-format
+msgid "reply with a vacation / autoresponder message: "
 msgstr "odpowiedz z t± Urlopow± wiadomo¶ci±: "
-
-#, fuzzy
-msgid "Vacation Message"
-msgstr "Vacation"
 
 msgid "Also keep a local copy."
 msgstr "Zachowaj tak¿e kopie lokaln±."
@@ -1247,6 +1602,9 @@ msgstr "Niepoprawna nazwa folderu. Wprowad¼ inna nazwe"
 #, fuzzy
 msgid "None"
 msgstr "None"
+
+#~ msgid "Vacation"
+#~ msgstr "Vacation"
 
 #~ msgid "Addresses: Only reply if sent to these addresses:"
 #~ msgstr "Adres: Odpowiedz je¶li mail by³ adresowany do:"

@@ -1,6 +1,35 @@
 <h2>Devel Series (1.9.x)</h2>
 
-<h3><a name="1.9.8">1.9.8svn - Devel Branch</a></h3>
+<h3><a name="1.9.9">1.9.9 ALPHA - Devel Branch</a></h3>
+
+<ul>
+    <li>New feature: Support for the <strong>Sieve Date Extension</strong>. This allows
+    conditions and tests against the message's date/time, or the date and time during
+    the execution of the Sieve script.</li>
+    <li>New feature: Support for the <strong>Sieve Index Extension</strong>. This allows
+    for checks against a specific header index (for instance, the second Received: header
+    counting from the last one).</li>
+    <li>New feature: Support for the <strong>Sieve IMAP4Flags Extension</strong>. This
+    allows additional Sieve actions that set specific IMAP flags or labels to messages.
+    Standard IMAP4 flags, Thunderbird labels and even custom labels are supported.</li>
+    <li>New User Interface: the condition of a rule is now dynamically driven via
+    Javascript. New conditions can be added or changed on-the-fly via AJAX, without
+    reloading the entire page. Also, dynamic blocks within a single condition are
+    supported.</li>
+    <li>All Javascript functions are now under the AVELSIEVE namespace so as not to
+    pollute the global namespace.</li>
+    <li>Vacation action has been renamed to &quot;Vacation / Autoresponder&quot;, since
+    now it will be used more often for <em>out-of-office-</em> or <em>out-of-service-</em>
+    style notices because of the date-time feature.</li>
+    <li>New Debug options in <tt>config.php</tt>, allow testing of avelsieve features
+    without the actual feature existing on the server.</li>
+    <li>Eliminate PHP Notice in STARTTLS check in ManageSieve library.</li>
+    <li>Bugfix: Rule actions icons should now be properly vertically-aligned.</li>
+    <li>This release is sponsored by <strong>Alexey Melnikov</strong> and by
+    <strong>ellak.gr</strong>.</li>
+</ul>
+
+<h3><a name="1.9.8">1.9.8 ALPHA - Devel Branch</a></h3>
 
 <ul>
 <li>A large part of the code that is the part of the rule editing procedure has been
@@ -167,7 +196,18 @@ output an empty <tt>require []</tt> line.
 <li>Bugfix: in the ManageSieve library, ignore case for the available capabilities.
 (<span class="bugreporter"> Stephan Bosch</span>)</li>
 
+<li>Fixes in ManageSieve library with regard to deleting scripts and making avelsieve
+operational with Dovecot IMAP server, tickets #246, #247.</li>
+
+<li>TLS option in ManageSieve can be explicitly disabled.</li>
+
+<li>Allow the <tt>+</tt> (plus) character in email addresses field of forward
+action so that subaddressing is possible; thanks to Philipp Dreimann.</li>
+
 <li>Fixed typo (regural -&gt; regular)</li>
+
+<li>Fixed typo in default config file (header X-MailingList became X-Mailing-List).
+Thanks to Debian package maintainer Jan Hauke Rahm.</li>
 
 </ul>
 

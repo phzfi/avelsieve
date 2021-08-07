@@ -1,13 +1,23 @@
 <?php
+/**
+ * CSS Styles for table & edit pages.
+ *
+ * This is a PHP function as it depends on the global $color theme from Squirrelmail.
+ *
+ * @version $Id: styles.inc.php 1044 2009-05-27 14:04:31Z avel $
+ * @author Alexandros Vellis <avel@users.sourceforge.net>
+ * @copyright 2004-2009 Alexandros Vellis
+ * @package plugins
+ * @subpackage avelsieve
+ */
 
+/**
+ * Return a string with CSS style definitions
+ * @return string
+ */
 function avelsieve_css_styles() {
     global $color;
     return '
-a:hover {
-        text-decoration: none;
-        background: '.$color[3].';
-}
-
 .avelsieve_div {
         width: 90%;
         margin-left: auto;
@@ -38,7 +48,7 @@ a:hover {
 }
 .avelsieve_more_options_link {
         color: '.$color[7].';
-        text-decoration: underline;
+        text-decoration: none;
         font-size: 0.9em;
 }
 ';

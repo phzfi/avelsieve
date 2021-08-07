@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: avelsieve 0.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-04 15:51+0300\n"
+"POT-Creation-Date: 2009-05-29 11:16+0300\n"
 "PO-Revision-Date: 2003-05-21 13:15+0300\n"
 "Last-Translator: Vadim Kozlov <vad@tomsknet.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -56,8 +56,44 @@ msgstr ""
 "обновить, вперёд и назад вашего браузера."
 
 #, fuzzy
+msgid "Display and Edit"
+msgstr "Показывать как"
+
+msgid ""
+"Shows a table of the mail filtering rules of this script and allows editing "
+"of them."
+msgstr ""
+
+msgid "Save Locally / Backup"
+msgstr ""
+
+msgid ""
+"Retrieve the mail filtering script from the Sieve server to your computer."
+msgstr ""
+
+msgid "Set as Filtering script for a Shared Folder"
+msgstr ""
+
+msgid ""
+"Activates this script, for all email received directly to a shared folder."
+msgstr ""
+
+#, fuzzy
 msgid "Mail Filtering Scripts"
 msgstr "Имеющиеся правила фильтрации"
+
+msgid "Script Name"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+#, fuzzy
+msgid "Actions"
+msgstr "Действие"
+
+msgid "Initial / Predefined script"
+msgstr ""
 
 msgid "Message Filters"
 msgstr "Фильтры сообщений"
@@ -103,6 +139,16 @@ msgstr ""
 msgid "The entered position, %s, is greater than the current number of rules."
 msgstr ""
 
+msgid "Message"
+msgstr "Сообщение"
+
+msgid "Current Date / Time"
+msgstr ""
+
+#, fuzzy
+msgid "Always"
+msgstr "дней"
+
 msgid "Could not get SIEVE script from your IMAP server"
 msgstr "Не могу получить скрипт с вашего сервера IMAP"
 
@@ -130,6 +176,444 @@ msgstr "Не могу соединится с демоном timsiaved на ва
 
 msgid "Server responded with:"
 msgstr "Сервер ответил:"
+
+msgid "Disable"
+msgstr ""
+
+msgid "The rule will have no effect for as long as it is disabled."
+msgstr ""
+
+msgid "Discard"
+msgstr "Уничтожить"
+
+msgid "Silently discards the message; use with caution."
+msgstr ""
+
+#, fuzzy
+msgid "Move to Folder"
+msgstr "Переместить на самый верх"
+
+#, php-format
+msgid "Or specify a new folder: %s to be created under %s"
+msgstr ""
+
+msgid "Flag"
+msgstr ""
+
+msgid "Set message flags"
+msgstr ""
+
+msgid "Standard Flags"
+msgstr ""
+
+#, fuzzy
+msgid "Message Labels"
+msgstr "Фильтры сообщений"
+
+msgid "Custom Flags"
+msgstr ""
+
+msgid "Seen"
+msgstr ""
+
+msgid "Answered"
+msgstr ""
+
+msgid "Flagged"
+msgstr ""
+
+#, fuzzy
+msgid "Deleted"
+msgstr "Удалить"
+
+msgid "Draft"
+msgstr ""
+
+msgid "Important"
+msgstr ""
+
+msgid "Work"
+msgstr ""
+
+msgid "Personal"
+msgstr ""
+
+msgid "To Do"
+msgstr ""
+
+#, fuzzy
+msgid "Later"
+msgstr "кратко"
+
+msgid "Junk"
+msgstr ""
+
+#, fuzzy
+msgid "Not Junk"
+msgstr "Переместить на самый верх"
+
+#, php-format
+msgid "Also, set message flag %s"
+msgstr ""
+
+#, php-format
+msgid "Also, set message flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Set (replace) flags as the current set: %s"
+msgstr ""
+
+#, php-format
+msgid "Set (replace) flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Add flags to current set: %s"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "Add flags: %s"
+msgstr "Добавить новое правило"
+
+#, php-format
+msgid "Remove flags from current set: %s"
+msgstr ""
+
+#, php-format
+msgid "Remove flags: %s"
+msgstr ""
+
+msgid ""
+"Enter here a list of flags separated by spaces. Example: <tt>$MyFlag "
+"$Special</tt>"
+msgstr ""
+
+#, fuzzy
+msgid "Move to Junk"
+msgstr "Переместить на самый верх"
+
+#, fuzzy, php-format
+msgid ""
+"Store message in your Junk Folder. Messages older than %s days will be "
+"deleted automatically."
+msgstr ""
+"Помещать спам в папку Junk. Сообщения, старше чем %s дней, будут удалены "
+"автоматически."
+
+msgid "Note that you can set the number of days in Folder Preferences."
+msgstr ""
+
+#, fuzzy
+msgid "Keep Message"
+msgstr "Сообщение"
+
+msgid "Save the message in your INBOX."
+msgstr ""
+
+msgid "Also keep copy in INBOX, marked as deleted."
+msgstr "Также сохранить во Входящих, пометив как удалённое."
+
+msgid "Notify"
+msgstr ""
+
+#, fuzzy
+msgid "Send a notification "
+msgstr "Уведомление через email"
+
+msgid "Mobile Phone Message (SMS)"
+msgstr "Послать SMS"
+
+msgid "Email notification"
+msgstr "Уведомление через email"
+
+msgid "Notification via Zephyr"
+msgstr "Уведомление через Zephyr"
+
+msgid "Notification via ICQ"
+msgstr "Уведомление через ICQ"
+
+msgid "Method"
+msgstr ""
+
+msgid "Notification ID"
+msgstr ""
+
+msgid "Destination"
+msgstr "Назначение"
+
+msgid "Priority"
+msgstr ""
+
+msgid "Help: Valid variables are:"
+msgstr "Справка: Допустимыми переменными являются:"
+
+msgid "Redirect"
+msgstr ""
+
+msgid "Automatically redirect the message to a different email address"
+msgstr ""
+
+msgid "someone@example.org"
+msgstr "someone@example.org"
+
+msgid "Keep a local copy as well."
+msgstr ""
+
+msgid ""
+"Incorrect email address(es). You must enter one or more valid email "
+"addresses, separated by comma."
+msgstr ""
+
+msgid "Reject"
+msgstr ""
+
+msgid "Send the message back to the sender, along with an excuse"
+msgstr ""
+
+msgid "Please do not send me large attachments."
+msgstr "Пожалуйста, не отправляйте мне больших вложений."
+
+msgid "If this rule matches, do not check any rules after it."
+msgstr "Если это правило срабатывает, не проверять другие правила после него"
+
+msgid "STOP"
+msgstr "ЗАКОНЧИТЬ"
+
+#, fuzzy
+msgid "Move to Trash"
+msgstr "Переместить на самый верх"
+
+#, fuzzy
+msgid ""
+"Store message in your Trash Folder. You will have to purge the folder "
+"yourself."
+msgstr ""
+"Помещать спам в папку Trash. Вы должны будете очищать её самостоятельно."
+
+#, fuzzy
+msgid "Vacation / Autoresponder"
+msgstr "Отпуск"
+
+msgid ""
+"This is an automated reply; I am away and will not be able to reply to you "
+"immediately."
+msgstr ""
+"Это автоматический ответ; В данный момент я отсутствую и не смогу ответить "
+"Вам немедленно."
+
+msgid "I will get back to you as soon as I return."
+msgstr "Я отвечу Вам, когда вернусь"
+
+msgid ""
+"The notice will be sent only once to each person that sends you mail, and "
+"will not be sent to a mailing list address."
+msgstr ""
+"Уведомление будет отправлено только один раз каждому корреспонденту и не "
+"будет отправляться в списки рассылки."
+
+msgid "Subject:"
+msgstr ""
+
+#, fuzzy
+msgid "Optional subject of the vacation message."
+msgstr "ответить этим сообщением:"
+
+#, fuzzy
+msgid "Your Addresses:"
+msgstr "Сравнение адреса"
+
+msgid ""
+"A vacation / autorespond message will be sent only if an email is sent "
+"explicitly to one of these addresses."
+msgstr ""
+
+#, fuzzy
+msgid "Days:"
+msgstr "дней"
+
+msgid "days"
+msgstr "дней"
+
+msgid ""
+"A vacation / autorespond message will not be resent to the same address, "
+"within this number of days."
+msgstr ""
+
+#, fuzzy
+msgid "Message:"
+msgstr "Сообщение"
+
+msgid "The number of days between vacation messages must be a positive number."
+msgstr ""
+
+#, fuzzy
+msgid "Date"
+msgstr "Скопировать"
+
+msgid "Received"
+msgstr ""
+
+#, fuzzy
+msgid "Year"
+msgstr "Сравнение заголовков"
+
+msgid "Month"
+msgstr ""
+
+#, fuzzy
+msgid "Day"
+msgstr "дней"
+
+msgid "Weekday"
+msgstr ""
+
+msgid "Hour"
+msgstr ""
+
+msgid "Minute"
+msgstr ""
+
+msgid "Second"
+msgstr ""
+
+#, fuzzy
+msgid "Sunday"
+msgstr "дней"
+
+#, fuzzy
+msgid "Monday"
+msgstr "дней"
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Wednesday"
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+#, fuzzy
+msgid "Friday"
+msgstr "дней"
+
+msgid "Saturday"
+msgstr ""
+
+msgid "Is"
+msgstr ""
+
+msgid "Before (&lt;=)"
+msgstr ""
+
+msgid "After (=&gt;)"
+msgstr ""
+
+msgid "Before (&lt;)"
+msgstr ""
+
+msgid "After (&gt;)"
+msgstr ""
+
+msgid "January"
+msgstr ""
+
+msgid "February"
+msgstr ""
+
+msgid "March"
+msgstr ""
+
+msgid "April"
+msgstr ""
+
+msgid "May"
+msgstr ""
+
+msgid "June"
+msgstr ""
+
+msgid "July"
+msgstr ""
+
+msgid "August"
+msgstr ""
+
+msgid "September"
+msgstr ""
+
+msgid "October"
+msgstr ""
+
+msgid "November"
+msgstr ""
+
+msgid "December"
+msgstr ""
+
+msgid "Occurence"
+msgstr ""
+
+msgid "Specific Date"
+msgstr ""
+
+msgid "Specific Time"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "of header %s"
+msgstr "заголовок"
+
+msgid "Current date / time:"
+msgstr ""
+
+#, fuzzy
+msgid "Current date:"
+msgstr "Создано:"
+
+#, fuzzy
+msgid "message header"
+msgstr "Сообщение"
+
+#, fuzzy
+msgid "Message header"
+msgstr "Фильтры сообщений"
+
+#, fuzzy, php-format
+msgid "is %s"
+msgstr "Редактировать"
+
+msgid "is"
+msgstr "совпадает"
+
+#, php-format
+msgid "is before than %s (inclusive)"
+msgstr ""
+
+#, php-format
+msgid "is after than %s (inclusive)"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "is before than %s"
+msgstr "меньше чем"
+
+#, fuzzy, php-format
+msgid "is after than %s"
+msgstr "больше чем"
+
+#, php-format
+msgid "&quot;%s&quot;"
+msgstr ""
+
+#, php-format
+msgid "&quot;<tt>%s:</tt>&quot;"
+msgstr ""
 
 msgid "AND (Every item must match)"
 msgstr "И (выполнение всех условий)"
@@ -207,6 +691,12 @@ msgstr ""
 msgid "Perform an action on messages depending on their content (body text)."
 msgstr "Выполнить действие в зависимости от содержания (текста сообщения)."
 
+#, fuzzy
+msgid ""
+"Perform an action on messages depending on date or time related to the "
+"message."
+msgstr "Выполнить действие в зависимости от размера сообщения."
+
 msgid "All"
 msgstr ""
 
@@ -218,9 +708,6 @@ msgstr "содержит"
 
 msgid "does not contain"
 msgstr "не содержит"
-
-msgid "is"
-msgstr "совпадает"
 
 msgid "is not"
 msgstr "не совпадает"
@@ -324,9 +811,6 @@ msgid ""
 msgstr ""
 "Помещать спам в папку Trash. Вы должны будете очищать её самостоятельно."
 
-msgid "Discard"
-msgstr "Уничтожить"
-
 msgid ""
 "Discard SPAM message. You will get no indication that the message ever "
 "arrived."
@@ -412,12 +896,6 @@ msgid ""
 "Messages that match any of these header rules will never end up in Junk "
 "Folders or regarded as SPAM."
 msgstr ""
-
-msgid "STOP"
-msgstr "ЗАКОНЧИТЬ"
-
-msgid "If this rule matches, do not check any rules after it."
-msgstr "Если это правило срабатывает, не проверять другие правила после него"
 
 msgid "Apply Changes"
 msgstr "Сохранить изменения"
@@ -553,6 +1031,36 @@ msgstr ""
 "Следующее действие будет применено ко <strong>всем</strong> входящим "
 "сообщениям, не подпадающим под действие ни одного из предыдущих правил."
 
+msgid "1st"
+msgstr ""
+
+msgid "2nd"
+msgstr ""
+
+msgid "3rd"
+msgstr ""
+
+msgid "4th"
+msgstr ""
+
+msgid "5th"
+msgstr ""
+
+msgid "6th"
+msgstr ""
+
+msgid "7th"
+msgstr ""
+
+msgid "8th"
+msgstr ""
+
+msgid "9th"
+msgstr ""
+
+msgid "from the end"
+msgstr ""
+
 msgid "Choose what to do when this rule triggers, from one of the following:"
 msgstr "Выберите действие, выполняющееся когда срабатывает данное правило:"
 
@@ -665,9 +1173,6 @@ msgid "Really delete selected rules?"
 msgstr "Успешно удалено правило #"
 
 msgid "Enable"
-msgstr ""
-
-msgid "Disable"
 msgstr ""
 
 msgid ""
@@ -792,174 +1297,6 @@ msgstr ""
 msgid "These search expressions are not applicable during message delivery."
 msgstr ""
 
-#, fuzzy
-msgid "Keep Message"
-msgstr "Сообщение"
-
-msgid "Save the message in your INBOX."
-msgstr ""
-
-msgid "Silently discards the message; use with caution."
-msgstr ""
-
-msgid "Reject"
-msgstr ""
-
-msgid "Send the message back to the sender, along with an excuse"
-msgstr ""
-
-msgid "Please do not send me large attachments."
-msgstr "Пожалуйста, не отправляйте мне больших вложений."
-
-msgid "Redirect"
-msgstr ""
-
-msgid "Automatically redirect the message to a different email address"
-msgstr ""
-
-msgid "someone@example.org"
-msgstr "someone@example.org"
-
-msgid "Keep a local copy as well."
-msgstr ""
-
-msgid ""
-"Incorrect email address(es). You must enter one or more valid email "
-"addresses, separated by comma."
-msgstr ""
-
-#, fuzzy
-msgid "Move to Folder"
-msgstr "Переместить на самый верх"
-
-#, php-format
-msgid "Or specify a new folder: %s to be created under %s"
-msgstr ""
-
-msgid "Vacation"
-msgstr "Отпуск"
-
-msgid ""
-"This is an automated reply; I am away and will not be able to reply to you "
-"immediately."
-msgstr ""
-"Это автоматический ответ; В данный момент я отсутствую и не смогу ответить "
-"Вам немедленно."
-
-msgid "I will get back to you as soon as I return."
-msgstr "Я отвечу Вам, когда вернусь"
-
-msgid ""
-"The notice will be sent only once to each person that sends you mail, and "
-"will not be sent to a mailing list address."
-msgstr ""
-"Уведомление будет отправлено только один раз каждому корреспонденту и не "
-"будет отправляться в списки рассылки."
-
-msgid "Subject:"
-msgstr ""
-
-#, fuzzy
-msgid "Optional subject of the vacation message."
-msgstr "ответить этим сообщением:"
-
-#, fuzzy
-msgid "Your Addresses:"
-msgstr "Сравнение адреса"
-
-msgid ""
-"A vacation message will be sent only if an email is sent explicitly to one "
-"of these addresses."
-msgstr ""
-
-#, fuzzy
-msgid "Days:"
-msgstr "дней"
-
-msgid "days"
-msgstr "дней"
-
-msgid ""
-"A vacation message will not be resent to the same address, within this "
-"number of days."
-msgstr ""
-
-#, fuzzy
-msgid "Message:"
-msgstr "Сообщение"
-
-msgid "The number of days between vacation messages must be a positive number."
-msgstr ""
-
-msgid "Notify"
-msgstr ""
-
-#, fuzzy
-msgid "Send a notification "
-msgstr "Уведомление через email"
-
-msgid "Mobile Phone Message (SMS)"
-msgstr "Послать SMS"
-
-msgid "Email notification"
-msgstr "Уведомление через email"
-
-msgid "Notification via Zephyr"
-msgstr "Уведомление через Zephyr"
-
-msgid "Notification via ICQ"
-msgstr "Уведомление через ICQ"
-
-msgid "Method"
-msgstr ""
-
-msgid "Notification ID"
-msgstr ""
-
-msgid "Destination"
-msgstr "Назначение"
-
-msgid "Priority"
-msgstr ""
-
-msgid "Message"
-msgstr "Сообщение"
-
-msgid "Help: Valid variables are:"
-msgstr "Справка: Допустимыми переменными являются:"
-
-msgid "Also keep copy in INBOX, marked as deleted."
-msgstr "Также сохранить во Входящих, пометив как удалённое."
-
-msgid "The rule will have no effect for as long as it is disabled."
-msgstr ""
-
-#, fuzzy
-msgid "Move to Junk"
-msgstr "Переместить на самый верх"
-
-#, fuzzy, php-format
-msgid ""
-"Store message in your Junk Folder. Messages older than %s days will be "
-"deleted automatically."
-msgstr ""
-"Помещать спам в папку Junk. Сообщения, старше чем %s дней, будут удалены "
-"автоматически."
-
-msgid "Note that you can set the number of days in Folder Preferences."
-msgstr ""
-
-#, fuzzy
-msgid "Move to Trash"
-msgstr "Переместить на самый верх"
-
-#, fuzzy
-msgid ""
-"Store message in your Trash Folder. You will have to purge the folder "
-"yourself."
-msgstr ""
-"Помещать спам в папку Trash. Вы должны будете очищать её самостоятельно."
-
 msgid ""
 "All messages considered as <strong>SPAM</strong> (unsolicited commercial "
 "messages)"
@@ -997,9 +1334,6 @@ msgstr "будут"
 
 msgid "stored in the Junk Folder."
 msgstr "помещены в папку Junk"
-
-msgid "Junk"
-msgstr ""
 
 msgid "stored in the Trash Folder."
 msgstr "помещаны в папку Trash"
@@ -1096,6 +1430,20 @@ msgstr "Сравнение адреса"
 msgid "message body"
 msgstr "Сообщение"
 
+#, php-format
+msgid "index number %s"
+msgstr ""
+
+#, php-format
+msgid "index #%s"
+msgstr ""
+
+msgid "(counting from last header)"
+msgstr ""
+
+msgid "(from end)"
+msgstr ""
+
 #, fuzzy
 msgid "matches the regular expression"
 msgstr "соответствует регулярному выражению"
@@ -1140,6 +1488,10 @@ msgstr "Для <strong>ВСЕХ<strong> входящих сообщений; "
 msgid "ALL"
 msgstr ""
 
+#, fuzzy
+msgid "always"
+msgstr "дней"
+
 msgid "and"
 msgstr ""
 
@@ -1182,12 +1534,9 @@ msgstr ""
 msgid "(Warning: Folder not available)"
 msgstr ""
 
-msgid "reply with this vacation message: "
+#, fuzzy, php-format
+msgid "reply with a vacation / autoresponder message: "
 msgstr "ответить этим сообщением:"
-
-#, fuzzy
-msgid "Vacation Message"
-msgstr "Отпуск"
 
 msgid "Also keep a local copy."
 msgstr ""
@@ -1231,6 +1580,9 @@ msgstr "Недопустимое имя папки. Пожалуйста, выб
 #, fuzzy
 msgid "None"
 msgstr "N правила"
+
+#~ msgid "Vacation"
+#~ msgstr "Отпуск"
 
 #~ msgid "Addresses: Only reply if sent to these addresses:"
 #~ msgstr "Адреса: отвечать, если отправлено на эти адреса: "

@@ -6,7 +6,7 @@
  * Licensed under the GNU GPL. For full terms see the file COPYING that came
  * with the Squirrelmail distribution.
  *
- * @version $Id: DO_Sieve.class.php,v 1.5 2007/01/17 13:46:10 avel Exp $
+ * @version $Id: DO_Sieve.class.php 1054 2009-05-28 13:53:23Z avel $
  * @author Alexandros Vellis <avel@users.sourceforge.net>
  * @copyright 2004-2007 Alexandros Vellis
  * @package plugins
@@ -16,11 +16,28 @@
 /** Includes */
 include_once(SM_PATH . 'plugins/avelsieve/include/support.inc.php');
 include_once(SM_PATH . 'plugins/avelsieve/config/config.php');
-	
+    
 class DO_Sieve {
     var $capabilities;
     var $rules;
     var $sieve;
+    
+    /*
+     * Condition kinds
+     * From avelsieve 1.9.8, a condition is one of these kinds:
+     * - 'message' => a condition that has to do with the mail message being processed
+     * - 'datetime' => a condition that has to do with the current date / time
+     * - 'all' => a condition that always returns true. Equivalent to sieve's true test
+     *
+     * In the future, the following conditions can be implemented:
+     * - 'variable' => a condition that has to do with a test on a Sieve variable
+     * - 'environment' => a condition that has to do with the mail environment
+     *
+     * @var array
+     * @access public
+     */
+    public $condition_kinds;
+
 
     /*
     function init()
@@ -39,6 +56,19 @@ class DO_Sieve {
         } else {
             $this->sieveDebug = false;
         }
+
+        $this->condition_kinds = array(
+            'message' => array(
+                'desc' => _("Message"),
+            ),
+            'datetime' => array(
+                'desc' => _("Current Date / Time"),
+                'capability' => 'date',
+            ),
+            'all' => array(
+                'desc' => _("Always"),
+            ),
+        );
         return;
     }
 
@@ -68,10 +98,38 @@ class DO_Sieve {
              * in order to get capabilities. */
             $this->init();
         }
-        if(in_array($cap, $this->capabilities) && !in_array($cap, $disable_avelsieve_capabilities)) {
+
+        if(AVELSIEVE_DEBUG >= 3) return true;
+
+        if(array_key_exists($cap, $this->capabilities) && !in_array($cap, $disable_avelsieve_capabilities)) {
             return true;
         }
         return false;
+    }
+    
+    /**
+     * Gets the applicable condition kinds according to current capabilities
+     *
+     * @return array
+     */
+    protected function _get_active_condition_kinds() {
+        $out = array();
+        foreach($this->condition_kinds as $k=>$v) {
+            if(AVELSIEVE_DEBUG == 3) {
+                $out[$k] = $v['desc'];
+                continue;
+            }
+
+            if(!isset($v['capability'])) {
+                $out[$k] = $v['desc'];
+                continue;
+            }
+            if($this->capability_exists($v['capability'])) {
+                $out[$k] = $v['desc'];
+                continue;
+            }
+        }
+        return $out;
     }
     
     /**
@@ -81,41 +139,41 @@ class DO_Sieve {
     * @return string
     */
     function encode_script($script) {
-	    global $languages, $squirrelmail_language, $default_charset;
+        global $languages, $squirrelmail_language, $default_charset;
     
-	    /* change $default_charset to user's charset */
-	    set_my_charset();
+        /* change $default_charset to user's charset */
+        set_my_charset();
     
-	    if(strtolower($default_charset) == 'utf-8') {
-		    // No need to convert.
-		    return $script;
-	    
+        if(strtolower($default_charset) == 'utf-8') {
+            // No need to convert.
+            return $script;
+        
         } elseif(function_exists('mb_convert_encoding') && function_exists('sqimap_mb_convert_encoding')) {
-		    // sqimap_mb_convert_encoding() returns '' if mb_convert_encoding() doesn't exist!
-		    $utf8_s = sqimap_mb_convert_encoding($script, 'UTF-8', $default_charset, $default_charset);
-		    if(empty($utf8_s)) {
-			    return $script;
-		    } else {
-			    return $utf8_s;
-		    }
+            // sqimap_mb_convert_encoding() returns '' if mb_convert_encoding() doesn't exist!
+            $utf8_s = sqimap_mb_convert_encoding($script, 'UTF-8', $default_charset, $default_charset);
+            if(empty($utf8_s)) {
+                return $script;
+            } else {
+                return $utf8_s;
+            }
     
-	    } elseif(function_exists('mb_convert_encoding')) {
-		    // Squirrelmail 1.4.0 ?
+        } elseif(function_exists('mb_convert_encoding')) {
+            // Squirrelmail 1.4.0 ?
     
-		    if ( stristr($default_charset, 'iso-8859-') ||
-		    stristr($default_charset, 'utf-8') || 
-		    stristr($default_charset, 'iso-2022-jp') ) {
-			    return mb_convert_encoding($script, "UTF-8", $default_charset);
-		    }
+            if ( stristr($default_charset, 'iso-8859-') ||
+            stristr($default_charset, 'utf-8') || 
+            stristr($default_charset, 'iso-2022-jp') ) {
+                return mb_convert_encoding($script, "UTF-8", $default_charset);
+            }
     
-	    } elseif(function_exists('recode_string')) {
-		    return recode_string("$default_charset..UTF-8", $script);
+        } elseif(function_exists('recode_string')) {
+            return recode_string("$default_charset..UTF-8", $script);
     
-	    } elseif(function_exists('iconv')) {
-		    return iconv($default_charset, 'UTF-8', $script);
-	    }
+        } elseif(function_exists('iconv')) {
+            return iconv($default_charset, 'UTF-8', $script);
+        }
     
-	    return $script;
+        return $script;
     }
     
     
@@ -127,44 +185,46 @@ class DO_Sieve {
     */
     function decode_script($script) {
     
-	    global $languages, $squirrelmail_language, $default_charset;
+        global $languages, $squirrelmail_language, $default_charset;
     
-	    /* change $default_charset to user's charset (THANKS Tomas) */
-	    set_my_charset();
+        /* change $default_charset to user's charset (THANKS Tomas) */
+        set_my_charset();
     
-	    if(strtolower($default_charset) == 'utf-8') {
-		    // No need to convert.
-		    return $script;
-	    
-	    } elseif(function_exists('mb_convert_encoding') && function_exists('sqimap_mb_convert_encoding')) {
-		    // sqimap_mb_convert_encoding() returns '' if mb_convert_encoding() doesn't exist!
-		    $un_utf8_s = sqimap_mb_convert_encoding($script, $default_charset, "UTF-8", $default_charset);
-		    if(empty($un_utf8_s)) {
-			    return $script;
-		    } else {
-			    return $un_utf8_s;
-		    }
+        if(strtolower($default_charset) == 'utf-8') {
+            // No need to convert.
+            return $script;
+        
+        } elseif(function_exists('mb_convert_encoding') && function_exists('sqimap_mb_convert_encoding')) {
+            // sqimap_mb_convert_encoding() returns '' if mb_convert_encoding() doesn't exist!
+            $un_utf8_s = sqimap_mb_convert_encoding($script, $default_charset, "UTF-8", $default_charset);
+            if(empty($un_utf8_s)) {
+                return $script;
+            } else {
+                return $un_utf8_s;
+            }
     
-	    } elseif(function_exists('mb_convert_encoding')) {
-		    /* Squirrelmail 1.4.0 ? */
+        } elseif(function_exists('mb_convert_encoding')) {
+            /* Squirrelmail 1.4.0 ? */
     
-		    if ( stristr($default_charset, 'iso-8859-') ||
-		    stristr($default_charset, 'utf-8') || 
-		    stristr($default_charset, 'iso-2022-jp') ) {
-			    return mb_convert_encoding($script, $default_charset, "UTF-8");
-		    }
+            if ( stristr($default_charset, 'iso-8859-') ||
+            stristr($default_charset, 'utf-8') || 
+            stristr($default_charset, 'iso-2022-jp') ) {
+                return mb_convert_encoding($script, $default_charset, "UTF-8");
+            }
     
-	    } elseif(function_exists('recode_string')) {
-		    return recode_string("UTF-8..$default_charset", $script);
+        } elseif(function_exists('recode_string')) {
+            return recode_string("UTF-8..$default_charset", $script);
     
-	    } elseif(function_exists('iconv')) {
-		    return iconv('UTF-8', $default_charset, $script);
-	    }
-	    return $script;
+        } elseif(function_exists('iconv')) {
+            return iconv('UTF-8', $default_charset, $script);
+        }
+        return $script;
     }
+    
 }
 
 /* Include the appropriate backend class. */
+global $avelsieve_backend;
 switch($avelsieve_backend) {
     case 'ManageSieve':
     case 'NetSieve':
@@ -176,4 +236,4 @@ switch($avelsieve_backend) {
         use a supported value for $avelsieve_backend.');
         break;
 }
-?>
+

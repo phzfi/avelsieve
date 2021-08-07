@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: avelsieve 0.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-04 15:51+0300\n"
+"POT-Creation-Date: 2009-05-29 11:16+0300\n"
 "PO-Revision-Date: 2002-09-30 16:13+0800\n"
 "Last-Translator: Wei Gao <wei@gaofamily.org>\n"
 "Language-Team: Chinese Simplified <LL@li.org>\n"
@@ -49,9 +49,44 @@ msgid ""
 "and forward buttons, to build a rule."
 msgstr ""
 
+msgid "Display and Edit"
+msgstr ""
+
+msgid ""
+"Shows a table of the mail filtering rules of this script and allows editing "
+"of them."
+msgstr ""
+
+msgid "Save Locally / Backup"
+msgstr ""
+
+msgid ""
+"Retrieve the mail filtering script from the Sieve server to your computer."
+msgstr ""
+
+msgid "Set as Filtering script for a Shared Folder"
+msgstr ""
+
+msgid ""
+"Activates this script, for all email received directly to a shared folder."
+msgstr ""
+
 #, fuzzy
 msgid "Mail Filtering Scripts"
 msgstr "当前的信件过滤规则"
+
+msgid "Script Name"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+#, fuzzy
+msgid "Actions"
+msgstr "动作"
+
+msgid "Initial / Predefined script"
+msgstr ""
 
 msgid "Message Filters"
 msgstr "信件过滤器"
@@ -94,6 +129,17 @@ msgstr ""
 msgid "The entered position, %s, is greater than the current number of rules."
 msgstr ""
 
+#, fuzzy
+msgid "Message"
+msgstr "所有信件"
+
+msgid "Current Date / Time"
+msgstr ""
+
+#, fuzzy
+msgid "Always"
+msgstr "天"
+
 msgid "Could not get SIEVE script from your IMAP server"
 msgstr "无法从你的IMAP服务器上得到SIEVE角本"
 
@@ -120,6 +166,435 @@ msgid "Could not log on to timsieved daemon on your IMAP server"
 msgstr "无法登陆到你的IMAP服务器的timsieved服务"
 
 msgid "Server responded with:"
+msgstr ""
+
+msgid "Disable"
+msgstr ""
+
+msgid "The rule will have no effect for as long as it is disabled."
+msgstr ""
+
+#, fuzzy
+msgid "Discard"
+msgstr "消消的勿略"
+
+msgid "Silently discards the message; use with caution."
+msgstr ""
+
+#, fuzzy
+msgid "Move to Folder"
+msgstr "移到步骤"
+
+#, php-format
+msgid "Or specify a new folder: %s to be created under %s"
+msgstr ""
+
+msgid "Flag"
+msgstr ""
+
+msgid "Set message flags"
+msgstr ""
+
+msgid "Standard Flags"
+msgstr ""
+
+#, fuzzy
+msgid "Message Labels"
+msgstr "信件过滤器"
+
+msgid "Custom Flags"
+msgstr ""
+
+msgid "Seen"
+msgstr ""
+
+msgid "Answered"
+msgstr ""
+
+msgid "Flagged"
+msgstr ""
+
+#, fuzzy
+msgid "Deleted"
+msgstr "删除"
+
+msgid "Draft"
+msgstr ""
+
+msgid "Important"
+msgstr ""
+
+msgid "Work"
+msgstr ""
+
+msgid "Personal"
+msgstr ""
+
+msgid "To Do"
+msgstr ""
+
+#, fuzzy
+msgid "Later"
+msgstr "过滤器"
+
+msgid "Junk"
+msgstr ""
+
+#, fuzzy
+msgid "Not Junk"
+msgstr "移到步骤"
+
+#, php-format
+msgid "Also, set message flag %s"
+msgstr ""
+
+#, php-format
+msgid "Also, set message flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Set (replace) flags as the current set: %s"
+msgstr ""
+
+#, php-format
+msgid "Set (replace) flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Add flags to current set: %s"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "Add flags: %s"
+msgstr "新建一个规则"
+
+#, php-format
+msgid "Remove flags from current set: %s"
+msgstr ""
+
+#, php-format
+msgid "Remove flags: %s"
+msgstr ""
+
+msgid ""
+"Enter here a list of flags separated by spaces. Example: <tt>$MyFlag "
+"$Special</tt>"
+msgstr ""
+
+#, fuzzy
+msgid "Move to Junk"
+msgstr "移到步骤"
+
+#, php-format
+msgid ""
+"Store message in your Junk Folder. Messages older than %s days will be "
+"deleted automatically."
+msgstr ""
+
+msgid "Note that you can set the number of days in Folder Preferences."
+msgstr ""
+
+#, fuzzy
+msgid "Keep Message"
+msgstr "所有信件"
+
+msgid "Save the message in your INBOX."
+msgstr ""
+
+msgid "Also keep copy in INBOX, marked as deleted."
+msgstr ""
+
+msgid "Notify"
+msgstr ""
+
+msgid "Send a notification "
+msgstr ""
+
+msgid "Mobile Phone Message (SMS)"
+msgstr ""
+
+msgid "Email notification"
+msgstr ""
+
+msgid "Notification via Zephyr"
+msgstr ""
+
+msgid "Notification via ICQ"
+msgstr ""
+
+msgid "Method"
+msgstr ""
+
+msgid "Notification ID"
+msgstr ""
+
+msgid "Destination"
+msgstr ""
+
+msgid "Priority"
+msgstr ""
+
+msgid "Help: Valid variables are:"
+msgstr ""
+
+msgid "Redirect"
+msgstr ""
+
+msgid "Automatically redirect the message to a different email address"
+msgstr ""
+
+msgid "someone@example.org"
+msgstr "someone@example.org"
+
+msgid "Keep a local copy as well."
+msgstr ""
+
+msgid ""
+"Incorrect email address(es). You must enter one or more valid email "
+"addresses, separated by comma."
+msgstr ""
+
+msgid "Reject"
+msgstr ""
+
+msgid "Send the message back to the sender, along with an excuse"
+msgstr ""
+
+msgid "Please do not send me large attachments."
+msgstr "请不要给我发送大的附件。"
+
+msgid "If this rule matches, do not check any rules after it."
+msgstr "如果这个规则匹配上了，就要再检查它后面的。"
+
+msgid "STOP"
+msgstr "停止"
+
+#, fuzzy
+msgid "Move to Trash"
+msgstr "移到步骤"
+
+msgid ""
+"Store message in your Trash Folder. You will have to purge the folder "
+"yourself."
+msgstr ""
+
+#, fuzzy
+msgid "Vacation / Autoresponder"
+msgstr "休假"
+
+msgid ""
+"This is an automated reply; I am away and will not be able to reply to you "
+"immediately."
+msgstr "这是一封自动回复；我现在不在，并且不能马上回复你。"
+
+msgid "I will get back to you as soon as I return."
+msgstr "我会在回来后尽快回复你。"
+
+msgid ""
+"The notice will be sent only once to each person that sends you mail, and "
+"will not be sent to a mailing list address."
+msgstr "这个通知将会给每一个给你发信的人发一次，并且不会发给邮件列表。"
+
+msgid "Subject:"
+msgstr ""
+
+#, fuzzy
+msgid "Optional subject of the vacation message."
+msgstr "用下面的休假信息回复："
+
+#, fuzzy
+msgid "Your Addresses:"
+msgstr "地址匹配"
+
+msgid ""
+"A vacation / autorespond message will be sent only if an email is sent "
+"explicitly to one of these addresses."
+msgstr ""
+
+#, fuzzy
+msgid "Days:"
+msgstr "天"
+
+msgid "days"
+msgstr "天"
+
+msgid ""
+"A vacation / autorespond message will not be resent to the same address, "
+"within this number of days."
+msgstr ""
+
+#, fuzzy
+msgid "Message:"
+msgstr "所有信件"
+
+msgid "The number of days between vacation messages must be a positive number."
+msgstr ""
+
+#, fuzzy
+msgid "Date"
+msgstr "复制"
+
+msgid "Received"
+msgstr ""
+
+#, fuzzy
+msgid "Year"
+msgstr "信头匹配"
+
+msgid "Month"
+msgstr ""
+
+#, fuzzy
+msgid "Day"
+msgstr "天"
+
+msgid "Weekday"
+msgstr ""
+
+msgid "Hour"
+msgstr ""
+
+msgid "Minute"
+msgstr ""
+
+msgid "Second"
+msgstr ""
+
+#, fuzzy
+msgid "Sunday"
+msgstr "天"
+
+#, fuzzy
+msgid "Monday"
+msgstr "天"
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Wednesday"
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+#, fuzzy
+msgid "Friday"
+msgstr "天"
+
+msgid "Saturday"
+msgstr ""
+
+msgid "Is"
+msgstr ""
+
+msgid "Before (&lt;=)"
+msgstr ""
+
+msgid "After (=&gt;)"
+msgstr ""
+
+msgid "Before (&lt;)"
+msgstr ""
+
+msgid "After (&gt;)"
+msgstr ""
+
+msgid "January"
+msgstr ""
+
+msgid "February"
+msgstr ""
+
+msgid "March"
+msgstr ""
+
+msgid "April"
+msgstr ""
+
+msgid "May"
+msgstr ""
+
+msgid "June"
+msgstr ""
+
+msgid "July"
+msgstr ""
+
+msgid "August"
+msgstr ""
+
+msgid "September"
+msgstr ""
+
+msgid "October"
+msgstr ""
+
+msgid "November"
+msgstr ""
+
+msgid "December"
+msgstr ""
+
+msgid "Occurence"
+msgstr ""
+
+msgid "Specific Date"
+msgstr ""
+
+msgid "Specific Time"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "of header %s"
+msgstr "信头"
+
+msgid "Current date / time:"
+msgstr ""
+
+msgid "Current date:"
+msgstr ""
+
+#, fuzzy
+msgid "message header"
+msgstr "所有信件"
+
+#, fuzzy
+msgid "Message header"
+msgstr "信件过滤器"
+
+#, fuzzy, php-format
+msgid "is %s"
+msgstr "修改"
+
+msgid "is"
+msgstr "是"
+
+#, php-format
+msgid "is before than %s (inclusive)"
+msgstr ""
+
+#, php-format
+msgid "is after than %s (inclusive)"
+msgstr ""
+
+#, php-format
+msgid "is before than %s"
+msgstr ""
+
+#, php-format
+msgid "is after than %s"
+msgstr ""
+
+#, php-format
+msgid "&quot;%s&quot;"
+msgstr ""
+
+#, php-format
+msgid "&quot;<tt>%s:</tt>&quot;"
 msgstr ""
 
 msgid "AND (Every item must match)"
@@ -196,6 +671,12 @@ msgstr ""
 msgid "Perform an action on messages depending on their content (body text)."
 msgstr "将会对信件的大小进行匹配"
 
+#, fuzzy
+msgid ""
+"Perform an action on messages depending on date or time related to the "
+"message."
+msgstr "将会对信件的大小进行匹配"
+
 msgid "All"
 msgstr ""
 
@@ -207,9 +688,6 @@ msgstr "包含"
 
 msgid "does not contain"
 msgstr "不包含"
-
-msgid "is"
-msgstr "是"
 
 msgid "is not"
 msgstr "不是"
@@ -314,10 +792,6 @@ msgid ""
 "yourself."
 msgstr ""
 
-#, fuzzy
-msgid "Discard"
-msgstr "消消的勿略"
-
 msgid ""
 "Discard SPAM message. You will get no indication that the message ever "
 "arrived."
@@ -397,12 +871,6 @@ msgid ""
 "Messages that match any of these header rules will never end up in Junk "
 "Folders or regarded as SPAM."
 msgstr ""
-
-msgid "STOP"
-msgstr "停止"
-
-msgid "If this rule matches, do not check any rules after it."
-msgstr "如果这个规则匹配上了，就要再检查它后面的。"
 
 msgid "Apply Changes"
 msgstr "应用修改"
@@ -537,6 +1005,36 @@ msgid ""
 msgstr ""
 "下面的动作会被子应用到<strong>所有</strong>收到的不满足任何规则的信件上。"
 
+msgid "1st"
+msgstr ""
+
+msgid "2nd"
+msgstr ""
+
+msgid "3rd"
+msgstr ""
+
+msgid "4th"
+msgstr ""
+
+msgid "5th"
+msgstr ""
+
+msgid "6th"
+msgstr ""
+
+msgid "7th"
+msgstr ""
+
+msgid "8th"
+msgstr ""
+
+msgid "9th"
+msgstr ""
+
+msgid "from the end"
+msgstr ""
+
 msgid "Choose what to do when this rule triggers, from one of the following:"
 msgstr "从下面的列表里选择当这个规则被应用时的动作："
 
@@ -645,9 +1143,6 @@ msgid "Really delete selected rules?"
 msgstr "成功的删除了规则#"
 
 msgid "Enable"
-msgstr ""
-
-msgid "Disable"
 msgstr ""
 
 msgid ""
@@ -769,166 +1264,6 @@ msgstr ""
 msgid "These search expressions are not applicable during message delivery."
 msgstr ""
 
-#, fuzzy
-msgid "Keep Message"
-msgstr "所有信件"
-
-msgid "Save the message in your INBOX."
-msgstr ""
-
-msgid "Silently discards the message; use with caution."
-msgstr ""
-
-msgid "Reject"
-msgstr ""
-
-msgid "Send the message back to the sender, along with an excuse"
-msgstr ""
-
-msgid "Please do not send me large attachments."
-msgstr "请不要给我发送大的附件。"
-
-msgid "Redirect"
-msgstr ""
-
-msgid "Automatically redirect the message to a different email address"
-msgstr ""
-
-msgid "someone@example.org"
-msgstr "someone@example.org"
-
-msgid "Keep a local copy as well."
-msgstr ""
-
-msgid ""
-"Incorrect email address(es). You must enter one or more valid email "
-"addresses, separated by comma."
-msgstr ""
-
-#, fuzzy
-msgid "Move to Folder"
-msgstr "移到步骤"
-
-#, php-format
-msgid "Or specify a new folder: %s to be created under %s"
-msgstr ""
-
-msgid "Vacation"
-msgstr "休假"
-
-msgid ""
-"This is an automated reply; I am away and will not be able to reply to you "
-"immediately."
-msgstr "这是一封自动回复；我现在不在，并且不能马上回复你。"
-
-msgid "I will get back to you as soon as I return."
-msgstr "我会在回来后尽快回复你。"
-
-msgid ""
-"The notice will be sent only once to each person that sends you mail, and "
-"will not be sent to a mailing list address."
-msgstr "这个通知将会给每一个给你发信的人发一次，并且不会发给邮件列表。"
-
-msgid "Subject:"
-msgstr ""
-
-#, fuzzy
-msgid "Optional subject of the vacation message."
-msgstr "用下面的休假信息回复："
-
-#, fuzzy
-msgid "Your Addresses:"
-msgstr "地址匹配"
-
-msgid ""
-"A vacation message will be sent only if an email is sent explicitly to one "
-"of these addresses."
-msgstr ""
-
-#, fuzzy
-msgid "Days:"
-msgstr "天"
-
-msgid "days"
-msgstr "天"
-
-msgid ""
-"A vacation message will not be resent to the same address, within this "
-"number of days."
-msgstr ""
-
-#, fuzzy
-msgid "Message:"
-msgstr "所有信件"
-
-msgid "The number of days between vacation messages must be a positive number."
-msgstr ""
-
-msgid "Notify"
-msgstr ""
-
-msgid "Send a notification "
-msgstr ""
-
-msgid "Mobile Phone Message (SMS)"
-msgstr ""
-
-msgid "Email notification"
-msgstr ""
-
-msgid "Notification via Zephyr"
-msgstr ""
-
-msgid "Notification via ICQ"
-msgstr ""
-
-msgid "Method"
-msgstr ""
-
-msgid "Notification ID"
-msgstr ""
-
-msgid "Destination"
-msgstr ""
-
-msgid "Priority"
-msgstr ""
-
-#, fuzzy
-msgid "Message"
-msgstr "所有信件"
-
-msgid "Help: Valid variables are:"
-msgstr ""
-
-msgid "Also keep copy in INBOX, marked as deleted."
-msgstr ""
-
-msgid "The rule will have no effect for as long as it is disabled."
-msgstr ""
-
-#, fuzzy
-msgid "Move to Junk"
-msgstr "移到步骤"
-
-#, php-format
-msgid ""
-"Store message in your Junk Folder. Messages older than %s days will be "
-"deleted automatically."
-msgstr ""
-
-msgid "Note that you can set the number of days in Folder Preferences."
-msgstr ""
-
-#, fuzzy
-msgid "Move to Trash"
-msgstr "移到步骤"
-
-msgid ""
-"Store message in your Trash Folder. You will have to purge the folder "
-"yourself."
-msgstr ""
-
 msgid ""
 "All messages considered as <strong>SPAM</strong> (unsolicited commercial "
 "messages)"
@@ -964,9 +1299,6 @@ msgid "will be"
 msgstr ""
 
 msgid "stored in the Junk Folder."
-msgstr ""
-
-msgid "Junk"
 msgstr ""
 
 msgid "stored in the Trash Folder."
@@ -1060,6 +1392,20 @@ msgstr "地址匹配"
 msgid "message body"
 msgstr "所有信件"
 
+#, php-format
+msgid "index number %s"
+msgstr ""
+
+#, php-format
+msgid "index #%s"
+msgstr ""
+
+msgid "(counting from last header)"
+msgstr ""
+
+msgid "(from end)"
+msgstr ""
+
 msgid "matches the regular expression"
 msgstr ""
 
@@ -1104,6 +1450,10 @@ msgstr "对<strong>所有</strong>的收到信件；"
 msgid "ALL"
 msgstr ""
 
+#, fuzzy
+msgid "always"
+msgstr "天"
+
 msgid "and"
 msgstr ""
 
@@ -1145,12 +1495,9 @@ msgstr ""
 msgid "(Warning: Folder not available)"
 msgstr ""
 
-msgid "reply with this vacation message: "
+#, fuzzy, php-format
+msgid "reply with a vacation / autoresponder message: "
 msgstr "用下面的休假信息回复："
-
-#, fuzzy
-msgid "Vacation Message"
-msgstr "休假"
 
 msgid "Also keep a local copy."
 msgstr ""
@@ -1195,6 +1542,9 @@ msgstr ""
 #, fuzzy
 msgid "None"
 msgstr "序号"
+
+#~ msgid "Vacation"
+#~ msgstr "休假"
 
 #~ msgid "Addresses: Only reply if sent to these addresses:"
 #~ msgstr "地址：只有当发给下面这些地址时才转发："

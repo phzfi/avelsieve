@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: avelsieve\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-04 15:51+0300\n"
+"POT-Creation-Date: 2009-05-29 11:16+0300\n"
 "PO-Revision-Date: 2004-05-14 12:00+0200\n"
 "Last-Translator: Veli Pirttila <titus@iki.fi>\n"
 "Language-Team: finnish <fi@li.org>\n"
@@ -54,8 +54,44 @@ msgstr ""
 "päivitä, takaisin, eteenpäin nappuloita tehdäksesi uuden säännön."
 
 #, fuzzy
+msgid "Display and Edit"
+msgstr "Näytä seuraavalta:"
+
+msgid ""
+"Shows a table of the mail filtering rules of this script and allows editing "
+"of them."
+msgstr ""
+
+msgid "Save Locally / Backup"
+msgstr ""
+
+msgid ""
+"Retrieve the mail filtering script from the Sieve server to your computer."
+msgstr ""
+
+msgid "Set as Filtering script for a Shared Folder"
+msgstr ""
+
+msgid ""
+"Activates this script, for all email received directly to a shared folder."
+msgstr ""
+
+#, fuzzy
 msgid "Mail Filtering Scripts"
 msgstr "Nykyiset suodinsäännöt"
+
+msgid "Script Name"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+#, fuzzy
+msgid "Actions"
+msgstr "Toiminta"
+
+msgid "Initial / Predefined script"
+msgstr ""
 
 msgid "Message Filters"
 msgstr "Viestien suodattimet"
@@ -101,6 +137,16 @@ msgstr ""
 msgid "The entered position, %s, is greater than the current number of rules."
 msgstr ""
 
+msgid "Message"
+msgstr "Viesti"
+
+msgid "Current Date / Time"
+msgstr ""
+
+#, fuzzy
+msgid "Always"
+msgstr "päiviä"
+
 msgid "Could not get SIEVE script from your IMAP server"
 msgstr "Ei voitu hakea komentotiedostoa palvelimelta"
 
@@ -128,6 +174,449 @@ msgstr "Ei voitu sisäänkirjautua palveluun"
 
 msgid "Server responded with:"
 msgstr "Palvelin vastasi seuraavanlaisesti:"
+
+msgid "Disable"
+msgstr ""
+
+msgid "The rule will have no effect for as long as it is disabled."
+msgstr ""
+
+msgid "Discard"
+msgstr "Hylkää"
+
+msgid "Silently discards the message; use with caution."
+msgstr ""
+
+#, fuzzy
+msgid "Move to Folder"
+msgstr "Siirry Ylös"
+
+#, php-format
+msgid "Or specify a new folder: %s to be created under %s"
+msgstr ""
+
+msgid "Flag"
+msgstr ""
+
+msgid "Set message flags"
+msgstr ""
+
+msgid "Standard Flags"
+msgstr ""
+
+#, fuzzy
+msgid "Message Labels"
+msgstr "Viestien suodattimet"
+
+msgid "Custom Flags"
+msgstr ""
+
+msgid "Seen"
+msgstr ""
+
+msgid "Answered"
+msgstr ""
+
+msgid "Flagged"
+msgstr ""
+
+#, fuzzy
+msgid "Deleted"
+msgstr "Poista"
+
+msgid "Draft"
+msgstr ""
+
+msgid "Important"
+msgstr ""
+
+#, fuzzy
+msgid "Work"
+msgstr "tai"
+
+msgid "Personal"
+msgstr ""
+
+#, fuzzy
+msgid "To Do"
+msgstr "To: tai Cc"
+
+#, fuzzy
+msgid "Later"
+msgstr "suppea"
+
+msgid "Junk"
+msgstr ""
+
+#, fuzzy
+msgid "Not Junk"
+msgstr "Siirry Ylös"
+
+#, php-format
+msgid "Also, set message flag %s"
+msgstr ""
+
+#, php-format
+msgid "Also, set message flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Set (replace) flags as the current set: %s"
+msgstr ""
+
+#, php-format
+msgid "Set (replace) flags: %s"
+msgstr ""
+
+#, php-format
+msgid "Add flags to current set: %s"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "Add flags: %s"
+msgstr "Lisää uusi sääntö"
+
+#, php-format
+msgid "Remove flags from current set: %s"
+msgstr ""
+
+#, php-format
+msgid "Remove flags: %s"
+msgstr ""
+
+msgid ""
+"Enter here a list of flags separated by spaces. Example: <tt>$MyFlag "
+"$Special</tt>"
+msgstr ""
+
+#, fuzzy
+msgid "Move to Junk"
+msgstr "Siirry Ylös"
+
+#, fuzzy, php-format
+msgid ""
+"Store message in your Junk Folder. Messages older than %s days will be "
+"deleted automatically."
+msgstr ""
+"Säilytä SPAM-viesti Junk Kansiossa. Vanhemmat viestit kuin %s päivää "
+"tuhoutuvat automaattisesti."
+
+msgid "Note that you can set the number of days in Folder Preferences."
+msgstr "Muista että voit asettaa montako päivää -arvon kansion asetuksissa."
+
+#, fuzzy
+msgid "Keep Message"
+msgstr "Viesti"
+
+msgid "Save the message in your INBOX."
+msgstr ""
+
+msgid "Also keep copy in INBOX, marked as deleted."
+msgstr "Pidä myös kopio sisääntulevissa ja merkkaa tuhotuksi"
+
+msgid "Notify"
+msgstr ""
+
+#, fuzzy
+msgid "Send a notification "
+msgstr "Sähköpostimuistutus"
+
+msgid "Mobile Phone Message (SMS)"
+msgstr "SMS-Viesti"
+
+msgid "Email notification"
+msgstr "Sähköpostimuistutus"
+
+msgid "Notification via Zephyr"
+msgstr "Muistutus Zephyrin kautta"
+
+msgid "Notification via ICQ"
+msgstr "Muistutus ICQn kautta"
+
+msgid "Method"
+msgstr ""
+
+msgid "Notification ID"
+msgstr "Ilmoitus ID"
+
+msgid "Destination"
+msgstr "Kohde"
+
+msgid "Priority"
+msgstr ""
+
+msgid "Help: Valid variables are:"
+msgstr "Apua: Sallitut muuttujat ovat:"
+
+msgid "Redirect"
+msgstr ""
+
+msgid "Automatically redirect the message to a different email address"
+msgstr ""
+
+msgid "someone@example.org"
+msgstr "email@osoite"
+
+msgid "Keep a local copy as well."
+msgstr "Pidä myös paikallinen kopio."
+
+msgid ""
+"Incorrect email address(es). You must enter one or more valid email "
+"addresses, separated by comma."
+msgstr ""
+
+msgid "Reject"
+msgstr ""
+
+msgid "Send the message back to the sender, along with an excuse"
+msgstr ""
+
+msgid "Please do not send me large attachments."
+msgstr "Älä lähetä minulle isoja liitetiedostoja."
+
+msgid "If this rule matches, do not check any rules after it."
+msgstr "Jos tämä sääntö täsmää, älä tarkasta enää muita sääntöjä sen jälkeen."
+
+msgid "STOP"
+msgstr "PYSÄHDY"
+
+#, fuzzy
+msgid "Move to Trash"
+msgstr "Siirry Ylös"
+
+#, fuzzy
+msgid ""
+"Store message in your Trash Folder. You will have to purge the folder "
+"yourself."
+msgstr ""
+"Tallenna SPAM-viesti Trash kansioon. Sinun on suoritettava purge-toiminto "
+"kansiolle itse."
+
+#, fuzzy
+msgid "Vacation / Autoresponder"
+msgstr "Lomavastaaja"
+
+msgid ""
+"This is an automated reply; I am away and will not be able to reply to you "
+"immediately."
+msgstr ""
+"Tämä on automaattinen vastaus; En ole tavoitettavissa enkä voi vastata juuri "
+"nyt. "
+
+msgid "I will get back to you as soon as I return."
+msgstr "Palaan asiaan pikimiten palatessani."
+
+msgid ""
+"The notice will be sent only once to each person that sends you mail, and "
+"will not be sent to a mailing list address."
+msgstr ""
+"Muistutus lähetetään vain kerran jokaiselle lähettäjälle ja  "
+"postituslistoille ei myöskään vastata"
+
+msgid "Subject:"
+msgstr ""
+
+#, fuzzy
+msgid "Optional subject of the vacation message."
+msgstr "vastaa tällä lomaviestillä: "
+
+#, fuzzy
+msgid "Your Addresses:"
+msgstr "Osoite sisältää"
+
+msgid ""
+"A vacation / autorespond message will be sent only if an email is sent "
+"explicitly to one of these addresses."
+msgstr ""
+
+#, fuzzy
+msgid "Days:"
+msgstr "päiviä"
+
+msgid "days"
+msgstr "päiviä"
+
+msgid ""
+"A vacation / autorespond message will not be resent to the same address, "
+"within this number of days."
+msgstr ""
+
+#, fuzzy
+msgid "Message:"
+msgstr "Viesti"
+
+msgid "The number of days between vacation messages must be a positive number."
+msgstr ""
+
+#, fuzzy
+msgid "Date"
+msgstr "Kopioi"
+
+msgid "Received"
+msgstr ""
+
+#, fuzzy
+msgid "Year"
+msgstr "Otsikko sisältyy"
+
+msgid "Month"
+msgstr ""
+
+#, fuzzy
+msgid "Day"
+msgstr "päiviä"
+
+msgid "Weekday"
+msgstr ""
+
+#, fuzzy
+msgid "Hour"
+msgstr "tai"
+
+msgid "Minute"
+msgstr ""
+
+msgid "Second"
+msgstr ""
+
+#, fuzzy
+msgid "Sunday"
+msgstr "päiviä"
+
+#, fuzzy
+msgid "Monday"
+msgstr "päiviä"
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Wednesday"
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+#, fuzzy
+msgid "Friday"
+msgstr "päiviä"
+
+msgid "Saturday"
+msgstr ""
+
+msgid "Is"
+msgstr ""
+
+msgid "Before (&lt;=)"
+msgstr ""
+
+msgid "After (=&gt;)"
+msgstr ""
+
+msgid "Before (&lt;)"
+msgstr ""
+
+msgid "After (&gt;)"
+msgstr ""
+
+msgid "January"
+msgstr ""
+
+msgid "February"
+msgstr ""
+
+msgid "March"
+msgstr ""
+
+msgid "April"
+msgstr ""
+
+msgid "May"
+msgstr ""
+
+#, fuzzy
+msgid "June"
+msgstr "ellei"
+
+msgid "July"
+msgstr ""
+
+msgid "August"
+msgstr ""
+
+msgid "September"
+msgstr ""
+
+msgid "October"
+msgstr ""
+
+msgid "November"
+msgstr ""
+
+msgid "December"
+msgstr ""
+
+msgid "Occurence"
+msgstr ""
+
+msgid "Specific Date"
+msgstr ""
+
+msgid "Specific Time"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "of header %s"
+msgstr "otsikko"
+
+msgid "Current date / time:"
+msgstr ""
+
+#, fuzzy
+msgid "Current date:"
+msgstr "Tehty:"
+
+#, fuzzy
+msgid "message header"
+msgstr "Viesti"
+
+#, fuzzy
+msgid "Message header"
+msgstr "Viestien suodattimet"
+
+#, fuzzy, php-format
+msgid "is %s"
+msgstr "Muokkaa"
+
+msgid "is"
+msgstr "on"
+
+#, php-format
+msgid "is before than %s (inclusive)"
+msgstr ""
+
+#, php-format
+msgid "is after than %s (inclusive)"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "is before than %s"
+msgstr "on pienempi kuin"
+
+#, fuzzy, php-format
+msgid "is after than %s"
+msgstr "on isompi kuin"
+
+#, php-format
+msgid "&quot;%s&quot;"
+msgstr ""
+
+#, php-format
+msgid "&quot;<tt>%s:</tt>&quot;"
+msgstr ""
 
 msgid "AND (Every item must match)"
 msgstr "JA (Kaikkien tulee sisältyä)"
@@ -203,6 +692,12 @@ msgstr ""
 msgid "Perform an action on messages depending on their content (body text)."
 msgstr "Tee toiminto viestin sisältöön liittyen"
 
+#, fuzzy
+msgid ""
+"Perform an action on messages depending on date or time related to the "
+"message."
+msgstr "Tee toiminto liittyen viestin kokoon"
+
 msgid "All"
 msgstr ""
 
@@ -214,9 +709,6 @@ msgstr "sisältää"
 
 msgid "does not contain"
 msgstr "ei sisällä"
-
-msgid "is"
-msgstr "on"
 
 msgid "is not"
 msgstr "ei ole"
@@ -321,9 +813,6 @@ msgstr ""
 "Tallenna SPAM-viesti Trash kansioon. Sinun on suoritettava purge-toiminto "
 "kansiolle itse."
 
-msgid "Discard"
-msgstr "Hylkää"
-
 msgid ""
 "Discard SPAM message. You will get no indication that the message ever "
 "arrived."
@@ -414,12 +903,6 @@ msgid ""
 msgstr ""
 "Viestit jotka osuvat mihinkään näistä otsikkosäännöistä eivät "
 "päädyRoskapostikansioihin tai luetella SPAMmiksi."
-
-msgid "STOP"
-msgstr "PYSÄHDY"
-
-msgid "If this rule matches, do not check any rules after it."
-msgstr "Jos tämä sääntö täsmää, älä tarkasta enää muita sääntöjä sen jälkeen."
 
 msgid "Apply Changes"
 msgstr "Tallenna muutokset"
@@ -564,6 +1047,36 @@ msgstr ""
 "Seuraava toiminta sisältyy <strong>jokaiseen</strong> sisääntulevaan "
 "viestiin jotka eivät sisälly edellisiin sääntöihin."
 
+msgid "1st"
+msgstr ""
+
+msgid "2nd"
+msgstr ""
+
+msgid "3rd"
+msgstr ""
+
+msgid "4th"
+msgstr ""
+
+msgid "5th"
+msgstr ""
+
+msgid "6th"
+msgstr ""
+
+msgid "7th"
+msgstr ""
+
+msgid "8th"
+msgstr ""
+
+msgid "9th"
+msgstr ""
+
+msgid "from the end"
+msgstr ""
+
 msgid "Choose what to do when this rule triggers, from one of the following:"
 msgstr "Valitse seuraavista mitä tehdä kun tämä sääntö käynnistyy:"
 
@@ -674,9 +1187,6 @@ msgid "Really delete selected rules?"
 msgstr "Poistetaanko tämä sääntö oikeasti?"
 
 msgid "Enable"
-msgstr ""
-
-msgid "Disable"
 msgstr ""
 
 msgid ""
@@ -802,175 +1312,6 @@ msgstr ""
 msgid "These search expressions are not applicable during message delivery."
 msgstr ""
 
-#, fuzzy
-msgid "Keep Message"
-msgstr "Viesti"
-
-msgid "Save the message in your INBOX."
-msgstr ""
-
-msgid "Silently discards the message; use with caution."
-msgstr ""
-
-msgid "Reject"
-msgstr ""
-
-msgid "Send the message back to the sender, along with an excuse"
-msgstr ""
-
-msgid "Please do not send me large attachments."
-msgstr "Älä lähetä minulle isoja liitetiedostoja."
-
-msgid "Redirect"
-msgstr ""
-
-msgid "Automatically redirect the message to a different email address"
-msgstr ""
-
-msgid "someone@example.org"
-msgstr "email@osoite"
-
-msgid "Keep a local copy as well."
-msgstr "Pidä myös paikallinen kopio."
-
-msgid ""
-"Incorrect email address(es). You must enter one or more valid email "
-"addresses, separated by comma."
-msgstr ""
-
-#, fuzzy
-msgid "Move to Folder"
-msgstr "Siirry Ylös"
-
-#, php-format
-msgid "Or specify a new folder: %s to be created under %s"
-msgstr ""
-
-msgid "Vacation"
-msgstr "Lomavastaaja"
-
-msgid ""
-"This is an automated reply; I am away and will not be able to reply to you "
-"immediately."
-msgstr ""
-"Tämä on automaattinen vastaus; En ole tavoitettavissa enkä voi vastata juuri "
-"nyt. "
-
-msgid "I will get back to you as soon as I return."
-msgstr "Palaan asiaan pikimiten palatessani."
-
-msgid ""
-"The notice will be sent only once to each person that sends you mail, and "
-"will not be sent to a mailing list address."
-msgstr ""
-"Muistutus lähetetään vain kerran jokaiselle lähettäjälle ja  "
-"postituslistoille ei myöskään vastata"
-
-msgid "Subject:"
-msgstr ""
-
-#, fuzzy
-msgid "Optional subject of the vacation message."
-msgstr "vastaa tällä lomaviestillä: "
-
-#, fuzzy
-msgid "Your Addresses:"
-msgstr "Osoite sisältää"
-
-msgid ""
-"A vacation message will be sent only if an email is sent explicitly to one "
-"of these addresses."
-msgstr ""
-
-#, fuzzy
-msgid "Days:"
-msgstr "päiviä"
-
-msgid "days"
-msgstr "päiviä"
-
-msgid ""
-"A vacation message will not be resent to the same address, within this "
-"number of days."
-msgstr ""
-
-#, fuzzy
-msgid "Message:"
-msgstr "Viesti"
-
-msgid "The number of days between vacation messages must be a positive number."
-msgstr ""
-
-msgid "Notify"
-msgstr ""
-
-#, fuzzy
-msgid "Send a notification "
-msgstr "Sähköpostimuistutus"
-
-msgid "Mobile Phone Message (SMS)"
-msgstr "SMS-Viesti"
-
-msgid "Email notification"
-msgstr "Sähköpostimuistutus"
-
-msgid "Notification via Zephyr"
-msgstr "Muistutus Zephyrin kautta"
-
-msgid "Notification via ICQ"
-msgstr "Muistutus ICQn kautta"
-
-msgid "Method"
-msgstr ""
-
-msgid "Notification ID"
-msgstr "Ilmoitus ID"
-
-msgid "Destination"
-msgstr "Kohde"
-
-msgid "Priority"
-msgstr ""
-
-msgid "Message"
-msgstr "Viesti"
-
-msgid "Help: Valid variables are:"
-msgstr "Apua: Sallitut muuttujat ovat:"
-
-msgid "Also keep copy in INBOX, marked as deleted."
-msgstr "Pidä myös kopio sisääntulevissa ja merkkaa tuhotuksi"
-
-msgid "The rule will have no effect for as long as it is disabled."
-msgstr ""
-
-#, fuzzy
-msgid "Move to Junk"
-msgstr "Siirry Ylös"
-
-#, fuzzy, php-format
-msgid ""
-"Store message in your Junk Folder. Messages older than %s days will be "
-"deleted automatically."
-msgstr ""
-"Säilytä SPAM-viesti Junk Kansiossa. Vanhemmat viestit kuin %s päivää "
-"tuhoutuvat automaattisesti."
-
-msgid "Note that you can set the number of days in Folder Preferences."
-msgstr "Muista että voit asettaa montako päivää -arvon kansion asetuksissa."
-
-#, fuzzy
-msgid "Move to Trash"
-msgstr "Siirry Ylös"
-
-#, fuzzy
-msgid ""
-"Store message in your Trash Folder. You will have to purge the folder "
-"yourself."
-msgstr ""
-"Tallenna SPAM-viesti Trash kansioon. Sinun on suoritettava purge-toiminto "
-"kansiolle itse."
-
 msgid ""
 "All messages considered as <strong>SPAM</strong> (unsolicited commercial "
 "messages)"
@@ -1011,9 +1352,6 @@ msgstr "tulee olemaan"
 
 msgid "stored in the Junk Folder."
 msgstr "talletettu Junk Kansioon."
-
-msgid "Junk"
-msgstr ""
 
 msgid "stored in the Trash Folder."
 msgstr "talletettu Trash Kansioon."
@@ -1111,6 +1449,20 @@ msgstr "Osoite sisältää"
 msgid "message body"
 msgstr "Viesti"
 
+#, php-format
+msgid "index number %s"
+msgstr ""
+
+#, php-format
+msgid "index #%s"
+msgstr ""
+
+msgid "(counting from last header)"
+msgstr ""
+
+msgid "(from end)"
+msgstr ""
+
 #, fuzzy
 msgid "matches the regular expression"
 msgstr "sisältää rexepin"
@@ -1155,6 +1507,10 @@ msgstr "<strong>Kaikille</strong> sisääntuleville viesteille; "
 msgid "ALL"
 msgstr ""
 
+#, fuzzy
+msgid "always"
+msgstr "päiviä"
+
 msgid "and"
 msgstr ""
 
@@ -1197,12 +1553,9 @@ msgstr ""
 msgid "(Warning: Folder not available)"
 msgstr ""
 
-msgid "reply with this vacation message: "
+#, fuzzy, php-format
+msgid "reply with a vacation / autoresponder message: "
 msgstr "vastaa tällä lomaviestillä: "
-
-#, fuzzy
-msgid "Vacation Message"
-msgstr "Lomavastaaja"
 
 msgid "Also keep a local copy."
 msgstr "Pidä myös paikallinen kopio."
@@ -1245,6 +1598,9 @@ msgstr "Virheellinen kansion nimi. Valitse muu nimi."
 
 msgid "None"
 msgstr "Ei yhtään"
+
+#~ msgid "Vacation"
+#~ msgstr "Lomavastaaja"
 
 #~ msgid "Addresses: Only reply if sent to these addresses:"
 #~ msgstr ""
