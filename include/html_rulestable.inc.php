@@ -161,7 +161,7 @@ class avelsieve_html_rules extends avelsieve_html {
      */
     function rules_confirmation_text() {
         $out = $this->retrieve_avelsieve_messages();
-        session_unregister('comm');
+//        session_unregister('comm');
         return $out;
     }
     

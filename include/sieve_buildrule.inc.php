@@ -581,7 +581,6 @@ function makesinglerule($rule, $mode='rule') {
     
     switch ($rule['action']) {
     case '1':    /* keep (default) */
-    default:
         $out .= 'keep' . (!empty($flags_out) ? " $flags_out" : '' ) . ';';
         $text .= _("<em>keep</em> the message.");
         $terse .= _("Keep");
