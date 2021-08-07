@@ -1,4 +1,7 @@
-# avelsieve
-“Avelsieve” or Sieve Mail Filters Plugin for Squirrelmail is a Squirrelmail plugin for creating Sieve scripts on a Sieve-compliant mail server.  Sieve is a mail filtering language, intended for server-side filtering of emails. For more information, please visit sieve.info or read RFC 5228.
+Avelsieve 1.9.9.1 plugin for SquirrelMail
+=========================================
 
-Note! This version is different/newer than the main code, with working Sieve File -backend.
+This is a fork of Avelsieve 1.9.9 from http://email.uoa.gr/avelsieve/
+
+This version bump fixes some depreciated php functions for PHP 5.5 support.
+

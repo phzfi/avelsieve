@@ -39,8 +39,11 @@ class DO_Sieve {
     public $condition_kinds;
 
 
+    //TODO how this should work? - workaround to initialize capabilities, but they should be fetched somehow.
+    function init() {
+        $this->capabilities = [];
+    }
     /*
-    function init()
     function listscripts()
     function load()
     function save()
@@ -97,6 +100,7 @@ class DO_Sieve {
             /* Abnormal start of a backend. We need to call init() explicitly
              * in order to get capabilities. */
             $this->init();
+            $this->capabilities = [];
         }
 
         if(AVELSIEVE_DEBUG >= 3) return true;
