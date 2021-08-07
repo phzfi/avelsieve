@@ -41,7 +41,7 @@ class DO_Sieve {
 
     //TODO how this should work? - workaround to initialize capabilities, but they should be fetched somehow.
     function init() {
-        $this->capabilities = [];
+        $this->capabilities = $avelsieve_hardcoded_capabilities;
     }
     /*
     function listscripts()
