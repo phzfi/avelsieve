@@ -533,6 +533,13 @@ class avelsieve_html_edit extends avelsieve_html {
 		return $out;
 	}
 		
+    function condition_datetime($n) {
+        $myCondition = new avelsieve_condition_datetime($this->s, $this->rule, $n, 'date');
+        $out = $myCondition->datetime_header_ui();
+        $out .= $myCondition->datetime_common_ui();
+        return $out;
+    }
+
 	/**
 	 * All messages 
 	 * @return string

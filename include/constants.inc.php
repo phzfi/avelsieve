@@ -88,8 +88,16 @@ $types = array(
 		'description' => _("Perform an action on messages depending on their content (body text)."),
 		'dependencies' => array('body')
 	),
+        'datetime' => array(
+                'order' => 5,
+//                'name' => _("Date"),
+                'name' => "Date",
+//                'description' => _("Perform an action on messages depending on date or time related to the message."),
+                'description' => "Perform an action on messages depending on date or time related to the message.",
+                'dependencies' => array('date')
+        ),
 	'all' => array(
-		'order' => 5,
+		'order' => 6,
 		'name' => _("All"),
 		'description' => _("Perform an action on <strong>all</strong> incoming messages.")
 	)

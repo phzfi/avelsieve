@@ -36,6 +36,7 @@ include_once(SM_PATH . 'functions/identity.php');
 require_once(SM_PATH . 'plugins/avelsieve/include/constants.inc.php');
 include_once(SM_PATH . 'plugins/avelsieve/include/html_rulestable.inc.php');
 include_once(SM_PATH . 'plugins/avelsieve/include/html_ruleedit.inc.php');
+include_once(SM_PATH . 'plugins/avelsieve/include/sieve_conditions.inc.php');
 include_once(SM_PATH . 'plugins/avelsieve/include/sieve_actions.inc.php');
 include_once(SM_PATH . 'plugins/avelsieve/include/sieve.inc.php');
 include_once(SM_PATH . 'plugins/avelsieve/include/support.inc.php');

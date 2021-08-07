@@ -176,6 +176,16 @@ function build_rule_snippet($name, $header, $matchtype, $headermatch, $mode='rul
 			$text .= _("message body");
 			$terse .= ("Body");
 			break;
+                case 'datetime':
+                            include_once(SM_PATH . 'plugins/avelsieve/include/avelsieve_condition_datetime.class.php');
+                            $myCondition = new avelsieve_condition_datetime($sieve, $rule, $i, 'date');
+                            $aTmp = $myCondition->generate_sieve();
+
+                            $out .= $aTmp[0];
+                            $text .= $aTmp[1];
+                            $terse .= $aTmp[2];
+                            break;
+
 	}
 	$text .= ' ';
 	$terse .= ' ';
