@@ -6,7 +6,7 @@
  * Licensed under the GNU GPL. For full terms see the file COPYING that came
  * with the Squirrelmail distribution.
  *
- * @version $Id: sieve_buildrule.10.inc.php,v 1.4 2007/03/19 18:08:49 avel Exp $
+ * @version $Id: sieve_buildrule.10.inc.php 1034 2009-05-25 12:50:07Z avel $
  * @author Alexandros Vellis <avel@users.sourceforge.net>
  * @copyright 2004-2007 Alexandros Vellis
  * @package plugins
@@ -112,12 +112,12 @@ function avelsieve_buildrule_10($rule) {
         $out .= " ,\n";
         $out .= ' not anyof( ';
         for($i=0; $i<sizeof($rule['whitelist']); $i++ ) {
-            $out .= build_rule_snippet('header', $rule['whitelist'][$i]['header'], $rule['whitelist'][$i]['matchtype'],
-                $rule['whitelist'][$i]['headermatch'] ,'rule');
-            $text .= build_rule_snippet('header', $rule['whitelist'][$i]['header'], $rule['whitelist'][$i]['matchtype'],
-                $rule['whitelist'][$i]['headermatch'] ,'verbose');
-            $terse .= '<li>'. build_rule_snippet('header', $rule['whitelist'][$i]['header'], $rule['whitelist'][$i]['matchtype'],
-                $rule['whitelist'][$i]['headermatch'] ,'terse') . '</li>';
+            $aTmp = build_rule_snippet('header', $rule['whitelist'][$i]['header'], $rule['whitelist'][$i]['matchtype'],
+                $rule['whitelist'][$i]['headermatch']);
+            $out .= $aTmp[0];
+            $text .= $aTmp[1];
+            $terse .= $aTmp[2];
+
             if($i<sizeof($rule['whitelist'])-1) {
                 $out .= ', ';
                 $text .= ' ' . _("or") . ' ';
@@ -172,4 +172,3 @@ function avelsieve_buildrule_10($rule) {
     return(array($out,$text,$terse));
 }
 
-?>
